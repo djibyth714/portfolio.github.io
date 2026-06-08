@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>SACEM – Plateforme Météo DSI</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+  <link href="assets/img/test.png" rel="icon">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/css/style.css" rel="stylesheet">
+</head>
+<body>
+  <section id="portfolio-details" class="portfolio-details">
+    <div class="container">
+      <div class="row gy-4">
+        <div class="col-lg-8">
+          <div class="portfolio-details-slider swiper">
+            <div class="swiper-wrapper align-items-center">
+              <div class="swiper-slide">
+                <img src="assets/img/portfolio/portfolio-details-1.png" alt="">
+              </div>
+              <div class="swiper-slide">
+                <img src="assets/img/portfolio/portfolio-details-2.png" alt="">
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="portfolio-info">
+            <h3>RÉALISATION</h3>
+            <ul>
+              <li><strong>Entreprise</strong> : SACEM</li>
+              <li><strong>Rôle</strong> : Ingénieur DevOps / Développeur Full Stack</li>
+              <li><strong>Période</strong> : Novembre 2025 – Février 2026</li>
+              <li><strong>Stack</strong> : Node.js, React 18, TypeScript, PostgreSQL 15, Redis, Nginx, RHEL 9.4, vSphere, GitLab CI/CD, Prometheus, Grafana, LDAP/AD, JWT</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="portfolio-description">
+        <h2>REFONTE PLATEFORME MÉTÉO DSI – MIGRATION EXCEL VBA VERS APPLICATION WEB</h2>
+        <p>
+          Ce projet représente une transformation complète d'un outil de supervision critique basé sur Excel avec macros VBA vers une plateforme web moderne et scalable. L'ancienne solution, dépendante d'un poste Windows, collectait manuellement les données depuis Dollar U (ordonnancement), Prometheus (disponibilité applicatif), Centreon (supervision système) et NetBackup (sauvegardes) pour générer des rapports quotidiens.<br><br>
+          Le nouveau système centralise ces données dans une architecture haute disponibilité sur infrastructure on-premise vSphere/RHEL9, avec authentification LDAP, interface web responsive, API REST, et base de données PostgreSQL pour l'historisation.
+        </p>
+        <h3>Réalisations principales</h3>
+        <ul>
+          <li>Conception d'une architecture microservices haute disponibilité sur 2 VMs RHEL 9.4 (Backend : 8 vCPU, 16 GB RAM / Frontend : 4 vCPU, 8 GB RAM) avec séparation frontend/backend et sécurisation réseau (VLAN DMZ, firewalld).</li>
+          <li>Développement d'une API REST Node.js/Express avec architecture modulaire (routes, controllers, models, services) et middleware d'authentification JWT/LDAP.</li>
+          <li>Conception et implémentation du modèle de données PostgreSQL 15 avec gestion d'historique, relations complexes et migrations automatisées.</li>
+          <li>Création de collecteurs de données automatisés pour intégration multi-sources : Prometheus, Dollar U Oracle, Centreon, NetBackup API, EasyVista ITSM.</li>
+          <li>Implémentation de schedulers pour collectes automatiques, génération de rapports quotidiens à 7h00, et envoi d'emails via SMTP Exchange.</li>
+          <li>Développement d'une interface web moderne en React 18 + TypeScript avec Vite, Tailwind CSS et composants réutilisables (React Query, Chart.js).</li>
+          <li>Tableaux de bord dynamiques avec visualisation temps réel des statuts de 59 sondes applicatives, indicateurs métiers et graphiques interactifs.</li>
+          <li>Mise en place de Nginx 1.30.1 comme reverse proxy avec configuration TLS 1.3, HTTP/2 et résolution de problèmes critiques de certificats SSL (BOM UTF-8) sur 6 serveurs.</li>
+          <li>Déploiement automatisé avec pipelines CI/CD, scripts PowerShell/SSH, services systemd et stratégies zero-downtime avec health checks.</li>
+          <li>Sécurisation complète : HTTPS obligatoire, tokens JWT, protection CSRF/XSS, Fail2Ban, rate limiting API, logs centralisés.</li>
+        </ul>
+        <h3>Environnement Technique</h3>
+        <p>Node.js, Express, TypeScript, React 18, Vite, Tailwind CSS, PostgreSQL 15, Redis, Nginx, RHEL 9.4, vSphere, Git, GitLab CI/CD, Prometheus, Grafana, Checkly, EasyVista API, Oracle, Centreon, NetBackup API, LDAP/Active Directory, JWT, TLS/SSL, SELinux, Firewalld, Systemd</p>
+      </div>
+    </div>
+  </section>
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/typed.js/typed.min.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
