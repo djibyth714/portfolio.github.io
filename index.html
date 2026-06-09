@@ -1,1080 +1,2539 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
   <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>DSALL</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Djiby Oumar SALL – Ingénieur DevOps</title>
+  <meta name="description" content="Portfolio de Djiby Oumar SALL, Ingénieur DevOps & Cloud – Kubernetes, Terraform, AWS, Azure">
 
-  <!-- Favicons -->
-  <link href="assets/img/test.png" rel="icon">
-  <link href="assets/img/test.png" rel="apple-touch-icon">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <!-- Font Awesome 6 -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
 
-  <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
+  <!-- AOS animations -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
+  <!-- Swiper -->
+  <link href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" rel="stylesheet">
 
-  <!-- Animate.css -->
-	<link rel="stylesheet" href="css/animate.css">
-	<!-- Icomoon Icon Fonts-->
-	<link rel="stylesheet" href="css/icomoon.css">
-	<!-- Bootstrap  -->
-	<link rel="stylesheet" href="css/bootstrap.css">
-	<!-- Flexslider  -->
-	<link rel="stylesheet" href="css/flexslider.css">
-	<!-- Flaticons  -->
-	<link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
-	<!-- Owl Carousel -->
-	<link rel="stylesheet" href="css/owl.carousel.min.css">
-	<link rel="stylesheet" href="css/owl.theme.default.min.css">
-	<!-- Theme style  -->
-	<link rel="stylesheet" href="css/style.css">
+  <style>
+    :root {
+      --bg-primary: #050a18;
+      --bg-secondary: #0a1628;
+      --bg-card: rgba(255,255,255,0.03);
+      --bg-card-hover: rgba(255,255,255,0.07);
+      --accent: #00d4ff;
+      --accent2: #7c3aed;
+      --accent3: #f59e0b;
+      --text-primary: #f0f6ff;
+      --text-secondary: #8ba3c7;
+      --border: rgba(0,212,255,0.12);
+      --glow: 0 0 40px rgba(0,212,255,0.15);
+    }
 
-	<!-- Modernizr JS -->
-	<script src="js/modernizr-2.6.2.min.js"></script>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      overflow-x: hidden;
+    }
+
+    /* ── SCROLLBAR ── */
+    ::-webkit-scrollbar { width: 5px; }
+    ::-webkit-scrollbar-track { background: var(--bg-primary); }
+    ::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 3px; }
+
+    /* ── NOISE OVERLAY ── */
+    body::before {
+      content: '';
+      position: fixed; inset: 0; z-index: -1;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+    }
+
+    /* ── NAV ── */
+    #navbar {
+      position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
+      padding: 16px 0;
+      background: rgba(5,10,24,0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      transition: all .3s;
+    }
+
+    .nav-container {
+      max-width: 1200px; margin: 0 auto;
+      padding: 0 24px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+
+    .nav-logo {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.2rem; font-weight: 700;
+      color: var(--text-primary); text-decoration: none;
+      letter-spacing: -0.5px;
+    }
+
+    .nav-logo span { color: var(--accent); }
+
+    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .nav-links a {
+      color: var(--text-secondary); text-decoration: none;
+      font-size: .85rem; font-weight: 500; letter-spacing: .5px;
+      text-transform: uppercase; transition: color .2s;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--accent); }
+
+    .nav-cta {
+      background: var(--accent); color: var(--bg-primary) !important;
+      padding: 8px 20px; border-radius: 6px; font-weight: 700 !important;
+      transition: opacity .2s !important;
+    }
+    .nav-cta:hover { opacity: .85; color: var(--bg-primary) !important; }
+
+    .mobile-toggle {
+      display: none; background: none; border: none;
+      color: var(--text-primary); font-size: 1.5rem; cursor: pointer;
+    }
+
+    @media (max-width: 900px) {
+      .mobile-toggle { display: block; }
+      .nav-links {
+        display: none; position: absolute; top: 100%; left: 0; width: 100%;
+        flex-direction: column; gap: 0;
+        background: rgba(5,10,24,0.98);
+        border-bottom: 1px solid var(--border);
+        padding: 16px 0;
+      }
+      .nav-links.open { display: flex; }
+      .nav-links li { padding: 12px 24px; }
+      .nav-links a { font-size: 1rem; }
+    }
+
+    /* ── SECTION LAYOUT ── */
+    section { padding: 100px 0; }
+
+    .container-lg {
+      max-width: 1200px; margin: 0 auto; padding: 0 24px;
+    }
+
+    .section-label {
+      display: inline-flex; align-items: center; gap: 8px;
+      color: var(--accent); font-size: .75rem; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 2px; margin-bottom: 12px;
+    }
+    .section-label::before {
+      content: ''; display: block;
+      width: 24px; height: 2px; background: var(--accent);
+    }
+
+    .section-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      font-weight: 700; line-height: 1.15;
+      letter-spacing: -1px; margin-bottom: 16px;
+    }
+
+    .section-subtitle {
+      color: var(--text-secondary); font-size: 1rem;
+      max-width: 560px; line-height: 1.7; margin-bottom: 64px;
+    }
+
+    /* ── HERO ── */
+    #hero {
+      min-height: 100vh;
+      display: flex; align-items: center; justify-content: center;
+      position: relative; overflow: hidden;
+      padding-top: 80px;
+    }
+
+    .hero-bg {
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 50% 0%, rgba(0,212,255,.08) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 60% at 80% 80%, rgba(124,58,237,.06) 0%, transparent 50%),
+        linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+    }
+
+    .hero-grid {
+      position: absolute; inset: 0; opacity: .15;
+      background-image:
+        linear-gradient(var(--border) 1px, transparent 1px),
+        linear-gradient(90deg, var(--border) 1px, transparent 1px);
+      background-size: 60px 60px;
+      mask-image: radial-gradient(ellipse 80% 60% at 50% 50%, black 30%, transparent 80%);
+    }
+
+    .hero-content {
+      position: relative; z-index: 1;
+      max-width: 1200px; margin: 0 auto; padding: 0 24px;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
+    }
+
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(0,212,255,.08); border: 1px solid rgba(0,212,255,.2);
+      color: var(--accent); border-radius: 100px;
+      padding: 6px 16px; font-size: .8rem; font-weight: 600;
+      letter-spacing: .5px; margin-bottom: 20px;
+    }
+    .hero-badge span { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); animation: pulse 2s infinite; }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: .5; transform: scale(.8); }
+    }
+
+    .hero-name {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 800; line-height: 1.1;
+      letter-spacing: -2px; margin-bottom: 16px;
+    }
+
+    .hero-name .highlight {
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+
+    .hero-typed-wrap {
+      font-size: 1.2rem; color: var(--text-secondary);
+      font-weight: 400; margin-bottom: 24px; min-height: 30px;
+    }
+
+    .hero-typed-wrap .typed-cursor { color: var(--accent); }
+
+    .hero-desc {
+      color: var(--text-secondary); font-size: 1rem; line-height: 1.8;
+      margin-bottom: 36px; max-width: 480px;
+    }
+
+    .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+
+    .btn-primary-custom {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--accent); color: var(--bg-primary);
+      padding: 14px 28px; border-radius: 8px; text-decoration: none;
+      font-weight: 700; font-size: .9rem; transition: all .3s;
+      box-shadow: 0 0 30px rgba(0,212,255,.3);
+    }
+    .btn-primary-custom:hover {
+      background: #fff; color: var(--bg-primary);
+      box-shadow: 0 0 40px rgba(0,212,255,.5);
+      transform: translateY(-2px);
+    }
+
+    .btn-ghost {
+      display: inline-flex; align-items: center; gap: 8px;
+      border: 1px solid var(--border); color: var(--text-primary);
+      padding: 14px 28px; border-radius: 8px; text-decoration: none;
+      font-weight: 600; font-size: .9rem; transition: all .3s;
+    }
+    .btn-ghost:hover {
+      border-color: var(--accent); color: var(--accent);
+      background: rgba(0,212,255,.05);
+    }
+
+    .hero-socials {
+      display: flex; gap: 12px; margin-top: 32px;
+    }
+
+    .social-icon {
+      width: 42px; height: 42px; border-radius: 10px;
+      border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--text-secondary); text-decoration: none;
+      font-size: 1rem; transition: all .3s;
+    }
+    .social-icon:hover {
+      border-color: var(--accent); color: var(--accent);
+      background: rgba(0,212,255,.06); transform: translateY(-2px);
+    }
+
+    /* Hero photo */
+    .hero-photo-wrap {
+      position: relative; display: flex; align-items: center; justify-content: center;
+    }
+
+    .hero-photo-ring {
+      position: absolute;
+      width: 440px; height: 440px;
+      border-radius: 50%;
+      border: 1px solid rgba(0,212,255,.15);
+      animation: rotate 20s linear infinite;
+    }
+
+    .hero-photo-ring::before {
+      content: ''; position: absolute; top: -4px; left: 50%;
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--accent); margin-left: -4px;
+      box-shadow: 0 0 12px var(--accent);
+    }
+
+    @keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+    .hero-photo-img {
+      width: 360px; height: 360px;
+      border-radius: 50%;
+      object-fit: cover; object-position: center top;
+      border: 3px solid rgba(0,212,255,.2);
+      position: relative; z-index: 1;
+      box-shadow: 0 0 60px rgba(0,212,255,.15), 0 40px 80px rgba(0,0,0,.5);
+    }
+
+    .hero-floating-badge {
+      position: absolute;
+      background: rgba(10,22,40,.9); border: 1px solid var(--border);
+      backdrop-filter: blur(10px);
+      border-radius: 12px; padding: 10px 16px;
+      display: flex; align-items: center; gap: 10px;
+      font-size: .8rem; font-weight: 600; white-space: nowrap;
+      box-shadow: 0 10px 40px rgba(0,0,0,.4);
+    }
+    .hero-floating-badge i { color: var(--accent); font-size: 1.1rem; }
+
+    .badge-exp { bottom: 40px; left: -20px; z-index: 2; }
+    .badge-cert { top: 30px; right: -30px; z-index: 2; }
+
+    @media (max-width: 900px) {
+      .hero-content { grid-template-columns: 1fr; gap: 48px; text-align: center; }
+      .hero-photo-wrap { order: -1; }
+      .hero-photo-img { width: 240px; height: 240px; }
+      .hero-photo-ring { width: 280px; height: 280px; }
+      .hero-actions { justify-content: center; }
+      .hero-socials { justify-content: center; }
+      .hero-desc { margin: 0 auto 36px; }
+      .badge-exp { bottom: 10px; left: 0; }
+      .badge-cert { top: 10px; right: 0; }
+    }
+
+    /* ── ABOUT ── */
+    #about { background: var(--bg-secondary); }
+
+    .about-grid {
+      display: grid; grid-template-columns: 1fr 1.4fr; gap: 80px; align-items: center;
+    }
+
+    .about-photo {
+      position: relative;
+    }
+
+    .about-photo img {
+      width: 100%; border-radius: 20px;
+      object-fit: cover; object-position: center top;
+      aspect-ratio: 3/4;
+      box-shadow: 0 30px 80px rgba(0,0,0,.5);
+    }
+
+    .about-photo::after {
+      content: '';
+      position: absolute; inset: 0;
+      border-radius: 20px;
+      background: linear-gradient(135deg, rgba(0,212,255,.1), transparent 60%);
+    }
+
+    .about-photo-frame {
+      position: absolute; bottom: -16px; right: -16px;
+      width: 100%; height: 100%;
+      border: 2px solid rgba(0,212,255,.15);
+      border-radius: 20px; z-index: -1;
+    }
+
+    .about-text .section-subtitle { margin-bottom: 32px; }
+
+    .about-list {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+      list-style: none; margin-bottom: 32px;
+    }
+
+    .about-list li {
+      display: flex; align-items: flex-start; gap: 10px;
+      color: var(--text-secondary); font-size: .9rem;
+    }
+
+    .about-list li i { color: var(--accent); margin-top: 3px; flex-shrink: 0; }
+    .about-list li strong { color: var(--text-primary); }
+
+    @media (max-width: 900px) {
+      .about-grid { grid-template-columns: 1fr; gap: 40px; }
+      .about-list { grid-template-columns: 1fr; }
+    }
+
+    /* ── STATS ── */
+    #stats {
+      background: var(--bg-primary);
+      padding: 60px 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .stats-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px;
+    }
+
+    .stat-item {
+      text-align: center; padding: 40px 20px;
+      border-right: 1px solid var(--border);
+      position: relative; overflow: hidden;
+    }
+    .stat-item:last-child { border-right: none; }
+
+    .stat-item::before {
+      content: '';
+      position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
+      width: 60%; height: 2px;
+      background: linear-gradient(90deg, transparent, var(--accent), transparent);
+      opacity: 0; transition: opacity .3s;
+    }
+    .stat-item:hover::before { opacity: 1; }
+
+    .stat-number {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 3rem; font-weight: 800;
+      background: linear-gradient(135deg, #fff, var(--accent));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      line-height: 1;
+    }
+
+    .stat-plus { font-size: 2rem; }
+    .stat-label { color: var(--text-secondary); font-size: .85rem; margin-top: 8px; text-transform: uppercase; letter-spacing: 1px; }
+
+    @media (max-width: 600px) {
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .stat-item { border-bottom: 1px solid var(--border); }
+    }
+
+    /* ── SKILLS ── */
+    #skills { background: var(--bg-secondary); }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .skill-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px;
+      transition: all .3s;
+      position: relative; overflow: hidden;
+    }
+    .skill-card:hover {
+      background: var(--bg-card-hover);
+      border-color: rgba(0,212,255,.25);
+      transform: translateY(-4px);
+      box-shadow: var(--glow);
+    }
+
+    .skill-card-header {
+      display: flex; align-items: center; gap: 12px; margin-bottom: 20px;
+    }
+
+    .skill-icon {
+      width: 44px; height: 44px; border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem;
+    }
+
+    .skill-card h5 { font-size: 1rem; font-weight: 700; margin: 0; }
+
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+
+    .skill-tag {
+      padding: 5px 12px; border-radius: 6px;
+      font-size: .78rem; font-weight: 500;
+    }
+
+    .tag-blue   { background: rgba(59,130,246,.12); color: #93c5fd; border: 1px solid rgba(59,130,246,.2); }
+    .tag-purple { background: rgba(124,58,237,.12); color: #c4b5fd; border: 1px solid rgba(124,58,237,.2); }
+    .tag-green  { background: rgba(16,185,129,.12); color: #6ee7b7; border: 1px solid rgba(16,185,129,.2); }
+    .tag-orange { background: rgba(245,158,11,.12); color: #fcd34d; border: 1px solid rgba(245,158,11,.2); }
+    .tag-teal   { background: rgba(20,184,166,.12); color: #5eead4; border: 1px solid rgba(20,184,166,.2); }
+    .tag-red    { background: rgba(239,68,68,.12);  color: #fca5a5; border: 1px solid rgba(239,68,68,.2); }
+    .tag-indigo { background: rgba(99,102,241,.12); color: #a5b4fc; border: 1px solid rgba(99,102,241,.2); }
+
+    /* ── PORTFOLIO ── */
+    #portfolio { background: var(--bg-primary); }
+
+    .portfolio-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+    }
+
+    .portfolio-card {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: 16px; overflow: hidden;
+      transition: all .3s;
+      text-decoration: none; color: inherit;
+      display: block;
+    }
+    .portfolio-card:hover {
+      border-color: rgba(0,212,255,.3);
+      transform: translateY(-6px);
+      box-shadow: 0 20px 60px rgba(0,0,0,.4), var(--glow);
+    }
+
+    .portfolio-img-wrap {
+      position: relative; overflow: hidden; aspect-ratio: 16/9;
+    }
+
+    .portfolio-img-wrap img {
+      width: 100%; height: 100%;
+      object-fit: cover; transition: transform .4s;
+    }
+    .portfolio-card:hover .portfolio-img-wrap img { transform: scale(1.05); }
+
+    .portfolio-img-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(5,10,24,.8), transparent);
+      opacity: 0; transition: opacity .3s;
+      display: flex; align-items: center; justify-content: center; gap: 12px;
+    }
+    .portfolio-card:hover .portfolio-img-overlay { opacity: 1; }
+
+    .portfolio-overlay-btn {
+      width: 44px; height: 44px; border-radius: 50%;
+      background: rgba(255,255,255,.15); backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,255,255,.2);
+      display: flex; align-items: center; justify-content: center;
+      color: #fff; text-decoration: none; font-size: 1rem;
+      transition: background .2s;
+    }
+    .portfolio-overlay-btn:hover { background: var(--accent); color: var(--bg-primary); }
+
+    .portfolio-body { padding: 20px 24px; }
+    .portfolio-body h4 { font-size: 1rem; font-weight: 700; margin-bottom: 8px; }
+    .portfolio-body p { color: var(--text-secondary); font-size: .85rem; margin: 0; }
+
+    @media (max-width: 900px) { .portfolio-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 600px) { .portfolio-grid { grid-template-columns: 1fr; } }
+
+    /* ── EXPERIENCE ── */
+    #experience { background: var(--bg-secondary); }
+
+    .exp-company-group { margin-bottom: 48px; }
+
+    .exp-company-badge {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: rgba(0,212,255,.06); border: 1px solid rgba(0,212,255,.15);
+      padding: 8px 18px; border-radius: 8px;
+      font-size: .9rem; font-weight: 700;
+      color: var(--accent); margin-bottom: 24px;
+    }
+
+    .exp-item {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: 12px; padding: 28px;
+      margin-bottom: 16px;
+      position: relative; overflow: hidden;
+      transition: border-color .3s;
+    }
+    .exp-item:hover { border-color: rgba(0,212,255,.2); }
+
+    .exp-item::before {
+      content: '';
+      position: absolute; left: 0; top: 0; bottom: 0;
+      width: 3px;
+      background: linear-gradient(to bottom, var(--accent), var(--accent2));
+    }
+
+    .exp-header {
+      display: flex; align-items: flex-start; justify-content: space-between;
+      flex-wrap: wrap; gap: 8px; margin-bottom: 16px;
+    }
+
+    .exp-title { font-size: 1rem; font-weight: 700; }
+
+    .exp-date {
+      background: rgba(0,212,255,.08); border: 1px solid rgba(0,212,255,.15);
+      color: var(--accent); font-size: .78rem; font-weight: 600;
+      padding: 4px 12px; border-radius: 100px; white-space: nowrap;
+    }
+
+    .exp-item ul {
+      list-style: none; padding: 0; color: var(--text-secondary);
+      font-size: .88rem; line-height: 1.8;
+    }
+
+    .exp-item ul li {
+      padding-left: 16px; position: relative; margin-bottom: 4px;
+    }
+    .exp-item ul li::before {
+      content: '›'; position: absolute; left: 0; color: var(--accent); font-weight: 700;
+    }
+
+    .exp-item ul li strong { color: var(--text-primary); }
+
+    .exp-stack {
+      margin-top: 16px; padding-top: 16px;
+      border-top: 1px solid var(--border);
+      display: flex; flex-wrap: wrap; gap: 6px;
+    }
+
+    .exp-stack span {
+      background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.08);
+      color: var(--text-secondary); font-size: .75rem;
+      padding: 3px 10px; border-radius: 4px;
+    }
+
+    /* ── FORMATION ── */
+    #formation { background: var(--bg-primary); }
+
+    .formation-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 48px;
+    }
+
+    .formation-block h3 {
+      font-size: 1rem; font-weight: 700;
+      color: var(--accent); margin-bottom: 20px;
+      padding-bottom: 10px; border-bottom: 1px solid var(--border);
+    }
+
+    .formation-item {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: 12px; padding: 20px 24px; margin-bottom: 16px;
+    }
+
+    .formation-item h4 { font-size: .95rem; font-weight: 700; margin-bottom: 6px; }
+    .formation-item .year {
+      color: var(--accent); font-size: .8rem; font-weight: 600; margin-bottom: 6px;
+    }
+    .formation-item p { color: var(--text-secondary); font-size: .85rem; margin: 0; }
+
+    /* ── CERTIFICATIONS ── */
+    #certifications { background: var(--bg-secondary); }
+
+    .cert-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px;
+    }
+
+    .cert-card {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: 16px; padding: 28px;
+      transition: all .3s;
+    }
+    .cert-card:hover {
+      border-color: rgba(0,212,255,.2);
+      transform: translateY(-4px);
+      box-shadow: var(--glow);
+    }
+
+    .cert-icon {
+      width: 52px; height: 52px; border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem; margin-bottom: 16px;
+      background: rgba(0,212,255,.08); border: 1px solid rgba(0,212,255,.15);
+    }
+    .cert-icon i { color: var(--accent); }
+
+    .cert-card h4 { font-size: .95rem; font-weight: 700; margin-bottom: 6px; }
+    .cert-card .year { color: var(--accent); font-size: .8rem; font-weight: 600; margin-bottom: 12px; }
+    .cert-card p { color: var(--text-secondary); font-size: .83rem; line-height: 1.7; margin: 0; }
+
+    /* ── TESTIMONIALS ── */
+    #testimonials { background: var(--bg-primary); }
+
+    .swiper { padding-bottom: 48px !important; }
+
+    .testimonial-card {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: 20px; padding: 36px;
+      height: auto !important;
+    }
+
+    .testimonial-quote {
+      font-size: 2.5rem; line-height: 1;
+      color: var(--accent); opacity: .4; margin-bottom: 16px;
+      font-family: Georgia, serif;
+    }
+
+    .testimonial-text {
+      color: var(--text-secondary); font-size: .9rem;
+      line-height: 1.8; margin-bottom: 24px;
+      font-style: italic;
+    }
+
+    .testimonial-footer {
+      display: flex; align-items: center; gap: 14px;
+    }
+
+    .testimonial-footer img {
+      width: 48px; height: 48px; border-radius: 50%;
+      object-fit: cover; border: 2px solid rgba(0,212,255,.2);
+    }
+
+    .testimonial-footer h5 { font-size: .95rem; font-weight: 700; margin: 0; }
+    .testimonial-footer span { color: var(--text-secondary); font-size: .8rem; }
+
+    .swiper-pagination-bullet {
+      background: var(--text-secondary) !important;
+      opacity: .5 !important;
+    }
+    .swiper-pagination-bullet-active {
+      background: var(--accent) !important; opacity: 1 !important;
+      width: 20px !important; border-radius: 4px !important;
+    }
+
+    /* ── CONTACT ── */
+    #contact { background: var(--bg-secondary); }
+
+    .contact-grid {
+      display: grid; grid-template-columns: 1fr 1.4fr; gap: 64px;
+    }
+
+    .contact-info h3 { font-size: 1.5rem; font-weight: 700; margin-bottom: 8px; }
+    .contact-info p { color: var(--text-secondary); font-size: .9rem; margin-bottom: 32px; }
+
+    .contact-item {
+      display: flex; align-items: flex-start; gap: 16px; margin-bottom: 24px;
+    }
+
+    .contact-item-icon {
+      width: 44px; height: 44px; border-radius: 10px;
+      background: rgba(0,212,255,.08); border: 1px solid rgba(0,212,255,.15);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--accent); font-size: 1rem; flex-shrink: 0;
+    }
+
+    .contact-item h5 { font-size: .85rem; font-weight: 600; margin-bottom: 2px; color: var(--text-secondary); text-transform: uppercase; letter-spacing: .5px; }
+    .contact-item p { color: var(--text-primary); font-size: .9rem; margin: 0; }
+    .contact-item a { color: var(--text-primary); text-decoration: none; }
+    .contact-item a:hover { color: var(--accent); }
+
+    .contact-socials { display: flex; gap: 10px; margin-top: 32px; }
+
+    .contact-form .form-group { margin-bottom: 20px; }
+
+    .contact-form label {
+      display: block; font-size: .82rem; font-weight: 600;
+      color: var(--text-secondary); margin-bottom: 8px;
+      text-transform: uppercase; letter-spacing: .5px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%; background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 10px; padding: 14px 18px;
+      color: var(--text-primary); font-family: inherit; font-size: .9rem;
+      transition: border-color .2s, box-shadow .2s;
+      outline: none;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(0,212,255,.08);
+    }
+
+    .contact-form textarea { resize: vertical; min-height: 140px; }
+
+    .contact-form input::placeholder,
+    .contact-form textarea::placeholder { color: rgba(139,163,199,.4); }
+
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+    @media (max-width: 600px) { .form-row { grid-template-columns: 1fr; } }
+
+    .btn-submit {
+      width: 100%; padding: 16px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      color: #fff; border: none; border-radius: 10px;
+      font-size: .95rem; font-weight: 700; cursor: pointer;
+      font-family: inherit;
+      transition: opacity .3s, transform .2s;
+      box-shadow: 0 4px 20px rgba(0,212,255,.25);
+    }
+    .btn-submit:hover { opacity: .9; transform: translateY(-2px); }
+
+    @media (max-width: 900px) {
+      .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+      .formation-grid { grid-template-columns: 1fr; gap: 32px; }
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--bg-primary);
+      border-top: 1px solid var(--border);
+      padding: 32px 0; text-align: center;
+      color: var(--text-secondary); font-size: .85rem;
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+
+    /* ── BACK TO TOP ── */
+    #back-top {
+      position: fixed; bottom: 24px; right: 24px; z-index: 900;
+      width: 44px; height: 44px; border-radius: 10px;
+      background: var(--accent); color: var(--bg-primary);
+      display: flex; align-items: center; justify-content: center;
+      text-decoration: none; font-size: 1.1rem;
+      opacity: 0; pointer-events: none;
+      transition: opacity .3s, transform .3s;
+      box-shadow: 0 4px 20px rgba(0,212,255,.4);
+    }
+    #back-top.visible { opacity: 1; pointer-events: auto; }
+    #back-top:hover { transform: translateY(-4px); }
+
+    /* ── SKILL ICON COLORS ── */
+    .icon-blue   { background: rgba(59,130,246,.1);  color: #93c5fd; }
+    .icon-purple { background: rgba(124,58,237,.1);  color: #c4b5fd; }
+    .icon-green  { background: rgba(16,185,129,.1);  color: #6ee7b7; }
+    .icon-orange { background: rgba(245,158,11,.1);  color: #fcd34d; }
+    .icon-teal   { background: rgba(20,184,166,.1);  color: #5eead4; }
+    .icon-red    { background: rgba(239,68,68,.1);   color: #fca5a5; }
+    .icon-indigo { background: rgba(99,102,241,.1);  color: #a5b4fc; }
+
+    /* ── FRISE ── */
+    #frise { background: var(--bg-secondary); text-align: center; }
+    #frise img { max-width: 100%; border-radius: 12px; border: 1px solid var(--border); margin-bottom: 24px; }
+
+    /* ── LIGHTBOX ── */
+    #lb-overlay {
+      display: none; position: fixed; inset: 0; z-index: 10000;
+      background: rgba(0,0,0,.92); backdrop-filter: blur(16px);
+      align-items: center; justify-content: center;
+    }
+    #lb-overlay.open { display: flex; }
+    #lb-img {
+      max-width: 90vw; max-height: 88vh;
+      border-radius: 12px; box-shadow: 0 0 80px rgba(0,0,0,.8);
+      object-fit: contain;
+    }
+    #lb-close {
+      position: fixed; top: 20px; right: 24px;
+      width: 44px; height: 44px; border-radius: 50%;
+      background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.2);
+      color: #fff; font-size: 1.4rem; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: background .2s;
+    }
+    #lb-close:hover { background: rgba(255,255,255,.2); }
+    #lb-prev, #lb-next {
+      position: fixed; top: 50%; transform: translateY(-50%);
+      width: 48px; height: 48px; border-radius: 50%;
+      background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.2);
+      color: #fff; font-size: 1.4rem; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: background .2s;
+    }
+    #lb-prev:hover, #lb-next:hover { background: rgba(0,212,255,.25); border-color: rgba(0,212,255,.4); }
+    #lb-prev { left: 16px; }
+    #lb-next { right: 16px; }
+    #lb-counter { position: fixed; bottom: 16px; left: 50%; transform: translateX(-50%); color: rgba(255,255,255,.5); font-size: .85rem; }
+    .lb-thumb {
+      cursor: zoom-in; transition: opacity .2s, transform .2s;
+    }
+    .lb-thumb:hover { opacity: .85; transform: scale(1.03); }
+  </style>
 </head>
-
 <body>
 
-  <!-- ======= Mobile nav toggle button ======= -->
-  <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
+<!-- ══════════════════════════════════ NAVBAR ══ -->
+<nav id="navbar">
+  <div class="nav-container">
+    <a href="#hero" class="nav-logo">D<span>.</span>SALL</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">Profil</a></li>
+      <li><a href="#skills">Compétences</a></li>
+      <li><a href="#portfolio">Réalisations</a></li>
+      <li><a href="#experience">Expérience</a></li>
+      <li><a href="#formation">Formation</a></li>
+      <li><a href="#testimonials">Réputation</a></li>
+      <li><a href="#contact" class="nav-cta">Contact</a></li>
+    </ul>
+    <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
+      <i class="fa fa-bars"></i>
+    </button>
+  </div>
+</nav>
 
-  <!-- ======= Header ======= -->
-  <header id="header">
-    <div class="d-flex flex-column">
+<!-- ══════════════════════════════════ HERO ══ -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div data-aos="fade-right" data-aos-duration="800">
+      <div class="hero-badge">
+        <span></span> Disponible pour de nouvelles opportunités
+      </div>
+      <h1 class="hero-name">
+        Djiby Oumar<br>
+        <span class="highlight">SALL</span>
+      </h1>
+      <div class="hero-typed-wrap">
+        <span id="typed"></span>
+      </div>
+      <p class="hero-desc">
+        Ingénieur DevOps passionné, 5 ans d'expérience en Cloud, Kubernetes, GitOps et Infrastructure as Code.
+        Basé à Drancy, Île-de-France.
+      </p>
+      <div class="hero-actions">
+        <a href="SALL DjIBY OUMAR CV.pdf" class="btn-primary-custom" target="_blank">
+          <i class="fa fa-download"></i> Télécharger le CV
+        </a>
+        <a href="#contact" class="btn-ghost">
+          <i class="fa fa-envelope"></i> Me contacter
+        </a>
+      </div>
+      <div class="hero-socials">
+        <a href="https://www.linkedin.com/in/djiby-oumar-sall-42304217b/" class="social-icon" target="_blank" title="LinkedIn">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a href="https://twitter.com/djibyth714" class="social-icon" target="_blank" title="Twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="https://www.instagram.com/sallbyrecord/" class="social-icon" target="_blank" title="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://www.facebook.com/Denta.Fouta.Production/" class="social-icon" target="_blank" title="Facebook">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://portfolio.dsall.fr/" class="social-icon" target="_blank" title="Portfolio">
+          <i class="fa fa-globe"></i>
+        </a>
+      </div>
+    </div>
+    <div class="hero-photo-wrap" data-aos="fade-left" data-aos-duration="800" data-aos-delay="100">
+      <div class="hero-photo-ring"></div>
+      <img src="PHoto profil SALL DJiby.png" alt="Djiby Oumar SALL" class="hero-photo-img">
+      <div class="hero-floating-badge badge-exp">
+        <i class="fa fa-briefcase"></i>
+        <div><strong>5 ans</strong><br><small style="color:var(--text-secondary)">d'expérience</small></div>
+      </div>
+      <div class="hero-floating-badge badge-cert">
+        <i class="fa fa-award"></i>
+        <div><strong>5 certifications</strong><br><small style="color:var(--text-secondary)">professionnelles</small></div>
+      </div>
+    </div>
+  </div>
+</section>
 
-      <div class="profile">
-        <img src="assets/img/test.png" alt="" class="img-fluid rounded-circle">
-        <h1 class="text-light"><a href="index.html">Djiby Oumar SALL</a></h1>
-        <div class="social-links mt-3 text-center">
-          <a href="https://www.linkedin.com/in/djiby-oumar-sall-42304217b/" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-          <a href="https://twitter.com/djibyth714" class="twitter"><i class="bx bxl-twitter"></i></a>
-          <a href="https://www.facebook.com/Denta.Fouta.Production/" class="facebook"><i class="bx bxl-facebook"></i></a>
-          <a href="https://www.instagram.com/sallbyrecord/" class="instagram"><i class="bx bxl-instagram"></i></a>
+<!-- ══════════════════════════════════ STATS ══ -->
+<section id="stats">
+  <div class="container-lg">
+    <div class="stats-grid">
+      <div class="stat-item" data-aos="fade-up" data-aos-delay="0">
+        <div class="stat-number"><span class="counter" data-target="5">0</span><span class="stat-plus">+</span></div>
+        <div class="stat-label">Ans d'expérience</div>
+      </div>
+      <div class="stat-item" data-aos="fade-up" data-aos-delay="80">
+        <div class="stat-number"><span class="counter" data-target="6">0</span></div>
+        <div class="stat-label">Entreprises</div>
+      </div>
+      <div class="stat-item" data-aos="fade-up" data-aos-delay="160">
+        <div class="stat-number"><span class="counter" data-target="5">0</span></div>
+        <div class="stat-label">Certifications</div>
+      </div>
+      <div class="stat-item" data-aos="fade-up" data-aos-delay="240">
+        <div class="stat-number"><span class="counter" data-target="30">0</span><span class="stat-plus">+</span></div>
+        <div class="stat-label">Technologies</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════ ABOUT ══ -->
+<section id="about">
+  <div class="container-lg">
+    <div class="about-grid">
+      <div data-aos="fade-right">
+        <div class="about-photo">
+          <img src="3 Photo Profil SALL Djiby.JPG" alt="Djiby Oumar SALL">
+          <div class="about-photo-frame"></div>
         </div>
       </div>
-
-      <nav id="navbar" class="nav-menu navbar">
-        <ul>
-          <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>ACCUEIL</span></a></li>
-          <li><a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>QUI SUIS-JE ?</span></a></li>
-          <li><a href="#portfolio" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>RÉALISATIONS</span></a></li>
-          <li><a href="#skills" class="nav-link scrollto"><i class="bx bx-bar-chart"></i> <span>COMPÉTENCES</span></a></li>
-          <li><a href="#experiance" class="nav-link scrollto"><i class="bx bx-server"></i> <span>EXPÉRIENCE</span></a></li>
-          <li><a href="#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>FORMATION</span></a></li>
-          <li><a href="#testimonials" class="nav-link scrollto"><i class="bx bx-recycle"></i> <span>RÉPUTATION</span></a></li>
-          <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
+      <div data-aos="fade-left" data-aos-delay="100">
+        <div class="section-label">À propos</div>
+        <h2 class="section-title">Ingénieur DevOps<br>& Cloud Expert</h2>
+        <p class="section-subtitle">
+          Je suis quelqu'un qui valorise les valeurs humaines, la force du collectif et le travail en équipe.
+          Le métier d'ingénieur DevOps me passionne. Professionnel dynamique, polyvalent et ayant le goût du challenge,
+          j'ai développé un sens de l'organisation et une méthodologie adaptée.
+        </p>
+        <ul class="about-list">
+          <li><i class="fa fa-chevron-right"></i> <div><strong>Niveau :</strong> Master (RNCP niveau 7)</div></li>
+          <li><i class="fa fa-chevron-right"></i> <div><strong>Expérience :</strong> 5 ans</div></li>
+          <li><i class="fa fa-chevron-right"></i> <div><strong>Ville :</strong> Drancy, Île-de-France</div></li>
+          <li><i class="fa fa-chevron-right"></i> <div><strong>Fonction :</strong> Ingénieur DevOps</div></li>
+          <li><i class="fa fa-chevron-right"></i> <div><strong>Diplôme :</strong> <a href="https://www.francecompetences.fr/recherche/rncp/35275/" target="_blank" style="color:var(--accent)">RNCP 35275</a></div></li>
+          <li><i class="fa fa-chevron-right"></i> <div><strong>Email :</strong> djibyth714@gmail.com</div></li>
         </ul>
-      </nav><!-- .nav-menu -->
-    </div>
-  </header><!-- End Header -->
-
-  <!-- ======= Hero Section ======= -->
-  <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
-    <div class="hero-container" data-aos="fade-in">
-      <h1>SALL Djiby Oumar</h1>
-      <p><span class="typed" data-typed-items="Ingénieur DevOps, Cloud & Infrastructure Engineer, Kubernetes & GitOps Expert, Terraform & IaC Specialist"></span></p>
-    </div>
-    <a href="#about" class="hero-scroll-indicator scrollto" title="Défiler vers le bas" aria-label="Défiler vers le bas"><i class="bx bx-chevrons-down" aria-hidden="true"></i></a>
-  </section><!-- End Hero -->
-
-  <main id="main">
-
-    <!-- ======= About Section ======= -->
-    <section id="about" class="about portfolio">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>QUI SUIS-JE ?</h2>
-          <p>
-            Je suis quelqu'un qui valorise les valeurs humaines, telles que le respect et la considération des autres. Je crois à la force du collectif et je suis prêt à travailler en équipe pour atteindre nos objectifs communs. Le métier d'ingénieur DevOps me passionne. Professionnel dynamique, polyvalent et ayant le goût du challenge, j'ai développé un sens de l'organisation et une méthodologie adaptée. Je suis reconnu pour ma capacité de mener à bien des missions et à m'adapter rapidement à de nouveaux environnements.
-          </p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;">
+          <a href="SALL DjIBY OUMAR CV.pdf" class="btn-primary-custom" target="_blank">
+            <i class="fa fa-file-pdf"></i> Mon CV
+          </a>
+          <a href="https://www.linkedin.com/in/djiby-oumar-sall-42304217b/" class="btn-ghost" target="_blank">
+            <i class="fab fa-linkedin-in"></i> LinkedIn
+          </a>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-        <div class="row">
-          <div class="col-lg-4" data-aos="fade-right">
-              <img src="assets/img/profile-image.PNG" class="img-fluid" alt="">
+<!-- ══════════════════════════════════ SKILLS ══ -->
+<section id="skills">
+  <div class="container-lg">
+    <div class="section-label" data-aos="fade-up">Expertise</div>
+    <h2 class="section-title" data-aos="fade-up" data-aos-delay="50">Compétences Techniques</h2>
+    <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+      Maîtrise des outils DevOps modernes : CI/CD, conteneurisation, infrastructure cloud et monitoring.
+    </p>
+    <div class="skills-grid">
+
+      <div class="skill-card" data-aos="fade-up" data-aos-delay="0">
+        <div class="skill-card-header">
+          <div class="skill-icon icon-blue"><i class="fa fa-infinity"></i></div>
+          <h5>CI/CD</h5>
+        </div>
+        <div class="skill-tags">
+          <span class="skill-tag tag-blue">Jenkins</span>
+          <span class="skill-tag tag-blue">GitHub Actions</span>
+          <span class="skill-tag tag-blue">GitLab CI/CD</span>
+          <span class="skill-tag tag-blue">FluxCD</span>
+          <span class="skill-tag tag-blue">Helm</span>
+          <span class="skill-tag tag-blue">ArgoCD</span>
+        </div>
+      </div>
+
+      <div class="skill-card" data-aos="fade-up" data-aos-delay="60">
+        <div class="skill-card-header">
+          <div class="skill-icon icon-purple"><i class="fab fa-docker"></i></div>
+          <h5>Conteneurs & Orchestration</h5>
+        </div>
+        <div class="skill-tags">
+          <span class="skill-tag tag-purple">Kubernetes</span>
+          <span class="skill-tag tag-purple">RKE2</span>
+          <span class="skill-tag tag-purple">AKS</span>
+          <span class="skill-tag tag-purple">EKS</span>
+          <span class="skill-tag tag-purple">Docker</span>
+          <span class="skill-tag tag-purple">Docker Compose</span>
+          <span class="skill-tag tag-purple">Kustomize</span>
+        </div>
+      </div>
+
+      <div class="skill-card" data-aos="fade-up" data-aos-delay="120">
+        <div class="skill-card-header">
+          <div class="skill-icon icon-green"><i class="fa fa-code"></i></div>
+          <h5>Infrastructure as Code</h5>
+        </div>
+        <div class="skill-tags">
+          <span class="skill-tag tag-green">Terraform</span>
+          <span class="skill-tag tag-green">Ansible</span>
+          <span class="skill-tag tag-green">CloudFormation</span>
+          <span class="skill-tag tag-green">Checkov</span>
+          <span class="skill-tag tag-green">TFLint</span>
+          <span class="skill-tag tag-green">Kyverno</span>
+        </div>
+      </div>
+
+      <div class="skill-card" data-aos="fade-up" data-aos-delay="0">
+        <div class="skill-card-header">
+          <div class="skill-icon icon-orange"><i class="fa fa-cloud"></i></div>
+          <h5>Cloud</h5>
+        </div>
+        <div class="skill-tags">
+          <span class="skill-tag tag-orange">Azure</span>
+          <span class="skill-tag tag-orange">AWS</span>
+          <span class="skill-tag tag-orange">ECS Fargate</span>
+          <span class="skill-tag tag-orange">Lambda</span>
+          <span class="skill-tag tag-orange">S3 / RDS</span>
+          <span class="skill-tag tag-orange">VMware vSphere</span>
+          <span class="skill-tag tag-orange">vRealize</span>
+        </div>
+      </div>
+
+      <div class="skill-card" data-aos="fade-up" data-aos-delay="60">
+        <div class="skill-card-header">
+          <div class="skill-icon icon-teal"><i class="fa fa-chart-line"></i></div>
+          <h5>Monitoring</h5>
+        </div>
+        <div class="skill-tags">
+          <span class="skill-tag tag-teal">Prometheus</span>
+          <span class="skill-tag tag-teal">Grafana</span>
+          <span class="skill-tag tag-teal">Checkly</span>
+          <span class="skill-tag tag-teal">Playwright</span>
+          <span class="skill-tag tag-teal">Centreon</span>
+          <span class="skill-tag tag-teal">LogInsight</span>
+          <span class="skill-tag tag-teal">vROPS</span>
+        </div>
+      </div>
+
+      <div class="skill-card" data-aos="fade-up" data-aos-delay="120">
+        <div class="skill-card-header">
+          <div class="skill-icon icon-red"><i class="fa fa-terminal"></i></div>
+          <h5>Langages</h5>
+        </div>
+        <div class="skill-tags">
+          <span class="skill-tag tag-red">Python</span>
+          <span class="skill-tag tag-red">JavaScript</span>
+          <span class="skill-tag tag-red">TypeScript</span>
+          <span class="skill-tag tag-red">Bash</span>
+          <span class="skill-tag tag-red">C#</span>
+          <span class="skill-tag tag-red">SQL</span>
+          <span class="skill-tag tag-red">YAML</span>
+        </div>
+      </div>
+
+      <div class="skill-card" data-aos="fade-up" data-aos-delay="0">
+        <div class="skill-card-header">
+          <div class="skill-icon icon-indigo"><i class="fa fa-tasks"></i></div>
+          <h5>Méthodologies & Outils</h5>
+        </div>
+        <div class="skill-tags">
+          <span class="skill-tag tag-indigo">Agile SCRUM</span>
+          <span class="skill-tag tag-indigo">SAFe</span>
+          <span class="skill-tag tag-indigo">Kanban</span>
+          <span class="skill-tag tag-indigo">Jira</span>
+          <span class="skill-tag tag-indigo">Confluence</span>
+          <span class="skill-tag tag-indigo">GitLab</span>
+          <span class="skill-tag tag-indigo">GitHub</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════ PORTFOLIO ══ -->
+<section id="portfolio">
+  <div class="container-lg">
+    <div class="section-label" data-aos="fade-up">Projets</div>
+    <h2 class="section-title" data-aos="fade-up" data-aos-delay="50">Réalisations</h2>
+    <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+      Missions en entreprise et projets personnels illustrant mes compétences DevOps & Cloud.
+    </p>
+    <div class="portfolio-grid">
+
+      <a href="#" class="portfolio-card" data-aos="fade-up" data-aos-delay="0" onclick="openModal('modal-k8s');return false;">
+        <div class="portfolio-img-wrap">
+          <img src="assets/img/portfolio/sacem-kubernetes.svg" alt="SACEM – Kubernetes GitOps">
+          <div class="portfolio-img-overlay">
+            <span class="portfolio-overlay-btn"><i class="fa fa-expand"></i></span>
           </div>
-          <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
-            <h3>Ingénieur DevOps</h3>
-            <p class="fst-italic">
+        </div>
+        <div class="portfolio-body">
+          <h4>SACEM – Kubernetes GitOps</h4>
+          <p>Plateforme Kubernetes RKE2 automatisée avec Terraform, FluxCD & Kustomize</p>
+        </div>
+      </a>
+
+      <a href="#" class="portfolio-card" data-aos="fade-up" data-aos-delay="80" onclick="openModal('modal-meteo');return false;">
+        <div class="portfolio-img-wrap">
+          <img src="assets/img/portfolio/sacem-meteo.svg" alt="SACEM – Météo DSI">
+          <div class="portfolio-img-overlay">
+            <span class="portfolio-overlay-btn"><i class="fa fa-expand"></i></span>
+          </div>
+        </div>
+        <div class="portfolio-body">
+          <h4>SACEM – Météo DSI</h4>
+          <p>Application web React/Node.js de tableau de bord temps réel pour la DSI</p>
+        </div>
+      </a>
+
+      <a href="#" class="portfolio-card" data-aos="fade-up" data-aos-delay="160" onclick="openModal('modal-djib');return false;">
+        <div class="portfolio-img-wrap">
+          <img src="assets/img/portfolio/djibdataai.svg" alt="Djib Data-AI – E-Gouvernement AWS">
+          <div class="portfolio-img-overlay">
+            <span class="portfolio-overlay-btn"><i class="fa fa-expand"></i></span>
+          </div>
+        </div>
+        <div class="portfolio-body">
+          <h4>Djib Data-AI – E-Gov AWS</h4>
+          <p>Plateforme e-gouvernement multi-services sur AWS ECS Fargate & Terraform</p>
+        </div>
+      </a>
+
+      <a href="#" class="portfolio-card" data-aos="fade-up" data-aos-delay="0" onclick="openModal('modal-teolia');return false;">
+        <div class="portfolio-img-wrap">
+          <img src="assets/img/portfolio/teolia.svg" alt="TEOLIA – Platform Engineering">
+          <div class="portfolio-img-overlay">
+            <span class="portfolio-overlay-btn"><i class="fa fa-expand"></i></span>
+          </div>
+        </div>
+        <div class="portfolio-body">
+          <h4>TEOLIA – Platform Engineering</h4>
+          <p>Self-service de ressources Cloud Azure & AWS avec Terraform & Azure Functions</p>
+        </div>
+      </a>
+
+      <a href="#" class="portfolio-card" data-aos="fade-up" data-aos-delay="80" onclick="openModal('modal-edf');return false;">
+        <div class="portfolio-img-wrap">
+          <img src="assets/img/portfolio/edf-mycloud.svg" alt="EDF – DevOps MyCloud">
+          <div class="portfolio-img-overlay">
+            <span class="portfolio-overlay-btn"><i class="fa fa-expand"></i></span>
+          </div>
+        </div>
+        <div class="portfolio-body">
+          <h4>EDF – DevOps MyCloud</h4>
+          <p>Pipelines Jenkins, tests automatisés Selenium, monitoring LogInsight / vROPS</p>
+        </div>
+      </a>
+
+      <a href="#" class="portfolio-card" data-aos="fade-up" data-aos-delay="160" onclick="openModal('modal-dfprod');return false;">
+        <div class="portfolio-img-wrap">
+          <img src="assets/img/portfolio/dfprod.svg" alt="Denta Fouta Production">
+          <div class="portfolio-img-overlay">
+            <span class="portfolio-overlay-btn"><i class="fa fa-expand"></i></span>
+          </div>
+        </div>
+        <div class="portfolio-body">
+          <h4>Denta Fouta Production</h4>
+          <p>Production musicale & management artistique — projet entrepreneurial personnel</p>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════ EXPERIENCE ══ -->
+<section id="experience">
+  <div class="container-lg">
+    <div class="section-label" data-aos="fade-up">Parcours</div>
+    <h2 class="section-title" data-aos="fade-up" data-aos-delay="50">Expérience Professionnelle</h2>
+    <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+      5 ans d'expérience dans des environnements techniques exigeants — grands groupes et startups.
+    </p>
+
+    <!-- ─── SACEM Météo DSI ─── -->
+    <div class="exp-company-group" data-aos="fade-up">
+      <div class="exp-company-badge"><i class="fa fa-building"></i> SACEM</div>
+      <div class="exp-item">
+        <div class="exp-header">
+          <div class="exp-title">Ingénieur DevOps / Développeur Full Stack</div>
+          <div class="exp-date">Novembre 2025 – Février 2026</div>
+        </div>
+        <ul>
+          <li><strong>Projet :</strong> Refonte et modernisation de la plateforme Météo DSI – Migration d'Excel VBA vers application web centralisée.</li>
+          <li><strong>Contexte :</strong> Transformation complète d'un outil de supervision critique basé sur Excel/VBA vers une plateforme web moderne et scalable. Le nouveau système centralise les données (Dollar U, Prometheus, Centreon, NetBackup) dans une architecture haute disponibilité sur infrastructure on-premise vSphere/RHEL9, avec authentification LDAP, interface web responsive, API REST, et base de données PostgreSQL pour l'historisation.</li>
+        </ul>
+        <ul>
+          <li>Architecture microservices HA sur 2 VMs RHEL 9.4 (Backend : 8 vCPU/16 GB RAM · Frontend : 4 vCPU/8 GB RAM) avec séparation frontend/backend et sécurisation réseau (VLAN DMZ, firewalld).</li>
+          <li>API REST Node.js/Express avec architecture modulaire (routes, controllers, models, services) et middleware d'authentification JWT/LDAP.</li>
+          <li>Modèle de données PostgreSQL 15 avec gestion d'historique, relations complexes et migrations automatisées.</li>
+          <li>Collecteurs de données automatisés multi-sources : Prometheus, Dollar U Oracle, Centreon, NetBackup API, EasyVista ITSM — avec gestion erreurs et retry logic.</li>
+          <li>Schedulers pour collectes automatiques, génération de rapports quotidiens à 7h00 et envoi d'emails via SMTP Exchange.</li>
+          <li>Interface web React 18 + TypeScript + Vite + Tailwind CSS avec composants réutilisables (React Query, Chart.js).</li>
+          <li>Authentification LDAP/Active Directory avec gestion des rôles (Admin, Editor, Viewer) et protection des routes.</li>
+          <li>Tableaux de bord dynamiques avec visualisation temps réel de 59 sondes applicatives, indicateurs métiers et graphiques interactifs.</li>
+          <li>Nginx 1.30.1 comme reverse proxy avec TLS 1.3, HTTP/2 ; résolution de problèmes SSL (BOM UTF-8) sur 6 serveurs.</li>
+          <li>Pipelines CI/CD GitLab, services systemd, stratégie zero-downtime avec health checks.</li>
+          <li>Intégration Prometheus Node Exporter + Grafana pour métriques système/applicatives et alerting proactif.</li>
+          <li>Sécurisation complète : HTTPS, JWT, CSRF/XSS, Fail2Ban, rate limiting API, logs centralisés.</li>
+          <li>Documentation technique complète : architecture, guides d'installation, API OpenAPI/Swagger, runbooks opérationnels.</li>
+        </ul>
+        <div class="exp-stack">
+          <span>Node.js</span><span>Express</span><span>TypeScript</span><span>React 18</span><span>Vite</span><span>Tailwind CSS</span>
+          <span>PostgreSQL 15</span><span>Redis</span><span>Nginx</span><span>RHEL 9.4</span><span>vSphere</span>
+          <span>GitLab CI/CD</span><span>Prometheus</span><span>Grafana</span><span>Checkly</span><span>Oracle</span>
+          <span>Centreon</span><span>NetBackup API</span><span>LDAP/AD</span><span>JWT</span><span>TLS/SSL</span><span>SELinux</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── Djib Data-AI ─── -->
+    <div class="exp-company-group" data-aos="fade-up">
+      <div class="exp-company-badge"><i class="fa fa-building"></i> Djib Data-AI Consulting</div>
+      <div class="exp-item">
+        <div class="exp-header">
+          <div class="exp-title">Ingénieur DevOps / Infrastructure</div>
+          <div class="exp-date">Juin 2025 – Aujourd'hui</div>
+        </div>
+        <ul>
+          <li><strong>Projet :</strong> Modernisation et déploiement d'une plateforme e-gouvernement multi-services sur AWS.</li>
+          <li><strong>Contexte :</strong> Conception et déploiement d'une infrastructure cloud AWS complète pour héberger une suite d'applications e-gouvernement (e-visa, e-timbre, e-vignette, e-enregistrement, e-TVA) destinées à la digitalisation des services publics.</li>
+        </ul>
+        <ul>
+          <li><strong>Architecture cloud AWS :</strong> Infrastructure multi-services avec ECS Fargate, RDS PostgreSQL, S3 et ALB pour applications React/Node.js haute disponibilité.</li>
+          <li><strong>Infrastructure as Code :</strong> Modules Terraform réutilisables pour le provisioning automatisé (VPC, subnets, security groups, ECS, RDS, S3).</li>
+          <li><strong>Gestion des secrets :</strong> AWS Secrets Manager et Parameter Store pour la gestion sécurisée des credentials et variables d'environnement.</li>
+          <li><strong>Pipelines CI/CD :</strong> CodePipeline/CodeBuild avec déploiement automatisé Docker sur ECS via GitHub Actions.</li>
+          <li><strong>Multi-environnements :</strong> Déploiement UAT et PROD avec isolation réseau et gestion différenciée des ressources.</li>
+          <li><strong>Stockage documentaire :</strong> Intégration S3 pour gestion des documents administratifs avec configuration CORS et politiques d'accès granulaires.</li>
+          <li><strong>Monitoring & troubleshooting :</strong> Résolution de problèmes de connectivité réseau, optimisation des security groups et configuration des accès inter-services.</li>
+          <li><strong>Base de données :</strong> Gestion d'instances RDS PostgreSQL multi-bases avec backup automatisé et gestion des accès sécurisés.</li>
+          <li><strong>Support & maintenance :</strong> Disponibilité 24/7 des services, gestion des incidents et optimisation continue des performances.</li>
+        </ul>
+        <div class="exp-stack">
+          <span>AWS ECS Fargate</span><span>RDS PostgreSQL</span><span>S3</span><span>Secrets Manager</span>
+          <span>CodePipeline</span><span>CodeBuild</span><span>ALB</span><span>VPC</span>
+          <span>Terraform</span><span>Docker</span><span>React.js</span><span>Node.js</span><span>GitHub Actions</span><span>Bash</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── SACEM Kubernetes GitOps ─── -->
+    <div class="exp-company-group" data-aos="fade-up">
+      <div class="exp-company-badge"><i class="fa fa-building"></i> SACEM</div>
+      <div class="exp-item">
+        <div class="exp-header">
+          <div class="exp-title">Ingénieur DevOps – Kubernetes GitOps</div>
+          <div class="exp-date">Janvier 2025 – Aujourd'hui</div>
+        </div>
+        <ul>
+          <li><strong>Projet :</strong> Mise en place d'une plateforme Kubernetes automatisée avec GitOps (vSphere).</li>
+          <li><strong>Contexte :</strong> Déploiement d'une plateforme Kubernetes clé-en-main, entièrement automatisée et industrialisée sur une infrastructure on-premise vSphere, adoptant les pratiques DevOps et GitOps avec des outils modernes d'IaC orchestrés via GitLab CI/CD.</li>
+        </ul>
+        <ul>
+          <li>Conception d'une chaîne CI/CD GitLab complète pour le provisioning infra, le déploiement RKE2 et la livraison applicative via FluxCD.</li>
+          <li>Conception de modules Terraform pour le provisionnement de l'infrastructure (VMs, réseaux, stockage) sur vSphere.</li>
+          <li>Déploiement automatisé de clusters Kubernetes RKE2 via playbooks Ansible (installation, configuration réseau, démarrage du service).</li>
+          <li>Bootstrap GitOps avec FluxCD pour gérer le déploiement des applications et composants d'infrastructure depuis un dépôt Git.</li>
+          <li>Kustomize pour la personnalisation des manifestes Kubernetes selon les environnements (DEV, STAGING, PROD).</li>
+          <li>Déploiement d'applications avec Helm et gestion via HelmRelease dans FluxCD.</li>
+          <li>Intégration de pipelines GitLab CI pour automatiser l'ensemble du cycle de vie (lint, plan, apply, destroy).</li>
+          <li>Contrôle qualité et sécurité du code IaC avec TFLint et Checkov intégrés dans les pipelines CI.</li>
+          <li>Structuration du dépôt GitOps multi-clusters (apps/, infrastructure/, clusters/) pour assurer la réplicabilité et la scalabilité.</li>
+          <li>Supervision des clusters avec Prometheus et Grafana.</li>
+          <li>Documentation technique complète : modules, flux CI/CD, procédures d'installation, bonnes pratiques.</li>
+        </ul>
+        <div class="exp-stack">
+          <span>Terraform</span><span>Ansible</span><span>GitLab CI/CD</span><span>Kubernetes RKE2</span>
+          <span>vSphere</span><span>FluxCD</span><span>Kustomize</span><span>Helm</span>
+          <span>Prometheus</span><span>Grafana</span><span>Kyverno</span><span>Checkov</span><span>TFLint</span><span>Docker</span><span>Linux</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── SACEM Supervision IT ─── -->
+    <div class="exp-company-group" data-aos="fade-up">
+      <div class="exp-company-badge"><i class="fa fa-building"></i> SACEM</div>
+      <div class="exp-item">
+        <div class="exp-header">
+          <div class="exp-title">Ingénieur DevOps – Consultant en Exploitation & Supervision IT</div>
+          <div class="exp-date">Mai 2024 – Aujourd'hui</div>
+        </div>
+        <ul>
+          <li><strong>Contexte :</strong> Mission en régie au sein de l'équipe Exploitation & Supervision en collaboration avec l'équipe Middleware. Interventions RUN (exploitation quotidienne) et BUILD (projets d'automatisation et d'évolution de la supervision). Objectif : garantir la continuité des services IT, refondre la plateforme de supervision, industrialiser les processus d'exploitation et fiabiliser la supervision applicative interne et externe.</li>
+        </ul>
+        <ul>
+          <li><strong>RUN :</strong> Météo des services informatiques quotidienne à 7h15 avec détection proactive des incidents.</li>
+          <li>Supervision via Grafana (tableaux de bord Prometheus), confirmation des alertes par tests manuels, redémarrage applicatif ou création de ticket.</li>
+          <li>Gestion des tickets d'exploitation (ISupport) : sauvegardes, restaurations, certificats SSL (GlobalSign), snapshots, extension disque/RAM, traitement Fin de Vie des VMs.</li>
+          <li>Création et maintenance de VMs via vCenter (Centreon, agents Checkly).</li>
+          <li><strong>BUILD :</strong> Utilisation de Terraform pour préparer le provisionnement de l'infrastructure sur Azure.</li>
+          <li>Migration des sondes HpOvis vers Checkly : scénarios Playwright (authentification, navigation, API), automatisation via GitLab CI/CD, configuration des fenêtres de maintenance.</li>
+          <li>Ateliers de formation auprès des équipes métiers pour la prise en main de Checkly et création autonome de scénarios E2E.</li>
+          <li>Développement d'un Playwright Exporter Prometheus interne pour simuler des tests E2E et exposer les résultats via un endpoint HTTP.</li>
+          <li>Automatisation de la configuration Prometheus via Ansible et GitLab CI, avec structuration des scrape_configs par environnement et équipe.</li>
+          <li>Mise en place de la fédération Prometheus pour répliquer les données Checkly de production vers les environnements de test et recette.</li>
+          <li>Industrialisation du provisionnement des dashboards Grafana via Terraform et GitLab CI (multi-environnements), avec versioning Git et scripts Python pour gestion via l'API Grafana.</li>
+          <li>Rédaction de guides d'exploitation (API Checkly, déploiement GitLab, LDAP/Grafana) et maintien du patrimoine documentaire.</li>
+        </ul>
+        <div class="exp-stack">
+          <span>JavaScript</span><span>TypeScript</span><span>Python</span><span>Prometheus</span>
+          <span>Grafana</span><span>Checkly</span><span>Playwright</span><span>GitLab CI/CD</span>
+          <span>Terraform</span><span>Ansible</span><span>Linux RHEL/Debian</span><span>vCenter</span>
+          <span>Docker</span><span>Kubernetes</span><span>Keeper</span><span>ISupport</span><span>GlobalSign</span><span>Jira</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── TEOLIA Platform Engineering ─── -->
+    <div class="exp-company-group" data-aos="fade-up">
+      <div class="exp-company-badge"><i class="fa fa-building"></i> TEOLIA</div>
+      <div class="exp-item">
+        <div class="exp-header">
+          <div class="exp-title">Ingénieur DevOps – Platform Engineering</div>
+          <div class="exp-date">Janvier 2024 – Avril 2024</div>
+        </div>
+        <ul>
+          <li><strong>Contexte :</strong> Platform engineering visant à simplifier et automatiser le déploiement et la gestion des ressources Cloud. Objectif : permettre aux équipes de développement et aux consultants de faire des demandes automatisées de ressources d'infrastructure, faciliter le déploiement des applications et offrir une meilleure visibilité sur l'utilisation des ressources Cloud.</li>
+        </ul>
+        <ul>
+          <li><strong>Développement Frontend :</strong> HTML/CSS/JavaScript pour une interface utilisateur dynamique et conviviale — manipulation du DOM, interactions côté client.</li>
+          <li><strong>Terraform sur Azure :</strong> Provisionnement de l'infrastructure Azure, Remote Backend sur Azure Blob Storage pour gestion centralisée et sécurisée des états.</li>
+          <li><strong>Azure Static Web Apps :</strong> Déploiement automatisé du frontend pour performances optimales et haute disponibilité.</li>
+          <li><strong>GitHub Actions :</strong> Versioning Git et pipelines CI/CD de bout en bout (build, test, déploiement).</li>
+          <li><strong>Authentification SSO :</strong> Implémentation d'OpenID Connect pour sécuriser les accès à la plateforme.</li>
+          <li><strong>Azure Functions :</strong> deploy_ressource (provisioning automatisé), postmessage (Teams webhook), sendmail (notifications email en cas de refus).</li>
+          <li><strong>Migration Azure → AWS :</strong> Déploiement frontend sur AWS Amplify, fonction Lambda post_message (Teams webhook), API Gateway pour endpoints HTTP sécurisés, Terraform pour VPC, subnets, EC2, security groups.</li>
+        </ul>
+        <div class="exp-stack">
+          <span>HTML/CSS/JS</span><span>Terraform</span><span>Azure Static Web Apps</span><span>GitHub Actions</span>
+          <span>Azure Functions</span><span>AWS Amplify</span><span>AWS Lambda</span><span>API Gateway</span>
+          <span>CloudFormation</span><span>Jira</span>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <div class="exp-title">Ingénieur DevOps – Teo School</div>
+          <div class="exp-date">Septembre 2023 – Novembre 2023</div>
+        </div>
+        <ul>
+          <li><strong>Contexte :</strong> Programme de formation de 2 mois — usine logicielle CI/CD complète de bout en bout permettant à chaque ingénieur DevOps de toucher l'ensemble des outils et technologies DevOps, de la planification au monitoring.</li>
+          <li><strong>Méthodologie :</strong> Kanban · GitHub comme gestionnaire de repository</li>
+        </ul>
+        <ul>
+          <li><strong>Terraform :</strong> Remote Backend Azure Blob Storage, provisionnement cluster AKS, ACR et Azure Storage Account.</li>
+          <li><strong>AKS :</strong> Déploiement des micro-services avec manifests Kubernetes, gestion des nœuds/pods/services/ingress, implémentation ArgoCD, autoscaling via HPA.</li>
+          <li><strong>Docker :</strong> Création et optimisation des Dockerfiles, analyse sécurité des images avec Trivy.</li>
+          <li><strong>GitHub Actions :</strong> Pipelines CI/CD complets couvrant build, test, déploiement et surveillance — branche main déploie en production.</li>
+          <li><strong>Monitoring :</strong> Déploiement et configuration de Prometheus et Grafana avec Helm.</li>
+        </ul>
+        <div class="exp-stack">
+          <span>GitHub Actions</span><span>Docker</span><span>Kubernetes AKS</span><span>Terraform</span>
+          <span>ACR</span><span>ArgoCD</span><span>Prometheus</span><span>Grafana</span>
+          <span>Python</span><span>Trivy</span><span>Confluence</span><span>Jira</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── EDF ─── -->
+    <div class="exp-company-group" data-aos="fade-up">
+      <div class="exp-company-badge"><i class="fa fa-building"></i> EDF SA (Électricité de France)</div>
+      <div class="exp-item">
+        <div class="exp-header">
+          <div class="exp-title">Ingénieur DevOps (Stagiaire → CDD → Alternant)</div>
+          <div class="exp-date">Septembre 2020 – Septembre 2023</div>
+        </div>
+        <ul>
+          <li><strong>Entité :</strong> DSIT / IT-O / ICS / myCloud</li>
+          <li><strong>Contexte :</strong> MyCloud est un portail Cloud privé EDF permettant aux utilisateurs d'accéder à des services Cloud XaaS (VM, Load Balancer, DNS, CaaS, DBaaS). J'ai mis en place des tests automatisés pour valider la fiabilité des workflows, la conception et publication des catalogues, ainsi qu'un monitoring complet de la chaîne de production.</li>
+          <li><strong>Équipe :</strong> 9 personnes en interne + équipe d'infogérance de 8 personnes à Rennes (17 au total). <strong>Méthodologie :</strong> SAFe.</li>
+        </ul>
+        <ul>
+          <li><strong>Tests automatisés vRO :</strong> Workflows de test JavaScript dans vRealize Orchestrator, fonctions pytest Python, pipelines Jenkins pour automatiser le lancement.</li>
+          <li><strong>Automatisation tests VMs :</strong> Templates Terraform décrivant les configurations VMs, paramètres Terraform pour récupérer IPs/hostnames, Testinfra pour vérifier la configuration (réseau, fichiers système), Ansible pour changement de mots de passe Linux, pipeline Jenkins pour déclencher déploiement + tests.</li>
+          <li><strong>Tests IHM Selenium :</strong> Classes Workspace et ServiceBroker pour authentification/navigation dans vRA, Selenium WebDriver pour interactions IHM et vérifications fonctionnelles.</li>
+          <li><strong>Pipeline Code Stream :</strong> Relance automatique de tous les tests (unitaires, intégration, E2E) lors d'une mise à jour de vRA.</li>
+          <li><strong>Catalog items vRA :</strong> Création de blueprints et catalogues items pour déploiements de VMs.</li>
+          <li><strong>Logging & Monitoring :</strong> Indicateurs de pilotage LogInsight, supervision vROPS, reporting hebdomadaire automatisé (Selenium + Jenkins).</li>
+          <li><strong>Résultat :</strong> Validation d'une montée de version VRA en moins de 2 heures en un clic.</li>
+        </ul>
+        <div class="exp-stack">
+          <span>Terraform</span><span>Ansible</span><span>Testinfra</span><span>Jenkins</span>
+          <span>GitLab</span><span>VRA</span><span>VRO</span><span>vROPS</span><span>LogInsight</span>
+          <span>Python</span><span>Pytest</span><span>Selenium</span><span>JavaScript</span>
+          <span>Confluence</span><span>JIRA</span><span>SAFe</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── Carlili ─── -->
+    <div class="exp-company-group" data-aos="fade-up">
+      <div class="exp-company-badge"><i class="fa fa-building"></i> Carlili</div>
+      <div class="exp-item">
+        <div class="exp-header">
+          <div class="exp-title">Chargé des Opérations – Freelance</div>
+          <div class="exp-date">Novembre 2019 – Juillet 2023</div>
+        </div>
+        <ul>
+          <li><strong>Contexte :</strong> Startup offrant des services de location de voitures clé en main et promouvant la mobilité individuelle à faible émission de carbone — livraison et récupération de véhicules directement au domicile du client.</li>
+          <li><strong>Équipe :</strong> 8 personnes, un manager et un adjoint. <strong>Méthodologie :</strong> Ticketing.</li>
+        </ul>
+        <ul>
+          <li>Coordination des missions quotidiennes de la communauté des carsitters.</li>
+          <li>Gestion de la flotte automobile de Carlili et des agences partenaires.</li>
+          <li>Gestion des appels carsitters et clients, résolution des problématiques complexes avec diplomatie.</li>
+          <li>Comptabilisation des problèmes et remontées d'incidents.</li>
+        </ul>
+        <div class="exp-stack">
+          <span>Slack</span><span>Tookan</span><span>Hippo Chat</span><span>Aircall</span><span>record360</span><span>Notion</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── Expresso Sénégal ─── -->
+    <div class="exp-company-group" data-aos="fade-up">
+      <div class="exp-company-badge"><i class="fa fa-building"></i> Expresso / Sénégal</div>
+      <div class="exp-item">
+        <div class="exp-header">
+          <div class="exp-title">Ingénieur Réseau & Systèmes – CDD</div>
+          <div class="exp-date">Novembre 2017 – Décembre 2017</div>
+        </div>
+        <ul>
+          <li><strong>Contexte :</strong> Expresso Sénégal — 3ème opérateur Télécom au Sénégal, filiale du groupe Expresso Telecom (siège à Dubai).</li>
+          <li><strong>Projet :</strong> Maintenance et entretien annuel du matériel informatique d'Expresso Sénégal.</li>
+          <li><strong>Équipe :</strong> 6 personnes dont 2 responsables. <strong>Méthodologie :</strong> Ticketing.</li>
+        </ul>
+        <ul>
+          <li>Maintenance du matériel informatique et entretien des équipements.</li>
+          <li>Installation et configuration des applications de contrôle et de configuration à distance.</li>
+        </ul>
+        <div class="exp-stack">
+          <span>Windows</span><span>MacOS</span><span>Linux</span><span>TeamViewer</span><span>CCleaner</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── ISI ─── -->
+    <div class="exp-company-group" data-aos="fade-up">
+      <div class="exp-company-badge"><i class="fa fa-university"></i> ISI – Institut Supérieur d'Informatique, Sénégal</div>
+      <div class="exp-item">
+        <div class="exp-header">
+          <div class="exp-title">Ingénieur Systèmes & Réseaux – Stagiaire</div>
+          <div class="exp-date">Août 2017 – Octobre 2017</div>
+        </div>
+        <ul>
+          <li><strong>Contexte :</strong> ISI sous la tutelle du Ministère de l'Enseignement Supérieur privé, signataire des diplômes sous le contrôle de l'ANAQ-Sup.</li>
+          <li><strong>Projet :</strong> Accompagnement de l'ISI dans la mise en place de nouvelles salles informatiques, maintenance préventive de tous les équipements, et accompagnement des étudiants sur leurs projets/outils informatiques.</li>
+          <li><strong>Équipe :</strong> 3 personnes dont 1 responsable de service. <strong>Méthodologie :</strong> Ticketing.</li>
+        </ul>
+        <ul>
+          <li>Assister et accompagner les étudiants dans leurs projets informatiques.</li>
+          <li>Installation et configuration de différents systèmes sur des VMs Linux.</li>
+          <li>Vérification quotidienne des équipements réseau dans les salles informatiques.</li>
+          <li>Dépannage des ordinateurs, mise en réseau de nouvelles salles informatiques.</li>
+          <li>Assurer la maintenance préventive des équipements.</li>
+        </ul>
+        <div class="exp-stack">
+          <span>Trello</span><span>Windows</span><span>MacOS</span><span>Linux</span><span>VirtualBox</span><span>VMware</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════ FORMATION ══ -->
+<section id="formation">
+  <div class="container-lg">
+    <div class="section-label" data-aos="fade-up">Éducation</div>
+    <h2 class="section-title" data-aos="fade-up" data-aos-delay="50">Formation</h2>
+    <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+      Parcours académique entre la France et le Sénégal, jusqu'au niveau Master.
+    </p>
+    <div class="formation-grid">
+      <div data-aos="fade-right">
+        <div class="formation-block">
+          <h3><i class="fa fa-graduation-cap" style="margin-right:8px"></i>France – INTECH Groupe ESIEA, Paris</h3>
+          <div class="formation-item">
+            <h4>Master 2 – Architecture Système Information</h4>
+            <div class="year">2021 – 2023</div>
+            <p>Bac+5 – Titre certifié niveau 7, inscrit au RNCP</p>
+          </div>
+          <div class="formation-item">
+            <h4>Bachelor – Systèmes et Réseaux Informatiques</h4>
+            <div class="year">2019 – 2021</div>
+          </div>
+        </div>
+      </div>
+      <div data-aos="fade-left" data-aos-delay="100">
+        <div class="formation-block">
+          <h3><i class="fa fa-graduation-cap" style="margin-right:8px"></i>Sénégal</h3>
+          <div class="formation-item">
+            <h4>Licence professionnelle – Systèmes et Réseaux</h4>
+            <div class="year">2017 – 2018</div>
+            <p>ISI (Institut Supérieur d'Informatique)</p>
+          </div>
+          <div class="formation-item">
+            <h4>Certificats of Completion IT Essentials – CISCO</h4>
+            <div class="year">2017</div>
+            <p>ISI – Maintenance Informatique</p>
+          </div>
+          <div class="formation-item">
+            <h4>DTS – Maintenance Informatique</h4>
+            <div class="year">2015 – 2017</div>
+            <p>ISI</p>
+          </div>
+          <div class="formation-item">
+            <h4>Licence 1 – Sciences Juridiques et Politiques</h4>
+            <div class="year">2014 – 2015</div>
+            <p>UCAD – Université Cheikh Anta Diop de Dakar</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════ CERTIFICATIONS ══ -->
+<section id="certifications">
+  <div class="container-lg">
+    <div class="section-label" data-aos="fade-up">Accréditations</div>
+    <h2 class="section-title" data-aos="fade-up" data-aos-delay="50">Certifications</h2>
+    <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+      Certifications officielles validant mes compétences techniques.
+    </p>
+    <div class="cert-grid">
+      <div class="cert-card" data-aos="fade-up" data-aos-delay="0">
+        <div class="cert-icon"><i class="fa fa-certificate"></i></div>
+        <h4>HashiCorp Certified: Terraform Associate (003)</h4>
+        <div class="year">2023</div>
+        <p>IaC, commandes Terraform, state management, modules, workspaces, Registry, sécurité et collaboration.</p>
+      </div>
+      <div class="cert-card" data-aos="fade-up" data-aos-delay="80">
+        <div class="cert-icon"><i class="fab fa-microsoft"></i></div>
+        <h4>Microsoft Certified: Azure Fundamentals</h4>
+        <div class="year">25/04/2023</div>
+        <p>Concepts Azure, services cloud, gestion des identités, sécurité, conformité et solutions d'entreprise.</p>
+      </div>
+      <div class="cert-card" data-aos="fade-up" data-aos-delay="160">
+        <div class="cert-icon"><i class="fa fa-network-wired"></i></div>
+        <h4>Cisco: IT Essentials</h4>
+        <div class="year">10/11/2023</div>
+        <p>Composants informatiques, assemblage, maintenance, systèmes d'exploitation, sécurité réseau.</p>
+      </div>
+      <div class="cert-card" data-aos="fade-up" data-aos-delay="0">
+        <div class="cert-icon"><i class="fa fa-network-wired"></i></div>
+        <h4>Cisco CCNA 2: Routing & Switching Essentials</h4>
+        <div class="year">10/05/2023</div>
+        <p>VLAN, STP, EtherChannel, redondance de réseau commuté, routage inter-VLAN.</p>
+      </div>
+      <div class="cert-card" data-aos="fade-up" data-aos-delay="80">
+        <div class="cert-icon"><i class="fa fa-network-wired"></i></div>
+        <h4>Cisco CCNA 1: Introduction to Networks</h4>
+        <div class="year">10/05/2023</div>
+        <p>Réseaux LAN, configuration routeurs et commutateurs, IPv4/IPv6, bonnes pratiques de sécurité.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════ FRISE ══ -->
+<section id="frise">
+  <div class="container-lg">
+    <div class="section-label" data-aos="fade-up">Chronologie</div>
+    <h2 class="section-title" data-aos="fade-up" data-aos-delay="50">Frise de Parcours</h2>
+    <div data-aos="fade-up" data-aos-delay="100">
+      <img src="assets/img/FRISE_NEW.svg" alt="Frise parcours Djiby Oumar SALL">
+      <div>
+        <a href="#" class="btn-primary-custom" onclick="openModal('modal-frise');return false;">
+          <i class="fa fa-search-plus"></i> Voir la frise en détail
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════ TESTIMONIALS ══ -->
+<section id="testimonials">
+  <div class="container-lg">
+    <div class="section-label" data-aos="fade-up">Témoignages</div>
+    <h2 class="section-title" data-aos="fade-up" data-aos-delay="50">Réputation</h2>
+    <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+      Ce que disent les personnes avec lesquelles j'ai eu la chance de collaborer.
+    </p>
+    <div class="swiper testimonials-swiper" data-aos="fade-up" data-aos-delay="150">
+      <div class="swiper-wrapper">
+
+        <div class="swiper-slide">
+          <div class="testimonial-card">
+            <div class="testimonial-quote">"</div>
+            <p class="testimonial-text">
+              La présence de Djiby au sein de l'équipe a été un vrai atout, sa capacité d'adaptation et ses facultés
+              d'apprentissage rapide lui ont permis de rapidement s'intégrer parmi nous et de s'approprier les technologies
+              inhérentes à notre service. Ce bon niveau de technicité l'a rapidement amené à travailler sur des sujets variés
+              en collaboration ou en toute autonomie.
             </p>
-            <div class="row">
-              <div class="col-lg-6">
-                <ul>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Niveau:</strong> <span>Master (RNCP niveau 7)</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Site:</strong> <span><a href="https://portfolio.dsall.fr/">Portfolio</a></span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Ville:</strong> <span>Drancy, Île-de-France</span></li>
-                </ul>
+            <div class="testimonial-footer">
+              <img src="assets/img/testimonials/matthieu.jpeg" alt="Matthieu COURTY">
+              <div>
+                <h5>Matthieu COURTY</h5>
+                <span>Pilote Opérationnel d'Infrastructure & Scrum Master pour myCloud</span>
               </div>
-              <div class="col-lg-6">
-                <ul>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Expérience:</strong> <span>5 ans</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Degré:</strong> <span><a href="https://www.francecompetences.fr/recherche/rncp/35275/"> Experts en Ingénierie des SI ( N ° 35275 )</a></span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Fonction:</strong> <span>Ingénieur DevOps</span></li>
-                </ul>
-              </div>
-              <p>
-                <br>
-                <br>
-                Si vous êtes à la recherche d'une personne motivée et prête à relever des défis, n'hésitez pas à me contacter. Jetez un coup d'œil à <a href="SALL DjIBY OUMAR CV.pdf" class="portfolio-details-lightbox"> mon CV </a> et à <a href="https://www.linkedin.com/in/djiby-oumar-sall-42304217b/"> mon profil Linkedin</a> pour en savoir plus sur mes compétences et mon parcours. Les retours que j'ai reçus témoignent de ma capacité d'adaptation, mon efficacité et mon souci constant d'amélioration, que l'on peut retrouver dans mon portfolio. Je suis également apprécié pour mes compétences techniques, ma capacité à collaborer et à innover, ainsi que pour ma bonne humeur et mon éthique de travail rigoureuse.
-              </p>
             </div>
           </div>
         </div>
-        </div>
-    </section>
 
-    <!-- ======= Stats / Compteurs ======= -->
-    <section id="facts" class="facts">
-      <div class="container">
-        <div class="section-title">
-          <h2>EN CHIFFRES</h2>
-        </div>
-        <div class="row">
-          <div class="col-lg-3 col-md-6" data-aos="fade-up">
-            <div class="count-box">
-              <i class="bi bi-briefcase"></i>
-              <span data-purecounter-start="0" data-purecounter-end="5" data-purecounter-duration="1" class="purecounter">5</span>
-              <p>Ans d'expérience</p>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="count-box">
-              <i class="bi bi-building"></i>
-              <span data-purecounter-start="0" data-purecounter-end="6" data-purecounter-duration="1" class="purecounter">6</span>
-              <p>Entreprises</p>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="count-box">
-              <i class="bi bi-award"></i>
-              <span data-purecounter-start="0" data-purecounter-end="5" data-purecounter-duration="1" class="purecounter">5</span>
-              <p>Certifications</p>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="count-box">
-              <i class="bi bi-cpu"></i>
-              <span data-purecounter-start="0" data-purecounter-end="30" data-purecounter-duration="1" class="purecounter">30</span>
-              <p>Technologies</p>
+        <div class="swiper-slide">
+          <div class="testimonial-card">
+            <div class="testimonial-quote">"</div>
+            <p class="testimonial-text">
+              Je prends plaisir à te recommander fortement en raison de ton travail et de tes performances exceptionnels.
+              Ton professionnalisme et ton engagement sont exemplaires. Ta passion pour ton travail est évidente et ta fiabilité
+              est très appréciée. Ta motivation et ta volonté de réussir sont remarquables, et tu trouves toujours des solutions
+              créatives pour relever les défis.
+            </p>
+            <div class="testimonial-footer">
+              <img src="assets/img/testimonials/Benj.jpeg" alt="Benjamin Rodriguez">
+              <div>
+                <h5>Benjamin Rodriguez</h5>
+                <span>Co-fondateur Sharesub</span>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section><!-- End Stats -->
 
-    <!-- ======= Réalisation ======= -->
-    <section id="portfolio" class="portfolio section-bg">
-      <div class="container">
-        <div class="section-title">
-          <h2>RÉALISATIONS</h2>
+        <div class="swiper-slide">
+          <div class="testimonial-card">
+            <div class="testimonial-quote">"</div>
+            <p class="testimonial-text">
+              Djiby a su s'approprier l'environnement technique complexe dans lequel il a évolué, et particulièrement sur les
+              technologies VMware (Loginsight, vROPS). Cela lui a permis de mettre en place des indicateurs pour construire
+              les tableaux de bord de pilotage de l'activité. En qualité d'expert technique Cloud, ce fût un réel plaisir de
+              collaborer avec Djiby pour son sérieux, ses compétences techniques et ses qualités relationnelles.
+            </p>
+            <div class="testimonial-footer">
+              <img src="assets/img/testimonials/benoit.jpeg" alt="Benoit GAUSSEIN">
+              <div>
+                <h5>Benoit GAUSSEIN</h5>
+                <span>Expert Technique Cloud | OPEN – AMOE LOT 4</span>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div class="row" data-aos="fade-up" data-aos-delay="100">
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app filter-web filter-card">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/comp_tech_devops2.png" class="img-fluid" alt="SACEM – Kubernetes GitOps">
-              <span class="portfolio-item-label">SACEM – Kubernetes GitOps</span>
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/comp_tech_devops2.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="SACEM – Kubernetes GitOps" aria-label="Voir l'image"><i class="bx bx-plus" aria-hidden="true"></i></a>
-                <a href="SACEM_Kubernetes.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="SACEM – Kubernetes GitOps" aria-label="Voir le détail"><i class="bx bx-link" aria-hidden="true"></i></a>
+        <div class="swiper-slide">
+          <div class="testimonial-card">
+            <div class="testimonial-quote">"</div>
+            <p class="testimonial-text">
+              Djiby n'a pas attendu la fin de ses études pour être un vrai professionnel. Si vous recherchez un collaborateur
+              sérieux, rigoureux et force de proposition c'est votre homme ! Lors des projets auxquels nous avons participé
+              ensemble, il a su allier son intelligence et d'excellentes capacités techniques, le tout avec une très forte
+              compétence humaine.
+            </p>
+            <div class="testimonial-footer">
+              <img src="assets/img/testimonials/ismael.jpeg" alt="Ismaël Nimzil">
+              <div>
+                <h5>Ismaël Nimzil</h5>
+                <span>Cyber Security Engineer</span>
               </div>
             </div>
           </div>
+        </div>
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app filter-web filter-card">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-details-1.png" class="img-fluid" alt="SACEM – Météo DSI">
-              <span class="portfolio-item-label">SACEM – Météo DSI</span>
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/portfolio-details-1.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="SACEM – Météo DSI" aria-label="Voir l'image"><i class="bx bx-plus" aria-hidden="true"></i></a>
-                <a href="SACEM_Meteo.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="SACEM – Météo DSI" aria-label="Voir le détail"><i class="bx bx-link" aria-hidden="true"></i></a>
+        <div class="swiper-slide">
+          <div class="testimonial-card">
+            <div class="testimonial-quote">"</div>
+            <p class="testimonial-text">
+              Djiby est un collaborateur très sérieux, efficace et appliqué dans son travail. Il a une grande capacité à résoudre
+              les problèmes en combinant ses compétences en matière de communication et de travail en équipe. Il propose souvent
+              des idées et des projets pour faciliter son travail quotidien et celui de ses collègues.
+            </p>
+            <div class="testimonial-footer">
+              <img src="assets/img/testimonials/raouf.PNG" alt="Raouf Hamitou">
+              <div>
+                <h5>Raouf Hamitou</h5>
+                <span>Responsable des opérations carsitters</span>
               </div>
             </div>
           </div>
+        </div>
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app filter-web filter-card">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-2.png" class="img-fluid" alt="Djib Data-AI – E-Gouvernement AWS">
-              <span class="portfolio-item-label">Djib Data-AI – E-Gov AWS</span>
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/portfolio-2.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Djib Data-AI – E-Gouvernement AWS" aria-label="Voir l'image"><i class="bx bx-plus" aria-hidden="true"></i></a>
-                <a href="DjibDataAI.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Djib Data-AI – E-Gouvernement AWS" aria-label="Voir le détail"><i class="bx bx-link" aria-hidden="true"></i></a>
+        <div class="swiper-slide">
+          <div class="testimonial-card">
+            <div class="testimonial-quote">"</div>
+            <p class="testimonial-text">
+              Djiby a fait preuve d'un engagement sans faille, d'une expertise technique remarquable et d'un esprit d'innovation
+              constant. Sa capacité à résoudre des problèmes complexes, à collaborer efficacement et à trouver des solutions
+              pratiques a été une véritable valeur ajoutée à chaque projet. Djiby est également une personne avec qui il est
+              très agréable de travailler de par sa bonne humeur et sa rigueur.
+            </p>
+            <div class="testimonial-footer">
+              <img src="assets/img/testimonials/pierre.jpeg" alt="Pierre JOUANNO">
+              <div>
+                <h5>Pierre JOUANNO</h5>
+                <span>Ingénieur Informatique, Réseau, Cybersécurité</span>
               </div>
             </div>
           </div>
+        </div>
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app filter-web filter-card">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/starterhack2.png" class="img-fluid" alt="TEOLIA – Platform Engineering">
-              <span class="portfolio-item-label">TEOLIA – Platform Engineering</span>
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/starterhack2.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="TEOLIA – Platform Engineering" aria-label="Voir l'image"><i class="bx bx-plus" aria-hidden="true"></i></a>
-                <a href="TEOLIA.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="TEOLIA – Platform Engineering" aria-label="Voir le détail"><i class="bx bx-link" aria-hidden="true"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app filter-web filter-card">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/EDFLogo.png" class="img-fluid" alt="EDF – DevOps MyCloud">
-              <span class="portfolio-item-label">EDF – DevOps MyCloud</span>
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/EDFLogo.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="EDF – DevOps MyCloud" aria-label="Voir l'image"><i class="bx bx-plus" aria-hidden="true"></i></a>
-                <a href="EDF.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="EDF – DevOps MyCloud" aria-label="Voir le détail"><i class="bx bx-link" aria-hidden="true"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app filter-web filter-card">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/logoDFProd.jpeg" class="img-fluid" alt="Denta Fouta Production">
-              <span class="portfolio-item-label">Denta Fouta Production</span>
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/logoDFProd.jpeg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Denta Fouta Production" aria-label="Voir l'image"><i class="bx bx-plus" aria-hidden="true"></i></a>
-                <a href="DFProd.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Denta Fouta Production" aria-label="Voir le détail"><i class="bx bx-link" aria-hidden="true"></i></a>
+        <div class="swiper-slide">
+          <div class="testimonial-card">
+            <div class="testimonial-quote">"</div>
+            <p class="testimonial-text">
+              J'ai très apprécié de travailler avec Djiby, c'est une personne qui s'investit, qui aime travailler en équipe
+              et faire de la technique. Il a beaucoup contribué au sein de notre équipe. Les tests qu'il a développés (unitaires,
+              intégration, non-régression, interface) nous ont permis de délivrer des services plus sereinement et avec de la qualité.
+            </p>
+            <div class="testimonial-footer">
+              <img src="assets/img/testimonials/nicolas.webp" alt="Nicolas PANDJATCHARAM">
+              <div>
+                <h5>Nicolas PANDJATCHARAM</h5>
+                <span>Expert Technique Cloud | OPEN – AMOE LOT 4</span>
               </div>
             </div>
           </div>
         </div>
 
       </div>
-    </section><!-- End Réalisation -->  
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+</section>
 
-    <!-- ======= compétance Section ======= -->
-    <section id="skills" class="skills about portfolio" >
-      <div class="container">
+<!-- ══════════════════════════════════ CONTACT ══ -->
+<section id="contact">
+  <div class="container-lg">
+    <div class="section-label" data-aos="fade-up">Parlons-nous</div>
+    <h2 class="section-title" data-aos="fade-up" data-aos-delay="50">Contact</h2>
+    <div class="contact-grid">
+      <div data-aos="fade-right">
+        <h3>Prenons contact</h3>
+        <p>Je suis ouvert à de nouvelles opportunités professionnelles. N'hésitez pas à me contacter pour en discuter.</p>
 
-        <div class="section-title">
-          <h2>COMPÉTENCES</h2>
+        <div class="contact-item">
+          <div class="contact-item-icon"><i class="fa fa-map-marker-alt"></i></div>
+          <div>
+            <h5>Adresse</h5>
+            <p>Drancy, Île-de-France</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon"><i class="fa fa-envelope"></i></div>
+          <div>
+            <h5>Email</h5>
+            <p><a href="mailto:djibyth714@gmail.com">djibyth714@gmail.com</a></p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon"><i class="fab fa-linkedin-in"></i></div>
+          <div>
+            <h5>LinkedIn</h5>
+            <p><a href="https://www.linkedin.com/in/djiby-oumar-sall-42304217b/" target="_blank">Djiby Oumar SALL</a></p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon"><i class="fa fa-globe"></i></div>
+          <div>
+            <h5>Portfolio</h5>
+            <p><a href="https://portfolio.dsall.fr/" target="_blank">portfolio.dsall.fr</a></p>
+          </div>
         </div>
 
-        <div class="skills-grid" data-aos="fade-up">
-
-          <div class="skill-category-card">
-            <div class="skill-category-header">
-              <i class="bx bx-refresh"></i>
-              <h5>CI/CD</h5>
-            </div>
-            <div class="skill-tags">
-              <span class="skill-tag tag-blue">Jenkins</span>
-              <span class="skill-tag tag-blue">GitHub Actions</span>
-              <span class="skill-tag tag-blue">GitLab CI/CD</span>
-              <span class="skill-tag tag-blue">FluxCD</span>
-              <span class="skill-tag tag-blue">Helm</span>
-              <span class="skill-tag tag-blue">ArgoCD</span>
-            </div>
-          </div>
-
-          <div class="skill-category-card">
-            <div class="skill-category-header">
-              <i class="bx bx-cube-alt"></i>
-              <h5>Conteneurs &amp; Orchestration</h5>
-            </div>
-            <div class="skill-tags">
-              <span class="skill-tag tag-purple">Kubernetes</span>
-              <span class="skill-tag tag-purple">RKE2</span>
-              <span class="skill-tag tag-purple">AKS</span>
-              <span class="skill-tag tag-purple">EKS</span>
-              <span class="skill-tag tag-purple">Docker</span>
-              <span class="skill-tag tag-purple">Docker Compose</span>
-              <span class="skill-tag tag-purple">Kustomize</span>
-            </div>
-          </div>
-
-          <div class="skill-category-card">
-            <div class="skill-category-header">
-              <i class="bx bx-code-block"></i>
-              <h5>Infrastructure as Code</h5>
-            </div>
-            <div class="skill-tags">
-              <span class="skill-tag tag-green">Terraform</span>
-              <span class="skill-tag tag-green">Ansible</span>
-              <span class="skill-tag tag-green">CloudFormation</span>
-              <span class="skill-tag tag-green">Checkov</span>
-              <span class="skill-tag tag-green">TFLint</span>
-              <span class="skill-tag tag-green">Kyverno</span>
-            </div>
-          </div>
-
-          <div class="skill-category-card">
-            <div class="skill-category-header">
-              <i class="bx bx-cloud"></i>
-              <h5>Cloud</h5>
-            </div>
-            <div class="skill-tags">
-              <span class="skill-tag tag-orange">Azure</span>
-              <span class="skill-tag tag-orange">AWS</span>
-              <span class="skill-tag tag-orange">ECS Fargate</span>
-              <span class="skill-tag tag-orange">Lambda</span>
-              <span class="skill-tag tag-orange">S3 / RDS</span>
-              <span class="skill-tag tag-orange">VMware vSphere</span>
-              <span class="skill-tag tag-orange">vRealize</span>
-            </div>
-          </div>
-
-          <div class="skill-category-card">
-            <div class="skill-category-header">
-              <i class="bx bx-line-chart"></i>
-              <h5>Monitoring</h5>
-            </div>
-            <div class="skill-tags">
-              <span class="skill-tag tag-teal">Prometheus</span>
-              <span class="skill-tag tag-teal">Grafana</span>
-              <span class="skill-tag tag-teal">Checkly</span>
-              <span class="skill-tag tag-teal">Playwright</span>
-              <span class="skill-tag tag-teal">Centreon</span>
-              <span class="skill-tag tag-teal">LogInsight</span>
-              <span class="skill-tag tag-teal">vROPS</span>
-            </div>
-          </div>
-
-          <div class="skill-category-card">
-            <div class="skill-category-header">
-              <i class="bx bx-terminal"></i>
-              <h5>Langages</h5>
-            </div>
-            <div class="skill-tags">
-              <span class="skill-tag tag-red">Python</span>
-              <span class="skill-tag tag-red">JavaScript</span>
-              <span class="skill-tag tag-red">TypeScript</span>
-              <span class="skill-tag tag-red">Bash</span>
-              <span class="skill-tag tag-red">C#</span>
-              <span class="skill-tag tag-red">SQL</span>
-              <span class="skill-tag tag-red">YAML</span>
-            </div>
-          </div>
-
-          <div class="skill-category-card">
-            <div class="skill-category-header">
-              <i class="bx bx-task"></i>
-              <h5>Méthodologies &amp; Outils</h5>
-            </div>
-            <div class="skill-tags">
-              <span class="skill-tag tag-indigo">Agile SCRUM</span>
-              <span class="skill-tag tag-indigo">SAFe</span>
-              <span class="skill-tag tag-indigo">Kanban</span>
-              <span class="skill-tag tag-indigo">Jira</span>
-              <span class="skill-tag tag-indigo">Confluence</span>
-              <span class="skill-tag tag-indigo">GitLab</span>
-              <span class="skill-tag tag-indigo">GitHub</span>
-            </div>
-          </div>
-
+        <div class="contact-socials">
+          <a href="https://www.linkedin.com/in/djiby-oumar-sall-42304217b/" class="social-icon" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://twitter.com/djibyth714" class="social-icon" target="_blank"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.instagram.com/sallbyrecord/" class="social-icon" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.facebook.com/Denta.Fouta.Production/" class="social-icon" target="_blank"><i class="fab fa-facebook-f"></i></a>
         </div>
       </div>
-    </section><!-- End Skills Section -->
-    <!-- ======= compétance  transverse et techniqueSe ======= -->
-    <section id="skills" class="skills about portfolio section-bg">
-      <div class="container"> 
-          <div class="row" data-aos="fade-up">
-            <div class="col-lg-12 d-flex justify-content-center">
-              <ul id="portfolio-flters">
-                <li data-filter="*" class="filter-active">All</li>
-                <li data-filter=".filter-web">COMPÉTENCES TRANSVERSES</li>
-                <li data-filter=".filter-card">COMPÉTENCES TECHNIQUES</li>
-              </ul>
+
+      <div data-aos="fade-left" data-aos-delay="100">
+        <form class="contact-form" onsubmit="handleContactSubmit(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Nom</label>
+              <input type="text" id="name" placeholder="Votre nom" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" placeholder="Votre email" required>
             </div>
           </div>
-
-          <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="100">
-
-            <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-              <div class="portfolio-wrap">
-                <img src="assets/img/portfolio/ecoute.png" class="img-fluid" alt="">
-                <div class="portfolio-links">
-                  <a href="assets/img/portfolio/ecoute.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1"><i class="bx bx-plus"></i></a>
-                  <a href="ecoute.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-              <div class="portfolio-wrap">
-                <img src="assets/img/portfolio/Managementportfolio.jpeg" class="img-fluid" alt="">
-                <div class="portfolio-links">
-                  <a href="assets/img/portfolio/Managementportfolio.jpeg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1"><i class="bx bx-plus"></i></a>
-                  <a href="management.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-              <div class="portfolio-wrap">
-                <img src="assets/img/portfolio/talibe3.jpeg" class="img-fluid" alt="">
-                <div class="portfolio-links">
-                  <a href="assets/img/portfolio/talibe3.jpeg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1"><i class="bx bx-plus"></i></a>
-                  <a href="aide_humanitaire.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-              <div class="portfolio-wrap">
-                <img src="assets/img/portfolio/comp_tech_sysops1.png" class="img-fluid" alt="">
-                <div class="portfolio-links">
-                  <a href="assets/img/portfolio/comp_tech_sysops1.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1"><i class="bx bx-plus"></i></a>
-                  <a href="Tech_StarterHack.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-              <div class="portfolio-wrap">
-                <img src="assets/img/portfolio/comp_tech_devops1.png" class="img-fluid" alt="">
-                <div class="portfolio-links">
-                  <a href="assets/img/portfolio/comp_tech_devops1.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1"><i class="bx bx-plus"></i></a>
-                  <a href="Tech_EDF.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-              <div class="portfolio-wrap">
-                <img src="assets/img/portfolio/comp_tech_music1.png" class="img-fluid" alt="">
-                <div class="portfolio-links">
-                  <a href="assets/img/portfolio/comp_tech_music1.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1"><i class="bx bx-plus"></i></a>
-                  <a href="Tech_DFProd.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
-                </div>
-              </div>
-            </div>
+          <div class="form-group">
+            <label for="subject">Objet</label>
+            <input type="text" id="subject" placeholder="Objet du message" required>
           </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" placeholder="Votre message..." required></textarea>
+          </div>
+          <button type="submit" class="btn-submit">
+            <i class="fa fa-paper-plane" style="margin-right:8px"></i> Envoyer le message
+          </button>
+        </form>
       </div>
-    </section><!-- End Skills Section -->
+    </div>
+  </div>
+</section>
 
+<!-- ══════════════════════════════════ FOOTER ══ -->
+<footer>
+  <div class="container-lg">
+    <p>© 2026 <strong>Djiby Oumar SALL</strong> — Ingénieur DevOps & Cloud. Conçu avec passion.</p>
+  </div>
+</footer>
 
-    <!-- ======= experiance Section ======= -->
-    <section id="experiance" class="experiance">
-      <div class="container">
+<!-- Back to top -->
+<a href="#hero" id="back-top" title="Retour en haut"><i class="fa fa-arrow-up"></i></a>
 
-        <div class="section-title">
-          <h2>EXPÉRIENCE</h2>
-        </div>
-        <div class="row">
-          <div class="col-lg-6" data-aos="fade-up">
-            <h3 class="experiance-title">SACEM</h3>
-            <div class="experiance-item">
-              <h4>Ingénieur DevOps / Développeur Full Stack</h4>
-              <h5>Novembre 2025 – Février 2026</h5>
-              <ul>
-                <li><strong>PROJET </strong>: Refonte et modernisation de la plateforme Météo DSI – Migration d'Excel VBA vers application web centralisée.</li>
-                <li><strong>RÔLES ET ACTIVITÉS </strong>:
-                  <ul>
-                    <li>Architecture microservices haute disponibilité sur 2 VMs RHEL 9.4 avec séparation frontend/backend.</li>
-                    <li>API REST Node.js/Express avec authentification JWT/LDAP et collecteurs de données multi-sources (Prometheus, Centreon, NetBackup, Oracle).</li>
-                    <li>Interface web React 18 + TypeScript + Tailwind CSS avec tableaux de bord temps réel (59 sondes applicatives).</li>
-                    <li>Reverse proxy Nginx avec TLS 1.3, HTTP/2 ; sécurisation HTTPS, Fail2Ban, rate limiting.</li>
-                    <li>Pipelines CI/CD GitLab, services systemd, stratégie zero-downtime avec health checks.</li>
-                  </ul>
-                </li>
-                <li><strong>ENVIRONNEMENT TECHNIQUE </strong>: Node.js, Express, TypeScript, React 18, Vite, Tailwind CSS, PostgreSQL 15, Redis, Nginx, RHEL 9.4, vSphere, GitLab CI/CD, Prometheus, Grafana, LDAP/AD, JWT, SELinux</li>
-              </ul>
-            </div>
-            <div class="experiance-item">
-              <h4>Ingénieur DevOps</h4>
-              <h5>Janvier 2025 – Aujourd'hui</h5>
-              <ul>
-                <li><strong>PROJET </strong>: Mise en place d'une plateforme Kubernetes automatisée avec GitOps (vSphere).</li>
-                <li><strong>RÔLES ET ACTIVITÉS </strong>:
-                  <ul>
-                    <li>Conception de modules Terraform pour le provisionnement vSphere (VMs, réseaux, stockage).</li>
-                    <li>Déploiement automatisé de clusters Kubernetes RKE2 via playbooks Ansible.</li>
-                    <li>Bootstrap GitOps avec FluxCD, Kustomize multi-environnements (DEV, STAGING, PROD), HelmRelease.</li>
-                    <li>Pipelines GitLab CI avec TFLint et Checkov pour le contrôle qualité et sécurité IaC.</li>
-                    <li>Supervision des clusters avec Prometheus et Grafana.</li>
-                  </ul>
-                </li>
-                <li><strong>ENVIRONNEMENT TECHNIQUE </strong>: Terraform, Ansible, GitLab CI/CD, Kubernetes RKE2, vSphere, FluxCD, Kustomize, Helm, Prometheus, Grafana, Kyverno, Checkov, TFLint, Docker, Linux</li>
-              </ul>
-            </div>
-            <div class="experiance-item">
-              <h4>Ingénieur DevOps – Consultant Exploitation &amp; Supervision IT</h4>
-              <h5>Mai 2024 – Aujourd'hui</h5>
-              <ul>
-                <li><strong>RÔLES ET ACTIVITÉS </strong>:
-                  <ul>
-                    <li>Supervision quotidienne via Grafana/Prometheus, gestion des tickets d'exploitation (sauvegardes, certificats SSL, snapshots).</li>
-                    <li>Migration sondes HpOvis vers Checkly : scénarios Playwright, déploiement GitLab CI/CD.</li>
-                    <li>Développement d'un Playwright Exporter Prometheus interne pour tests E2E.</li>
-                    <li>Automatisation Prometheus via Ansible et GitLab CI, fédération Prometheus multi-environnements.</li>
-                    <li>Industrialisation des dashboards Grafana via Terraform et GitLab CI (multi-environnements).</li>
-                    <li>Formation des équipes métiers à Checkly et création autonome de scénarios E2E.</li>
-                  </ul>
-                </li>
-                <li><strong>ENVIRONNEMENT TECHNIQUE </strong>: JavaScript, TypeScript, Python, Prometheus, Grafana, Checkly, Playwright, GitLab CI/CD, Terraform, Ansible, Linux (RHEL/Debian), vCenter, Docker, Kubernetes, Jira</li>
-              </ul>
-            </div>
-            <h3 class="experiance-title">Djib Data-AI Consulting</h3>
-            <div class="experiance-item">
-              <h4>Ingénieur DevOps / Infrastructure</h4>
-              <h5>Juin 2025 – Aujourd'hui</h5>
-              <ul>
-                <li><strong>PROJET </strong>: Modernisation et déploiement d'une plateforme e-gouvernement multi-services sur AWS (e-visa, e-timbre, e-vignette, e-enregistrement, e-TVA).</li>
-                <li><strong>RÔLES ET ACTIVITÉS </strong>:
-                  <ul>
-                    <li>Architecture cloud AWS avec ECS Fargate, RDS PostgreSQL, S3 et ALB pour applications React/Node.js haute disponibilité.</li>
-                    <li>Modules Terraform réutilisables pour le provisioning automatisé (VPC, subnets, security groups, ECS, RDS, S3).</li>
-                    <li>AWS Secrets Manager et Parameter Store pour la gestion sécurisée des credentials.</li>
-                    <li>Pipelines CodePipeline/CodeBuild avec déploiement automatisé Docker sur ECS.</li>
-                    <li>Gestion multi-environnements UAT et PROD avec isolation réseau.</li>
-                  </ul>
-                </li>
-                <li><strong>ENVIRONNEMENT TECHNIQUE </strong>: AWS (ECS Fargate, RDS PostgreSQL, S3, Secrets Manager, CodePipeline, CodeBuild, ALB, VPC), Terraform, Docker, React.js, Node.js, GitHub Actions, Linux, Bash</li>
-              </ul>
-            </div>
-            <h3 class="experiance-title">TEOLIA</h3>
-            <div class="experiance-item">
-              <h4>Ingénieur DevOps – Platform Engineering</h4>
-              <h5>Janvier 2024 – Avril 2024</h5>
-              <ul>
-                <li><strong>PROJET </strong>: Platform engineering pour automatiser le déploiement et la gestion des ressources Cloud, permettre aux équipes de faire des demandes de ressources automatisées.</li>
-                <li><strong>RÔLES ET ACTIVITÉS </strong>:
-                  <ul>
-                    <li>Développement frontend HTML/CSS/JavaScript pour interface de demande de ressources Cloud.</li>
-                    <li>Provisionnement Terraform sur Azure (Remote Backend Azure Blob Storage).</li>
-                    <li>Déploiement Azure Static Web Apps, Azure Functions (deploy_ressource, postmessage, sendmail).</li>
-                    <li>Authentification SSO avec OpenID Connect.</li>
-                    <li>Migration Azure vers AWS : AWS Amplify, Lambda, API Gateway, infrastructure Terraform (VPC, EC2).</li>
-                  </ul>
-                </li>
-                <li><strong>ENVIRONNEMENT TECHNIQUE </strong>: HTML, CSS, JavaScript, Terraform, Azure Static Web Apps, GitHub Actions, Azure Functions, AWS Amplify, AWS Lambda, AWS API Gateway, CloudFormation</li>
-              </ul>
-            </div>
-            <div class="experiance-item">
-              <h4>Ingénieur DevOps – Teo School</h4>
-              <h5>Septembre 2023 – Novembre 2023</h5>
-              <ul>
-                <li><strong>PROJET </strong>: Programme de formation de 2 mois – mise en place d'une usine logicielle complète CI/CD de bout en bout.</li>
-                <li><strong>RÔLES ET ACTIVITÉS </strong>:
-                  <ul>
-                    <li>Provisionnement Azure avec Terraform : cluster AKS, ACR, Azure Storage Account.</li>
-                    <li>Déploiement micro-services Kubernetes (manifests, ArgoCD, HPA).</li>
-                    <li>Création et optimisation de Dockerfiles, analyse sécurité avec Trivy.</li>
-                    <li>Pipelines CI/CD GitHub Actions end-to-end (build, test, deploy, monitoring).</li>
-                    <li>Déploiement Prometheus et Grafana avec Helm.</li>
-                  </ul>
-                </li>
-                <li><strong>ENVIRONNEMENT TECHNIQUE </strong>: GitHub, GitHub Actions, Docker, Kubernetes (AKS), Terraform, ACR, ArgoCD, Prometheus, Grafana, Python, Trivy, Kanban</li>
-              </ul>
-            </div>
-            <h3 class="experiance-title">EDF SA (Électricité de France)</h3>
-            <div class="experiance-item">
-              <h4>Ingénieur DevOps - Alternant</h4>
-              <h5>2021 - 2023</h5>
-              <ul>
-                <li><strong>CONTEXTE </strong>: 1er électricien mondial. Ses activités couvrent la production et vente d'électricité et de gaz naturel, le négoce d'électricité, de gaz naturel, de charbon et de pétrole, la gestion de réseaux de distribution d'électricité basse et moyenne tension, les prestations de services énergétiques (ingénierie, exploitation, maintenance, etc.).</li>
-                <li><strong>PROJET </strong>: Intégrateur DevOps pour le test et l’automatisation de la chaine d’intégration des OI et des nouveaux service dans le portail MyCloud EDF. </li>
-                <li><strong>RÔLES ET ACTIVITÉS </strong>:
-                  <ul>
-                    <li>Mise en œuvre de pipelines Jenkins de tests automatisés pour garantir la conformité des Cloud Templates VRA développés par l'équipe de développement Mycloud et les délivrer plus rapidement en production</li>
-                    <li>Mise en en place des tests IHM avec Selenuim afin de tester les catalogue de service VRA Maintien en état fonctionel des pipelines existants: mise à jour des agents, mise à jour du code, test de pipeline sur les différentes environnements.</li>
-                    <li>Développement d'un test automatisé pour valider les pré-requis attendus d'un nouveau VLAN consommé par le service Mycloud </li>
-                    <li>Surveiller les indicateurs d’infrastructure (avec Log Insight)</li>
-                    <li>Mise en place des indications des superviseurs via vROPS</li>
-                  </ul>
-                </li>
-                <li><strong>ENVIRONNEMENT TECHNIQUE </strong>: Confluence · JIRA · Terraform · Jenkins · GitLab · VRA · VRO · vROPS · LogInsight · Python · Pytest/Selenuim </li>
-              </ul>
-            </div>
-            <div class="experiance-item">
-              <h4>Ingénieur DevOps - CDD</h4>
-              <h5>Mars - Septembre 2021</h5>
-              <ul>
-                <li><strong>RÔLES ET ACTIVITÉS </strong>:
-                  <ul>
-                    <li>Mise en place des indications de pilotage sur LogInsight</li>
-                    <li>Mise en place des indications des superviseurs via vROPS</li>
-                    <li>Reporting hebdomadaire sur les déploiements via le portail MyCloud</li>
-                    <li>Mise en place des tests unitaires et d'intégration pour garantir la conformité du Cloud Template DNS et Oracle de vRA</li>
-                    <li>Automatiser le lancement des tests via un pipeline Jenkins</li>
-                  </ul>
-                </li>
-                <li><strong>ENVIRONNEMENT TECHNIQUE </strong>: Confluence · JIRA · Terraform · Jenkins · GitLab · VRA · VRO · vROPS · LogInsight · Python · Pytest/Selenuim</li>
-              </ul>
-            </div>
-            <div class="experiance-item">
-              <h4>Ingénieur DevOps Stagiaire</h4>
-              <h5>Septembre  2020- Mars 2021</h5>
-              <ul>
-                <li><strong>RÔLES ET ACTIVITÉS </strong>:
-                  <ul>
-                    <li>Développement des tests unitaires et non-régression sur les workflows afin de fiabiliser le code</li>
-                    <li>Développement des fonctions python pour le lancement des tests manuellement avec pytest</li>
-                    <li>Reporting hebdomadaire sur les déploiements via le portail MyCloud</li>
-                    <li>Analyse et reporting : construction et maintenance de dashboards métiers (LogInsight / vROPS)</li>
-                  </ul>
-                </li>
-                <li><strong>ENVIRONNEMENT TECHNIQUE </strong>: vROPS · Javascript · Jenkins · GitLab · VRA · VRO · LogInsight · Python</li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-            <h3 class="experiance-title">Carlili</h3>
-            <div class="experiance-item">
-              <h4>Chargé des opérations - Freelance</h4>
-              <h5>2021 - 2023</h5>
-              <ul>
-                <li><strong>CONTEXTE </strong>: Carlili est une Startup qui fait la location de voitures clés en main et qui œuvre pour une mobilité individuelle décarbonée</li>
-                <li><strong>PROJET </strong>: Agent opérationnel qui assiste les Carsitters dans l'exécution de leurs missions quotidiennes, tout en étant chargé de la gestion du parc automobile et de la satisfaction des clients en ce qui concerne les commandes. </li>
-                <li><strong>RÔLES ET ACTIVITÉS </strong>:
-                  <ul>
-                    <li>Coordonner les missions quotidiennes de la communauté des carsitters</li>
-                    <li>Gérer la flotte automobile de Carlili et des agences partenaires</li>
-                    <li>Gestion des appels Carsitters et client</li>
-                    <li>Comptabiliser les problèmes</li>
-                  </ul>
-                </li>
-                <li><strong>ENVIRONNEMENT TECHNIQUE </strong>: Slack · Tookan · Hippo Chat · Opérations back office · Aircall · record360 . Notion </li>
-              </ul>
-            </div>
-            <h3 class="experiance-title">Expresso / Sénégal</h3>
-            <div class="experiance-item">
-              <h4>Ingénieure réseau et systèmes - CDD</h4>
-              <h5>NOV. 2017 - DÉC. 2017</h5>
-              <ul>
-                <li><strong>CONTEXTE </strong>: Expresso Sénégal est le 3ème opérateur Télécom au Sénégal, qui est une filiale du groupe Expresso Telecom (Expresso Telecom Group), qui a son siège à Dubai.</li>
-                <li><strong>PROJET </strong>: Maintenance et entretien annuel du matériel informatique d'Expresso Sénégal du 22 novembre au 06 décembre 2017. </li>
-                <li><strong>RÔLES ET ACTIVITÉS </strong>:
-                  <ul>
-                    <li>Maintenance du matériel Informatique</li>
-                    <li>Entretien des équipements </li>
-                    <li>Installation et configuration des applications de contrôle et de configuration à distance</li>
-                  </ul>
-                </li>
-                <li><strong>ENVIRONNEMENT TECHNIQUE </strong>: Windows, MacOS, LEinduxu· TceamtViioewner · mise à jour de logiciel · installations antivirus · débogueur de protocole · CCleaner </li>
-              </ul>
-            </div>
-            <h3 class="experiance-title">ISI (INSTITUT Supérieur D'INFORMATIQUE)</h3>
-            <div class="experiance-item">
-              <h4>Ingénieure réseau et systèmes - Stagiaire</h4>
-              <h5>AOÛT 2017 - OCT. 2017</h5>
-              <ul>
-                <li><strong>CONTEXTE </strong>: ISI (l’institut supérieur d’informatique ISI), est sous la tutelle du Ministère de l’Enseignement Supérieur privé qui est signataire de tous les diplômes délivrés, sous le contrôle de l’ANAQ-Sup.</li>
-                <li><strong>PROJET </strong>: Dépannage des ordinateurs, accompagnés les étudiants sur leurs projets, la résolution de problèmes logiciels et matériels, ainsi que des interventions en cas de pannes de réseau. Mise en réseau de nouvelles salles informatiques et de l'assurance de la maintenance préventive de tous les équipements informatiques. </li>
-                <li><strong>RÔLES ET ACTIVITÉS </strong>:
-                  <ul>
-                    <li>Assister et accompagner les étudiants dans leurs projets</li>
-                    <li>Installation, configuration de différents systèmes sur des VMs Linux. </li>
-                    <li>Vérification quotidienne des équipements du réseau dans les salles informatiques</li>
-                    <li>Dépannage des ordinateurs</li>
-                    <li>Mise en réseaux de nouvelles salles informatiques</li>
-                    <li>Assurer la maintenance préventive.</li>
-                  </ul>
-                </li>
-                <li><strong>ENVIRONNEMENT TECHNIQUE </strong>: Trello, Systèmes d'exploitation Windows, MacOS et Linux, Outils de virtualisation : VirtualBox, VMware, multimètre numérique </li>
-              </ul>
-            </div>
-          </div>
-        </div>
+<!-- ══════════════════════════════════ MODALS ══ -->
+<style>
+  /* ── Modal overlay ── */
+  .pmodal-overlay {
+    display: none; position: fixed; inset: 0; z-index: 9000;
+    background: rgba(3,7,18,.92);
+    backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+    overflow-y: auto; padding: 40px 20px;
+    animation: fadeOverlay .25s ease;
+  }
+  .pmodal-overlay.open { display: block; }
+  @keyframes fadeOverlay { from { opacity: 0; } to { opacity: 1; } }
 
+  .pmodal {
+    max-width: 1000px; margin: 0 auto;
+    background: #0a1628;
+    border: 1px solid rgba(0,212,255,.15);
+    border-radius: 20px; overflow: hidden;
+    box-shadow: 0 40px 120px rgba(0,0,0,.7);
+    animation: slideModal .3s ease;
+    position: relative;
+  }
+  @keyframes slideModal { from { transform: translateY(30px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+
+  /* Frise modal wider */
+  .pmodal.wide { max-width: 1200px; }
+
+  .pmodal-close {
+    position: absolute; top: 16px; right: 16px; z-index: 10;
+    width: 40px; height: 40px; border-radius: 50%;
+    background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.15);
+    color: #fff; font-size: 1.1rem; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: background .2s;
+  }
+  .pmodal-close:hover { background: rgba(239,68,68,.3); border-color: rgba(239,68,68,.4); }
+
+  /* Banner image */
+  .pmodal-banner {
+    width: 100%; aspect-ratio: 16/6;
+    object-fit: cover; object-position: center top;
+    display: block; border-bottom: 1px solid rgba(0,212,255,.1);
+  }
+  .pmodal-banner-svg { width: 100%; display: block; border-bottom: 1px solid rgba(0,212,255,.1); }
+
+  /* Body */
+  .pmodal-body { padding: 36px 40px; }
+
+  .pmodal-header { margin-bottom: 28px; }
+  .pmodal-badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: rgba(0,212,255,.08); border: 1px solid rgba(0,212,255,.18);
+    color: #00d4ff; border-radius: 100px;
+    padding: 4px 14px; font-size: .78rem; font-weight: 700;
+    letter-spacing: .5px; margin-bottom: 12px;
+  }
+  .pmodal-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(1.4rem, 2.5vw, 2rem);
+    font-weight: 800; letter-spacing: -.5px; margin-bottom: 8px;
+    color: #f0f6ff;
+  }
+  .pmodal-subtitle { color: #8ba3c7; font-size: .95rem; }
+
+  .pmodal-grid {
+    display: grid; grid-template-columns: 1fr 280px; gap: 40px;
+  }
+
+  /* Info sidebar */
+  .pmodal-info {
+    background: rgba(255,255,255,.02);
+    border: 1px solid rgba(255,255,255,.06);
+    border-radius: 14px; padding: 24px;
+    align-self: start;
+  }
+  .pmodal-info h5 {
+    font-size: .75rem; font-weight: 700; color: #00d4ff;
+    text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px;
+  }
+  .pmodal-info-item { margin-bottom: 14px; }
+  .pmodal-info-item label {
+    display: block; font-size: .75rem; color: #8ba3c7;
+    font-weight: 600; text-transform: uppercase; letter-spacing: .5px; margin-bottom: 4px;
+  }
+  .pmodal-info-item span { font-size: .88rem; color: #f0f6ff; line-height: 1.5; }
+
+  .pmodal-stack { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 16px; }
+  .pmodal-stack span {
+    background: rgba(0,212,255,.07); border: 1px solid rgba(0,212,255,.15);
+    color: #00d4ff; font-size: .72rem; font-weight: 600;
+    padding: 3px 10px; border-radius: 5px;
+  }
+
+  /* Main content */
+  .pmodal-content h3 {
+    font-size: 1.05rem; font-weight: 700; color: #f0f6ff;
+    margin: 24px 0 10px; display: flex; align-items: center; gap: 8px;
+  }
+  .pmodal-content h3::before {
+    content: ''; display: block; width: 18px; height: 2px; background: #00d4ff;
+  }
+  .pmodal-content p { color: #8ba3c7; font-size: .9rem; line-height: 1.8; margin-bottom: 12px; }
+  .pmodal-content ul { list-style: none; padding: 0; margin-bottom: 12px; }
+  .pmodal-content ul li {
+    color: #8ba3c7; font-size: .88rem; line-height: 1.75;
+    padding-left: 18px; position: relative; margin-bottom: 6px;
+  }
+  .pmodal-content ul li::before { content: '›'; position: absolute; left: 0; color: #00d4ff; font-weight: 700; }
+  .pmodal-content ul li strong { color: #f0f6ff; }
+
+  /* Frise modal */
+  .frise-container {
+    padding: 24px; overflow-x: auto;
+  }
+  .frise-container img {
+    width: 100%; min-width: 900px;
+    border-radius: 10px;
+    border: 1px solid rgba(0,212,255,.1);
+  }
+
+  @media (max-width: 700px) {
+    .pmodal-grid { grid-template-columns: 1fr; }
+    .pmodal-body { padding: 24px 20px; }
+  }
+</style>
+
+<!-- ── MODAL: SACEM Kubernetes ── -->
+<div class="pmodal-overlay" id="modal-k8s">
+  <div class="pmodal">
+    <button class="pmodal-close" onclick="closeModal('modal-k8s')"><i class="fa fa-times"></i></button>
+    <img src="assets/img/portfolio/sacem-kubernetes.svg" class="pmodal-banner-svg" alt="SACEM – Kubernetes GitOps">
+    <div class="pmodal-body">
+      <div class="pmodal-header">
+        <div class="pmodal-badge"><i class="fa fa-building"></i> SACEM</div>
+        <h2 class="pmodal-title">Plateforme Kubernetes Automatisée avec GitOps</h2>
+        <p class="pmodal-subtitle">Infrastructure on-premise vSphere entièrement automatisée et industrialisée</p>
       </div>
-    </section><!-- End experiance Section -->
-
-    <!-- ======= Resume Section ======= -->
-    <section id="resume" class="resume section-bg">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>FORMATION</h2>
+      <div class="pmodal-grid">
+        <div class="pmodal-content">
+          <p>Au sein de la SACEM, j'ai conçu et déployé une plateforme Kubernetes clé-en-main, entièrement automatisée et industrialisée sur une infrastructure on-premise vSphere. L'objectif était de simplifier la mise à disposition d'environnements de développement et de production, en adoptant les meilleures pratiques DevOps et GitOps avec des outils modernes d'Infrastructure as Code (IaC), le tout orchestré via GitLab CI/CD.</p>
+          <h3>Réalisations principales</h3>
+          <ul>
+            <li>Conception d'une chaîne CI/CD GitLab complète pour le provisioning infra, le déploiement RKE2, et la livraison applicative via FluxCD.</li>
+            <li>Conception de modules Terraform pour le provisionnement de l'infrastructure (VMs, réseaux, stockage) sur vSphere.</li>
+            <li>Déploiement automatisé de clusters Kubernetes RKE2 à l'aide de playbooks Ansible, incluant installation, configuration réseau, et démarrage du service RKE2.</li>
+            <li>Mise en place du bootstrap GitOps avec FluxCD pour gérer le déploiement des applications depuis un dépôt Git.</li>
+            <li>Utilisation de Kustomize pour la personnalisation des manifestes Kubernetes selon les environnements (DEV, STAGING, PROD).</li>
+            <li>Déploiement d'applications complexes avec Helm et gestion via HelmRelease dans FluxCD.</li>
+            <li>Contrôle qualité et sécurité du code IaC avec TFLint et Checkov intégrés dans les pipelines CI.</li>
+            <li>Structuration du dépôt GitOps multi-clusters (apps/, infrastructure/, clusters/) pour assurer la réplicabilité et la scalabilité.</li>
+            <li>Mise en place de la supervision des clusters avec Prometheus et Grafana.</li>
+            <li>Documentation technique complète : modules, flux CI/CD, procédures d'installation, gestion des erreurs et bonnes pratiques.</li>
+          </ul>
         </div>
-
-        <div class="row">
-          <div class="col-lg-6" data-aos="fade-up">
-            <h3 class="resume-title">INTECH Groupe ESIEA - Paris</h3>
-            <div class="resume-item">
-              <h4>Master 2: Architecture système information</h4>
-              <h5>2021 - 2023</h5>
-              <p><em>Bac + 5 – Titre certifié niveau 7, inscrit au RNCP</em></p>
-            </div>
-
-            <h3 class="resume-title">INTECH Groupe ESIEA - Paris</h3>
-            <div class="resume-item">
-              <h4>Bachelor: Systèmes et Réseaux Informatiques</h4>
-              <h5>2019 - 2021</h5>
-            </div>
-            
-          </div>
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-            <h3 class="resume-title">ISI (INSTITUT SUPÉRIEUR D'INFORMATIQUE) - Sénégal</h3>
-            <div class="resume-item">
-              <h4>Licence professionnelle en réseau informatique : Systèmes et Réseaux</h4>
-              <h5>2017 - 2018</h5>
-            </div>
-            <div class="resume-item">
-              <h4>Certificats of Completion IT Essentials CISCO : Maintenance Informatique</h4>
-              <h5>2017</h5>
-            </div>
-            <div class="resume-item">
-              <h4>DTS : Maintenance Informatique</h4>
-              <h5>2015 - 2017</h5>
-            </div>
-            <h3 class="resume-title">UCAD (Université Cheikh Anta Diop de Dakar) – Sénégal</h3>
-            <div class="resume-item">
-              <h4>Faculté des Sciences Juridiques et Politiques : Licence 1</h4>
-              <h5>2014 - 2015</h5>
+        <div>
+          <div class="pmodal-info">
+            <h5>Informations</h5>
+            <div class="pmodal-info-item"><label>Entreprise</label><span>SACEM</span></div>
+            <div class="pmodal-info-item"><label>Rôle</label><span>Ingénieur DevOps</span></div>
+            <div class="pmodal-info-item"><label>Période</label><span>Janvier 2025 – Aujourd'hui</span></div>
+            <div class="pmodal-info-item"><label>Stack technique</label></div>
+            <div class="pmodal-stack">
+              <span>Terraform</span><span>Ansible</span><span>GitLab CI/CD</span>
+              <span>Kubernetes RKE2</span><span>FluxCD</span><span>Kustomize</span>
+              <span>Helm</span><span>Prometheus</span><span>Grafana</span>
+              <span>vSphere</span><span>Kyverno</span><span>Checkov</span><span>TFLint</span>
             </div>
           </div>
         </div>
       </div>
-    </section><!-- End Resume Section -->
+    </div>
+  </div>
+</div>
 
-    <!-- ======= Certification ======= -->
-    <section id="resume" class="resume">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>CERTIFICATIONS</h2>
+<!-- ── MODAL: SACEM Météo DSI ── -->
+<div class="pmodal-overlay" id="modal-meteo">
+  <div class="pmodal">
+    <button class="pmodal-close" onclick="closeModal('modal-meteo')"><i class="fa fa-times"></i></button>
+    <img src="assets/img/portfolio/sacem-meteo.svg" class="pmodal-banner-svg" alt="SACEM – Météo DSI">
+    <div class="pmodal-body">
+      <div class="pmodal-header">
+        <div class="pmodal-badge"><i class="fa fa-building"></i> SACEM</div>
+        <h2 class="pmodal-title">Refonte Plateforme Météo DSI</h2>
+        <p class="pmodal-subtitle">Migration Excel VBA → Application web temps réel React 18 / Node.js</p>
+      </div>
+      <div class="pmodal-grid">
+        <div class="pmodal-content">
+          <p>Ce projet représente une transformation complète d'un outil de supervision critique basé sur Excel avec macros VBA vers une plateforme web moderne et scalable. Le nouveau système centralise ces données dans une architecture haute disponibilité sur infrastructure on-premise vSphere/RHEL9, avec authentification LDAP, interface web responsive, API REST, et base de données PostgreSQL pour l'historisation.</p>
+          <h3>Réalisations principales</h3>
+          <ul>
+            <li>Architecture microservices haute disponibilité sur 2 VMs RHEL 9.4 (8 vCPU/16 GB RAM Backend, 4 vCPU/8 GB RAM Frontend) avec séparation frontend/backend et sécurisation réseau (VLAN DMZ, firewalld).</li>
+            <li>API REST Node.js/Express avec architecture modulaire et middleware d'authentification JWT/LDAP.</li>
+            <li>Modèle de données PostgreSQL 15 avec gestion d'historique, relations complexes et migrations automatisées.</li>
+            <li>Collecteurs de données automatisés multi-sources : Prometheus, Dollar U Oracle, Centreon, NetBackup API, EasyVista ITSM.</li>
+            <li>Interface web React 18 + TypeScript + Tailwind CSS avec 59 sondes applicatives en temps réel.</li>
+            <li>Reverse proxy Nginx avec TLS 1.3, HTTP/2 ; sécurisation HTTPS, Fail2Ban, rate limiting.</li>
+            <li>Pipelines CI/CD GitLab, services systemd, stratégie zero-downtime avec health checks.</li>
+            <li>Schedulers pour collectes automatiques et génération de rapports quotidiens à 7h00.</li>
+          </ul>
         </div>
-
-        <div class="row">
-          <div class="col-lg-6" data-aos="fade-up">
-            <h3 class="resume-title"></h3>
-            <div class="resume-item">
-              <h4>HashiCorp Certified: Terraform Associate (003)</h4>
-              <h5>2023</h5>
-              <p><em>• Comprendre les concepts d'Infrastructure as Code (IaC)<br>
-                • Maîtriser les principales commandes Terraform (init, plan, apply, destroy)<br>
-                • Gérer l'état Terraform (local et remote backends)<br>
-                • Travailler avec les modules, variables, outputs et workspaces<br>
-                • Utiliser le Terraform Registry et les providers<br>
-                • Appliquer les bonnes pratiques de sécurité et de collaboration</em>
-              </p>
-            </div>
-            <h3 class="resume-title"></h3>
-            <div class="resume-item">
-              <h4>Microsoft Certified: Azure Fundamentals</h4>
-              <h5>25/04/2023</h5>
-              <p><em>• Concepts de base d’Azure <br>
-                • Compréhension des services cloud <br>
-                • Gestion des identités et des accès <br>
-                • Gestion des coûts et de la conformité <br>
-                • Sécurité, confidentialité et conformité <br>
-                • Solutions pour les entreprises Support et services de base d’Azure</em>
-              </p>
-            </div>
-            <h3 class="resume-title"></h3>
-            <div class="resume-item">
-              <h4>Certificats of Completion IT Essentials CISCO</h4>
-              <h5>10/11/2023</h5>
-              <p><em>• Choisir les composants informatiques appropriés pour assembler, réparer ou mettre à niveau des ordinateurs personnels.<br>
-                • Expliquer comment utiliser correctement les outils et travailler en toute sécurité d a n s un atelier.<br>
-                • Installer des composants pour assembler, réparer ou mettre àniveau des ordinateurs personnels.<br>
-                • Expliquer les procédures de maintenance préventive et de dépannage sur les ordinateurs personnels.<br>
-                • Installer des systèmes d’exploitation Windows.<br>
-                • Assurer la gestion et la maintenance des systèmes d’exploitation Windows.<br>
-                • Configurer les ordinateurs afin qu’ils communiquent sur un réseau.<br>
-                • Configurer des périphériques pour qu’ils se connectent à Internet et aux services cloud.<br>
-                • Expliquer comment utiliser, configurer et gérer des ordinateurs portables et des appareils mobiles.<br>
-                • Expliquer comment configurer, sécuriser et dépanner les systèmes d’exploitation mobiles, OS Xet Linux.<br>
-                • Installer et partager une imprimante de manière à ce qu’elle réponde aux exigences définies.<br>
-                • Mettre en œuvre la sécurité de base du réseau, de l’hôte et des données.<br>
-                • Expliquer les rôles et les responsabilités du professionnel de l’IT. <br>
-                • Résoudre des problèmes matériels et logiciels avancés.</em></p>
-            </div>
-            
-          </div>
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-            <h3 class="resume-title"></h3>
-            <div class="resume-item">
-              <h4>CISCO: CCNA ROUTING AND SWITCHING: ROUTING AND SWITCHING ESSENTIALS (CCNA 2)</h4>
-              <h5>10/05/2023</h5>
-              <p><em>• Travailler avec les routeurs, les commutateurs et les périphériques sans fil pour configurer et dépanner les
-                VLAN, les VLAN sans fil et le routage inter-VLAN,<br>
-                • Configurer et dépanner la redondance sur un réseau commuté à l'aide du protocole STP et
-                d'EtherChannel,<br>
-                • Développer un esprit critique et des compétences en matière de résolution des problèmes en utilisant des équipements réels et Cisco Packet Tracer,<br>
-                • Expliquer comment prendre en charge les réseaux fiables et disponibles à l'aide d'adressage dynamique et de protocoles de redondance de premier saut.</em></p>
-            </div>
-            <h3 class="resume-title"></h3>
-            <div class="resume-item">
-              <h4>CISCO: CCNA R&S: INTRODUCTION TO NETWORKS (CCNA 1)</h4>
-              <h5>10/05/2023</h5>
-              <p><em>• Créer des réseaux LAN simples, effectuer les configurations de base des routeurs et des commutateurs et mettre en œuvre des schémas d'adressage IPv4 et IPv6,<br>
-                • Configurer les routeurs, les commutateurs et les terminaux pour fournir un accès aux ressources réseau locales et distantes et permettre une connectivité de bout en bout entre les périphériques distants,<br>
-                • Développer un esprit critique et des compétences en matière de résolution des problèmes en utilisant des équipements réels et Cisco Packet Tracer,<br>
-                • Configurer et dépanner la connectivité d'un petit réseau à l'aide des bonnes pratiques en matière de sécurité.</em></p>
+        <div>
+          <div class="pmodal-info">
+            <h5>Informations</h5>
+            <div class="pmodal-info-item"><label>Entreprise</label><span>SACEM</span></div>
+            <div class="pmodal-info-item"><label>Rôle</label><span>Ingénieur DevOps / Développeur Full Stack</span></div>
+            <div class="pmodal-info-item"><label>Période</label><span>Novembre 2025 – Février 2026</span></div>
+            <div class="pmodal-info-item"><label>Stack technique</label></div>
+            <div class="pmodal-stack">
+              <span>Node.js</span><span>Express</span><span>TypeScript</span><span>React 18</span>
+              <span>Vite</span><span>Tailwind CSS</span><span>PostgreSQL 15</span><span>Redis</span>
+              <span>Nginx</span><span>RHEL 9.4</span><span>vSphere</span><span>GitLab CI/CD</span>
+              <span>Prometheus</span><span>Grafana</span><span>LDAP/AD</span><span>JWT</span><span>SELinux</span>
             </div>
           </div>
         </div>
       </div>
-    </section><!-- End Certification-->
-        <br>
-    <!-- ======= Resume Frise ======= -->
-    <section id="resume" class="resume section-bg">
-      <div class="container"></div>
-        <div class="section">
-          <br>
-          <img src="assets/img/FRISE.png" class="img-fluid" alt="">
-            <div class="text-center">
-              <br>
-              <a href="frise_sall_djiby_oumar.pdf" class="btn btn-primary btn-lg active portfolio-details-lightbox" role="button" aria-pressed="true"><i class="bx bx-link"></i> Détail de la frise</a>
-            </div>      
-          </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── MODAL: Djib Data-AI ── -->
+<div class="pmodal-overlay" id="modal-djib">
+  <div class="pmodal">
+    <button class="pmodal-close" onclick="closeModal('modal-djib')"><i class="fa fa-times"></i></button>
+    <img src="assets/img/portfolio/djibdataai.svg" class="pmodal-banner-svg" alt="Djib Data-AI – E-Gouvernement AWS">
+    <div class="pmodal-body">
+      <div class="pmodal-header">
+        <div class="pmodal-badge" style="background:rgba(245,158,11,.08);border-color:rgba(245,158,11,.2);color:#fcd34d"><i class="fa fa-cloud"></i> Djib Data-AI Consulting</div>
+        <h2 class="pmodal-title">E-Gouvernement Multi-Services sur AWS</h2>
+        <p class="pmodal-subtitle">Modernisation et déploiement d'une plateforme cloud-native haute disponibilité</p>
       </div>
-    </section><!-- End Frise-->
-
-        <!-- ======= Testimonials Section ======= -->
-        <section id="testimonials" class="testimonials section-bg">
-          <div class="container">
-    
-            <div class="section-title">
-              <h2>RÉPUTATION</h2>
+      <div class="pmodal-grid">
+        <div class="pmodal-content">
+          <p>Conception et déploiement d'une infrastructure cloud AWS complète pour héberger une suite d'applications e-gouvernement destinées à la digitalisation des services publics : <strong>e-visa, e-timbre, e-vignette, e-enregistrement, e-TVA</strong>.</p>
+          <p>En tant que responsable de l'ensemble de l'infrastructure, j'ai architecturé une solution cloud-native hautement disponible et scalable.</p>
+          <h3>Réalisations principales</h3>
+          <ul>
+            <li><strong>Architecture cloud AWS</strong> : ECS Fargate, RDS PostgreSQL, S3 et ALB pour applications React/Node.js haute disponibilité.</li>
+            <li><strong>Infrastructure as Code</strong> : Modules Terraform réutilisables pour le provisioning automatisé (VPC, subnets, security groups, ECS, RDS, S3).</li>
+            <li><strong>Gestion des secrets</strong> : AWS Secrets Manager et Parameter Store pour la gestion sécurisée des credentials.</li>
+            <li><strong>Pipelines CI/CD</strong> : CodePipeline/CodeBuild avec déploiement automatisé Docker sur ECS via GitHub Actions.</li>
+            <li><strong>Multi-environnements</strong> : Déploiement UAT et PROD avec isolation réseau et gestion différenciée des ressources.</li>
+          </ul>
+        </div>
+        <div>
+          <div class="pmodal-info">
+            <h5>Informations</h5>
+            <div class="pmodal-info-item"><label>Entreprise</label><span>Djib Data-AI Consulting</span></div>
+            <div class="pmodal-info-item"><label>Rôle</label><span>Ingénieur DevOps / Infrastructure</span></div>
+            <div class="pmodal-info-item"><label>Période</label><span>Juin 2025 – Aujourd'hui</span></div>
+            <div class="pmodal-info-item"><label>Stack technique</label></div>
+            <div class="pmodal-stack">
+              <span>AWS ECS Fargate</span><span>RDS PostgreSQL</span><span>S3</span>
+              <span>Secrets Manager</span><span>CodePipeline</span><span>CodeBuild</span>
+              <span>ALB</span><span>VPC</span><span>Terraform</span><span>Docker</span>
+              <span>React.js</span><span>Node.js</span><span>GitHub Actions</span>
             </div>
-    
-            <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
-              <div class="swiper-wrapper">
-    
-                <div class="swiper-slide">
-                  <div class="testimonial-item" data-aos="fade-up" data-aos-delay="100">
-                    <p>
-                      <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                      La présence de Djiby au sein de l'équipe a été un vrai atout, sa capacité d'adaptation et ses facultés d'apprentissage rapide lui ont permis de rapidement s'intégrer parmi nous et de s'approprier les technologies inhérentes à notre service. Ce bon niveau de technicité l'a rapidement amené à travailler sur des sujets variés en collaboration ou en toute autonomie. Son engagement dans son travail est apprécié et valorisé par ses succès. Efficace mais discret il gagnerait à s'affirmer un peu plus afin de partager efficacement son travail ainsi qu'a un peu de rédaction documentaire.
-                      <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                    </p>
-                    <img src="assets/img/testimonials/matthieu.jpeg" class="testimonial-img" alt="">
-                    <h3>Matthieu COURTY</h3>
-                    <h4>Pilote Opérationnel d'Infrastructure & Scrum Master pour myCloud</h4>
-                  </div>
-                </div><!-- End testimonial item -->
-    
-                <div class="swiper-slide">
-                  <div class="testimonial-item" data-aos="fade-up">
-                    <p>
-                      <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                      Cher Djiby,
-                      Je prends plaisir à te recommander fortement en raison de ton travail et de tes performances exceptionnels. Ton professionnalisme et ton engagement sont exemplaires, ce qui se traduit par des résultats de haute qualité. Ta passion pour ton travail est évidente et ta fiabilité est très appréciée. Ta motivation et ta volonté de réussir sont remarquables, et tu trouves toujours des solutions créatives pour relever les défis. De plus, ta capacité d'adaptation et ta flexibilité font de toi un atout précieux au sein de toute équipe. Enfin, tes compétences techniques sont impressionnantes et tu es un communicateur efficace qui favorise la collaboration et le travail d'équipe.
-    
-                      En somme, tu es un professionnel exceptionnel et je suis convaincu que tu continueras à exceller dans tes futurs projets. Je te souhaite beaucoup de succès dans ta carrière.
-                      <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                    </p>
-                    <img src="assets/img/testimonials/Benj.jpeg" class="testimonial-img" alt="">
-                    <h3>Benjamin Rodriguez</h3>
-                    <h4>Co-fondateur Sharesub</h4>
-                  </div>
-                </div><!-- End testimonial item -->
-    
-                <div class="swiper-slide">
-                  <div class="testimonial-item" data-aos="fade-up" data-aos-delay="200">
-                    <p>
-                      <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                      Djiby a su s'approprier l'environnement technique complexe dans lequel il a évolue, et particulièrement sur les
-                      technologies VMware (Loginsight, vROPS).
-                      Cela lui a permis de mettre en place des indicateurs pour construire les tableaux de bord de pilotage de l'activité.
-                      Il a également contribué avec d'autres membres de l'équipe à mettre en œuvre la stratégie de tests d'intégration avec Jenkins pour sécuriser le service.
-                      Djiby a fait preuve d'autonomie sur les chantiers qui lui ont été confiées, tout en demandant de l'aide lorsque cela a été nécessaire pour avancer.
-                      En qualité d'expert technique Cloud, je tiens à dire que ce fût un réel plaisir de collaborer avec Djiby notamment pour son serieux, ses compétences techniques et ses qualités relationnelles.
-                      <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                    </p>
-                    <img src="assets/img/testimonials/benoit.jpeg" class="testimonial-img" alt="">
-                    <h3>Benoit GAUSSEIN</h3>
-                    <h4>Expert Technique Cloud | OPEN - AMOE LOT 4</h4>
-                  </div>
-                </div><!-- End testimonial item -->
-    
-                <div class="swiper-slide">
-                  <div class="testimonial-item" data-aos="fade-up" data-aos-delay="300">
-                    <p>
-                      <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                      Djiby n’a pas attendu la fin de ses études pour être un vrai professionnel. Si vous recherchez un collaborateur sérieux, rigoureux et force de proposition c’est votre homme ! 
-                      Lors des projets auxquelles nous avons participé ensemble, il a su allier son intelligence et d’excellentes capacités techniques, le tout avec une très forte compétence humaine. 
-                      Si je lançais une structure il serait celui que je chercherai à embarquer avec moi dans l’aventure sans hésitation !
-                      <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                    </p>
-                    <img src="assets/img/testimonials/ismael.jpeg" class="testimonial-img" alt="">
-                    <h3>Ismaël Nimzil</h3>
-                    <h4>Cyber Security Engineer</h4>
-                  </div>
-                </div><!-- End testimonial item -->
-
-                <div class="swiper-slide">
-                  <div class="testimonial-item" data-aos="fade-up" data-aos-delay="300">
-                    <p>
-                      <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                      Djiby est un collaborateur très sérieux, efficace et appliqué dans son travail. Il a une grande capacité à résoudre les problèmes en combinant ses compétences en matière de communication et de travail en équipe.
-                      Il apporte son soutien à ses collègues dans l'accomplissement de leurs tâches en offrant régulièrement des critiques constructives tout en étant ouvert à la critique sur son propre travail dans l'optique de s'améliorer constamment.
-                      Il propose souvent des idées et des projets pour faciliter son travail quotidien et celui de ses collègues.
-                      Dans le cadre de ma collaboration avec Djiby, il fait preuve d'une excellente capacité à coordonner plusieurs tâches et projets simultanément et à absorber un grand flux de travail dans les délais impartis, il doit ça à son excellente capacité à gérer son temps et à sa recherche constante des moyens d'être plus efficace et plus productive.
-                      Il a ainsi contribuer de manière significative à la croissance de l'entreprise.
-                      <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                    </p>
-                    <img src="assets/img/testimonials/raouf.PNG" class="testimonial-img" alt="">
-                    <h3>Raouf Hamitou</h3>
-                    <h4>Responsable des opérations carsitters</h4>
-                  </div>
-                </div><!-- End testimonial item -->
-    
-                <div class="swiper-slide">
-                  <div class="testimonial-item" data-aos="fade-up" data-aos-delay="100">
-                    <p>
-                      <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                      Djiby a fait preuve d'un engagement sans faille, d'une expertise technique remarquable et d'un esprit d'innovation constant. Sa capacité à résoudre des problèmes complexes, à collaborer efficacement et à trouver des solutions pratiques a été une véritable valeur ajoutée à chaque projet sur lesquels nous avons pu collaborer ensemble. Djiby est également une personne avec qui il est très agréable de travailler de par sa bonne humeur et sa rigueur.
-                      <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                    </p>
-                    <img src="assets/img/testimonials/pierre.jpeg" class="testimonial-img" alt="">
-                    <h3>Pierre JOUANNO</h3>
-                    <h4>Ingénieur Informatique, Réseau, Cybersécurité</h4>
-                  </div>
-                </div><!-- End testimonial item -->
-    
-                <div class="swiper-slide">
-                  <div class="testimonial-item" data-aos="fade-up" data-aos-delay="400">
-                    <p>
-                      <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                      J'ai très apprécié de travailler avec Djiby, c'est une personne qui s'investit, qui aime travailler en équipe et faire de la technique.
-                      Il a beaucoup contribué au sein de notre équipe en prenant divers sujets comme les rapports d'activités et qui lui ont permis de monter en compétence avec les outils VMware (Loginsight et vROPS), et ces intérêts pour les outillages de devops lui ont permis de développer les compétences des tests :
-                      • Tests unitaires
-                      • Tests d'intégrations
-                      • Tests de non-régressions
-                      • Tests d'interface
-                      Au sein de notre service d'automatisation, le travail qu'il a effectué au niveau des tests, cela nous a permis de délivrer des services plus sereinement et avec de la qualité.
-                      <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                    </p>
-                    <img src="assets/img/testimonials/nicolas.webp" class="testimonial-img" alt="">
-                    <h3>Nicolas PANDJATCHARAM</h3>
-                    <h4>Expert Technique Cloud | OPEN - AMOE LOT 4</h4>
-                  </div>
-                </div><!-- End testimonial item -->
-    
-              </div>
-              <div class="swiper-pagination"></div>
-            </div>
-    
           </div>
-        </section><!-- End Testimonials Section -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-    <!-- ======= Contact Section ======= -->
-    <section id="contact" class="contact">
-      <div class="container">
+<!-- ── MODAL: TEOLIA ── -->
+<div class="pmodal-overlay" id="modal-teolia">
+  <div class="pmodal">
+    <button class="pmodal-close" onclick="closeModal('modal-teolia')"><i class="fa fa-times"></i></button>
+    <img src="assets/img/portfolio/teolia.svg" class="pmodal-banner-svg" alt="TEOLIA – Platform Engineering">
+    <div class="pmodal-body">
+      <div class="pmodal-header">
+        <div class="pmodal-badge" style="background:rgba(96,165,250,.08);border-color:rgba(96,165,250,.2);color:#93c5fd"><i class="fa fa-building"></i> TEOLIA</div>
+        <h2 class="pmodal-title">Platform Engineering & Teo School</h2>
+        <p class="pmodal-subtitle">Self-service Cloud Azure & AWS — automatisation bout-en-bout</p>
+      </div>
+      <div class="pmodal-grid">
+        <div class="pmodal-content">
+          <h3>Mission 1 – Platform Engineering (Jan – Avr 2024)</h3>
+          <p>Projet de platform engineering visant à simplifier et automatiser le déploiement de ressources Cloud. Objectif : permettre aux équipes de faire des demandes automatisées d'infrastructure via une interface web.</p>
+          <ul>
+            <li>Développement frontend HTML/CSS/JavaScript pour interface de demande de ressources Cloud.</li>
+            <li>Provisionnement Terraform sur Azure (Remote Backend Azure Blob Storage).</li>
+            <li>Déploiement sur Azure Static Web Apps avec CI/CD via GitHub Actions.</li>
+            <li>Implémentation d'authentification SSO avec OpenID Connect.</li>
+            <li>Azure Functions : deploy_ressource (provisioning), postmessage (Teams webhook), sendmail (notifications).</li>
+            <li>Migration Azure vers AWS : AWS Amplify, Lambda, API Gateway, infrastructure Terraform (VPC, EC2).</li>
+          </ul>
+          <h3>Mission 2 – Teo School DevOps (Sep – Nov 2023)</h3>
+          <p>Programme de formation de 2 mois – mise en place d'une usine logicielle CI/CD complète de bout en bout.</p>
+          <ul>
+            <li>Provisionnement Azure avec Terraform : cluster AKS, ACR, Azure Storage Account.</li>
+            <li>Déploiement micro-services Kubernetes (manifests, ArgoCD, HPA).</li>
+            <li>Création et optimisation de Dockerfiles, analyse sécurité avec Trivy.</li>
+            <li>Pipelines CI/CD GitHub Actions end-to-end (build, test, deploy, monitoring).</li>
+            <li>Déploiement Prometheus et Grafana avec Helm.</li>
+          </ul>
+        </div>
+        <div>
+          <div class="pmodal-info">
+            <h5>Informations</h5>
+            <div class="pmodal-info-item"><label>Entreprise</label><span>TEOLIA</span></div>
+            <div class="pmodal-info-item"><label>Rôle</label><span>Ingénieur DevOps</span></div>
+            <div class="pmodal-info-item"><label>Période</label><span>Septembre 2023 – Avril 2024</span></div>
+            <div class="pmodal-info-item"><label>Stack technique</label></div>
+            <div class="pmodal-stack">
+              <span>HTML/CSS/JS</span><span>Terraform</span><span>Azure Static Web Apps</span>
+              <span>Azure Functions</span><span>GitHub Actions</span><span>AWS Amplify</span>
+              <span>Lambda</span><span>API Gateway</span><span>Kubernetes AKS</span>
+              <span>ArgoCD</span><span>Docker</span><span>Prometheus</span><span>Grafana</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-        <div class="section-title">
-          <h2>Contact</h2>
+<!-- ── MODAL: EDF ── -->
+<div class="pmodal-overlay" id="modal-edf">
+  <div class="pmodal wide">
+    <button class="pmodal-close" onclick="closeModal('modal-edf')"><i class="fa fa-times"></i></button>
+    <img src="assets/img/portfolio/edf-mycloud.svg" class="pmodal-banner-svg" alt="EDF – DevOps MyCloud">
+    <div class="pmodal-body">
+      <div class="pmodal-header">
+        <div class="pmodal-badge"><i class="fa fa-building"></i> EDF SA · Électricité de France · 2020 – 2023</div>
+        <h2 class="pmodal-title">DevOps MyCloud – Tests Automatisés</h2>
+        <p class="pmodal-subtitle">Cloud privé XaaS · Tests E2E automatisés · Jenkins CI · Terraform · Selenium · SAFe · Équipe 17 personnes</p>
+      </div>
+
+      <div class="pmodal-grid">
+        <div class="pmodal-content">
+          <p>MyCloud est le portail Cloud privé d'EDF permettant aux utilisateurs d'accéder à des services Cloud XaaS (VM, Load Balancer, DNS, CaaS, DBaaS). Ma mission sur 3 ans consistait à mettre en place des tests automatisés pour valider la fiabilité des workflows, la conception et publication des catalogues, et assurer un monitoring complet de la chaîne de production — réduisant la validation d'une montée de version vRA à moins de 2 heures en un clic.</p>
+
+          <h3><i class="fa fa-flask" style="color:#00d4ff;margin-right:8px"></i>Tests automatisés vRO & VMs</h3>
+          <ul>
+            <li>Workflows de test JavaScript dans vRealize Orchestrator pour valider les actions vRO côté serveur.</li>
+            <li>Fonctions pytest Python et pipelines Jenkins pour automatiser le lancement des tests sur déclencheur GitLab.</li>
+            <li>Templates Terraform décrivant les configurations VMs de test, Testinfra pour vérifier réseau et fichiers système.</li>
+            <li>Ansible pour le changement de mots de passe Linux post-déploiement, intégré dans le pipeline Jenkins.</li>
+          </ul>
+
+          <h3><i class="fa fa-desktop" style="color:#7c3aed;margin-right:8px"></i>Tests IHM Selenium & Catalog vRA</h3>
+          <ul>
+            <li>Classes Workspace et ServiceBroker pour l'authentification et la navigation dans le portail vRA.</li>
+            <li>Selenium WebDriver pour les interactions IHM : déploiement de services, vérifications fonctionnelles end-to-end.</li>
+            <li>Création de blueprints et catalogue items pour les déploiements de VMs standardisés.</li>
+            <li>Pipeline Code Stream pour relancer automatiquement tous les tests lors d'une mise à jour vRA.</li>
+          </ul>
+
+          <h3><i class="fa fa-chart-line" style="color:#10b981;margin-right:8px"></i>Monitoring & Reporting</h3>
+          <ul>
+            <li>Indicateurs de pilotage sur LogInsight : supervision des déploiements et détection d'anomalies.</li>
+            <li>Tableaux de bord vROPS pour la supervision de l'infrastructure vSphere sous-jacente.</li>
+            <li>Reporting hebdomadaire automatisé via Selenium + Jenkins : génération et envoi du rapport MyCloud.</li>
+            <li><strong>Résultat clé :</strong> validation d'une montée de version vRA complète en moins de 2 heures, en un seul clic.</li>
+          </ul>
+
+          <h3><i class="fa fa-road" style="color:#f59e0b;margin-right:8px"></i>Parcours EDF</h3>
+          <ul>
+            <li><strong>Stagiaire DevOps</strong> (Sep 2020 – Mar 2021) : développement des premiers tests unitaires/non-régression, mise en place des dashboards LogInsight et vROPS.</li>
+            <li><strong>CDD DevOps</strong> (Mar – Août 2021) : tests unitaires Cloud Templates DNS/Oracle, automatisation du pipeline Jenkins bout-en-bout.</li>
+            <li><strong>Alternant DevOps</strong> (Sep 2021 – Sep 2023) : tests automatisés complets (unitaires, intégration, E2E), Selenium IHM, développement du VLAN validator pour MyCloud.</li>
+          </ul>
         </div>
 
-        <div class="row" data-aos="fade-in">
+        <div>
+          <div class="pmodal-info">
+            <h5>Informations</h5>
+            <div class="pmodal-info-item"><label>Entreprise</label><span>EDF SA (Électricité de France)</span></div>
+            <div class="pmodal-info-item"><label>Entité</label><span>DSIT / IT-O / ICS / myCloud</span></div>
+            <div class="pmodal-info-item"><label>Rôle</label><span>Ingénieur DevOps</span></div>
+            <div class="pmodal-info-item"><label>Contrat</label><span>Stagiaire → CDD → Alternant</span></div>
+            <div class="pmodal-info-item"><label>Période</label><span>Sep 2020 – Sep 2023 (3 ans)</span></div>
+            <div class="pmodal-info-item"><label>Équipe</label><span>9 internes + 8 Rennes (17 total)</span></div>
+            <div class="pmodal-info-item"><label>Méthodo</label><span>SAFe</span></div>
+          </div>
 
-          <div class="col-lg-5 d-flex align-items-stretch">
-            <div class="info">
-              <div class="address">
-                <i class="bi bi-geo-alt"></i>
-                <h4>Adresse :</h4>
-                <p>Drancy, Île-de-France</p>
-              </div>
-
-              <div class="email">
-                <i class="bi bi-envelope"></i>
-                <h4>Email:</h4>
-                <p>djibyth714@gmail.com</p>
-              </div>
-
-              <!-- <div class="phone">
-                <i class="bi bi-phone"></i>
-                <h4>Téléphone :</h4>
-                <p>+337 00 00 00 00</p>
-              </div>
-              <div id="map"></div> -->
-
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10524.0!2d2.4457!3d48.9181!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66f1234567890%3A0x40c6d7b160f3b70!2sDrancy%2C%20France!5e0!3m2!1sfr!2sfr" frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe> 
+          <div class="pmodal-info" style="margin-top:20px;">
+            <h5>Stack Technique</h5>
+            <div class="pmodal-stack" style="margin-top:10px;">
+              <span>Jenkins</span><span>GitLab</span><span>Terraform</span><span>Ansible</span>
+              <span>Python</span><span>Pytest</span><span>Testinfra</span><span>Selenium</span>
+              <span>JavaScript</span><span>vRA</span><span>vRO</span><span>vROPS</span>
+              <span>LogInsight</span><span>vSphere</span><span>Confluence</span><span>JIRA</span><span>SAFe</span>
             </div>
-
           </div>
 
-          <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
-              <div class="row">
-                <div class="form-group col-md-6">
-                  <label for="name">Nom</label>
-                  <input type="text" name="name" class="form-control" id="name" placeholder="Votre nom" title="Nom" required>
-                </div>
-                <div class="form-group col-md-6">
-                  <label for="email">Email</label>
-                  <input type="email" class="form-control" name="email" id="email" placeholder="Votre adresse email" title="Email" required>
-                </div>
+          <div class="pmodal-info" style="margin-top:20px;background:rgba(0,212,255,.05);border:1px solid rgba(0,212,255,.15);border-radius:12px;padding:18px;">
+            <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;">
+              <img src="assets/img/portfolio/EDFLogo.png" alt="EDF" style="width:52px;height:52px;border-radius:8px;object-fit:contain;background:#fff;padding:4px;">
+              <div>
+                <div style="font-weight:700;color:#fff;font-size:.95rem;">EDF SA</div>
+                <div style="font-size:.8rem;color:#8ba3c7;">1er électricien mondial</div>
               </div>
-              <div class="form-group">
-                <label for="subject">Objet</label>
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="Objet de votre message" title="Objet" required>
-              </div>
-              <div class="form-group">
-                <label for="message">Message</label>
-                <textarea class="form-control" name="message" id="message" rows="10" placeholder="Votre message..." title="Message" required></textarea>
-              </div>
-              <div class="my-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
-              </div>
-              <!--<div class="text-center"><button type="submit">Send Message</button></div>-->
-              <div class="text-center"><button
-                onClick="location.href='mailto:djibyth714@gmail.com!!!!'"
-                type="submit">Send Message</button>
-              </div>
-              
-            </form>
+            </div>
+            <div style="background:rgba(0,212,255,.08);border-radius:8px;padding:12px;text-align:center;">
+              <div style="font-size:1.6rem;font-weight:800;color:#00d4ff;">&lt; 2h</div>
+              <div style="font-size:.8rem;color:#8ba3c7;margin-top:2px;">Validation montée de version vRA</div>
+              <div style="font-size:.75rem;color:#6ee7b7;margin-top:4px;">grâce à l'automatisation complète</div>
+            </div>
           </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
+<!-- ── MODAL: Denta Fouta Production ── -->
+<div class="pmodal-overlay" id="modal-dfprod">
+  <div class="pmodal wide">
+    <button class="pmodal-close" onclick="closeModal('modal-dfprod')"><i class="fa fa-times"></i></button>
+    <img src="assets/img/portfolio/dfprod.svg" class="pmodal-banner-svg" alt="Denta Fouta Production">
+    <div class="pmodal-body">
+      <div class="pmodal-header">
+        <div class="pmodal-badge" style="background:rgba(124,58,237,.08);border-color:rgba(124,58,237,.2);color:#c4b5fd"><i class="fa fa-music"></i> Projet Personnel · 2018 – Présent</div>
+        <h2 class="pmodal-title">Denta Fouta Production</h2>
+        <p class="pmodal-subtitle">Studio audiovisuel · Production musicale · Management artistique · Festival F2H (Fouta Hors Frontières)</p>
+      </div>
+
+      <div class="pmodal-grid">
+        <div class="pmodal-content">
+          <p>Denta Fouta Production (D.F. PROD) est un projet entrepreneurial personnel fondé en 2018 dans le domaine audiovisuel et musical. Né d'une passion pour la musique et la culture africaine, ce projet regroupe un studio d'enregistrement professionnel, la production et distribution de contenus musicaux, le management d'artistes émergents, et l'organisation du Festival F2H — Fouta Hors Frontières.</p>
+
+          <h3><i class="fa fa-microphone" style="color:#7c3aed;margin-right:8px"></i>Studio & Production Musicale</h3>
+          <ul>
+            <li>Direction artistique et production musicale : enregistrement, mixage et mastering en studio.</li>
+            <li>Gestion du studio d'enregistrement et du parc de matériel audiovisuel professionnel.</li>
+            <li>Production de singles, albums et contenus musicaux pour artistes locaux et diaspora.</li>
+            <li>Réalisation de clips vidéo et contenus audiovisuels promotionnels.</li>
+          </ul>
+
+          <h3><i class="fa fa-star" style="color:#f59e0b;margin-right:8px"></i>Management Artistique</h3>
+          <ul>
+            <li>Management d'artistes : accompagnement, développement de carrière et booking.</li>
+            <li>Négociation de contrats et partenariats avec labels et plateformes de distribution.</li>
+            <li>Stratégie de communication digitale et promotion sur les réseaux sociaux.</li>
+          </ul>
+
+          <h3><i class="fa fa-calendar-star" style="color:#c084fc;margin-right:8px"></i>Festival F2H – Fouta Hors Frontières</h3>
+          <ul>
+            <li>Organisation et logistique complète du Festival F2H, événement culturel dédié à la culture peule et africaine.</li>
+            <li>Coordination artistique, gestion des prestataires et sécurité des événements.</li>
+            <li>Production de la Caravane Culturelle : tournée culturelle itinérante dans plusieurs villes.</li>
+            <li>Couverture photo et vidéo des événements pour archives et promotion.</li>
+          </ul>
+
+          <!-- Photo gallery -->
+          <h3><i class="fa fa-images" style="color:#00d4ff;margin-right:8px"></i>Galerie</h3>
+          <script>
+            var dfGallery = [
+              'assets/img/portfolio/studio.png',
+              'assets/img/portfolio/JAQUETT.jpeg',
+              'assets/img/portfolio/caravane1.jpeg',
+              'assets/img/portfolio/caravane2.jpeg',
+              'assets/img/portfolio/caravane3.jpeg',
+              'assets/img/portfolio/caravane4.jpeg',
+              'assets/img/portfolio/caravane5.jpeg',
+              'assets/img/portfolio/caravane6.jpeg',
+              'assets/img/portfolio/talibe1.jpeg',
+              'assets/img/portfolio/talibe3.jpeg',
+              'assets/img/portfolio/talibe3_1.jpeg',
+              'assets/img/portfolio/ecoute.png',
+              'assets/img/portfolio/ecoute2.png',
+              'assets/img/portfolio/Managementportfolio.jpeg',
+              'assets/img/portfolio/comp_tech_music1.png',
+              'assets/img/portfolio/comp_tech_music2.png',
+              'assets/img/portfolio/GD.jpeg'
+            ];
+          </script>
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px;">
+            <img src="assets/img/portfolio/studio.png" alt="Studio" class="lb-thumb" onclick="lbOpen(dfGallery,0)" style="width:100%;border-radius:8px;object-fit:cover;aspect-ratio:4/3;">
+            <img src="assets/img/portfolio/JAQUETT.jpeg" alt="Jaquette" class="lb-thumb" onclick="lbOpen(dfGallery,1)" style="width:100%;border-radius:8px;object-fit:cover;aspect-ratio:4/3;">
+            <img src="assets/img/portfolio/caravane1.jpeg" alt="Caravane 1" class="lb-thumb" onclick="lbOpen(dfGallery,2)" style="width:100%;border-radius:8px;object-fit:cover;aspect-ratio:4/3;">
+            <img src="assets/img/portfolio/caravane2.jpeg" alt="Caravane 2" class="lb-thumb" onclick="lbOpen(dfGallery,3)" style="width:100%;border-radius:8px;object-fit:cover;aspect-ratio:4/3;">
+            <img src="assets/img/portfolio/caravane3.jpeg" alt="Caravane 3" class="lb-thumb" onclick="lbOpen(dfGallery,4)" style="width:100%;border-radius:8px;object-fit:cover;aspect-ratio:4/3;">
+            <img src="assets/img/portfolio/caravane4.jpeg" alt="Caravane 4" class="lb-thumb" onclick="lbOpen(dfGallery,5)" style="width:100%;border-radius:8px;object-fit:cover;aspect-ratio:4/3;">
+            <img src="assets/img/portfolio/caravane5.jpeg" alt="Caravane 5" class="lb-thumb" onclick="lbOpen(dfGallery,6)" style="width:100%;border-radius:8px;object-fit:cover;aspect-ratio:4/3;">
+            <img src="assets/img/portfolio/caravane6.jpeg" alt="Caravane 6" class="lb-thumb" onclick="lbOpen(dfGallery,7)" style="width:100%;border-radius:8px;object-fit:cover;aspect-ratio:4/3;">
+            <img src="assets/img/portfolio/talibe1.jpeg" alt="Festival" class="lb-thumb" onclick="lbOpen(dfGallery,8)" style="width:100%;border-radius:8px;object-fit:cover;aspect-ratio:4/3;">
+            <img src="assets/img/portfolio/talibe3.jpeg" alt="Talibé 3" class="lb-thumb" onclick="lbOpen(dfGallery,9)" style="width:100%;border-radius:8px;object-fit:cover;aspect-ratio:4/3;">
+            <img src="assets/img/portfolio/talibe3_1.jpeg" alt="Talibé 3-1" class="lb-thumb" onclick="lbOpen(dfGallery,10)" style="width:100%;border-radius:8px;object-fit:cover;aspect-ratio:4/3;">
+            <img src="assets/img/portfolio/ecoute.png" alt="Écoute" class="lb-thumb" onclick="lbOpen(dfGallery,11)" style="width:100%;border-radius:8px;object-fit:cover;aspect-ratio:4/3;">
+            <img src="assets/img/portfolio/ecoute2.png" alt="Écoute 2" class="lb-thumb" onclick="lbOpen(dfGallery,12)" style="width:100%;border-radius:8px;object-fit:cover;aspect-ratio:4/3;">
+            <img src="assets/img/portfolio/Managementportfolio.jpeg" alt="Management" class="lb-thumb" onclick="lbOpen(dfGallery,13)" style="width:100%;border-radius:8px;object-fit:cover;aspect-ratio:4/3;">
+            <img src="assets/img/portfolio/comp_tech_music1.png" alt="Compétences Music 1" class="lb-thumb" onclick="lbOpen(dfGallery,14)" style="width:100%;border-radius:8px;object-fit:cover;aspect-ratio:4/3;">
+            <img src="assets/img/portfolio/comp_tech_music2.png" alt="Compétences Music 2" class="lb-thumb" onclick="lbOpen(dfGallery,15)" style="width:100%;border-radius:8px;object-fit:cover;aspect-ratio:4/3;">
+            <img src="assets/img/portfolio/GD.jpeg" alt="GD" class="lb-thumb" onclick="lbOpen(dfGallery,16)" style="width:100%;border-radius:8px;object-fit:cover;aspect-ratio:4/3;">
+          </div>
         </div>
 
+        <div>
+          <div class="pmodal-info">
+            <h5>Informations</h5>
+            <div class="pmodal-info-item"><label>Structure</label><span>Denta Fouta Production (D.F. PROD)</span></div>
+            <div class="pmodal-info-item"><label>Rôle</label><span>Fondateur & Directeur Artistique</span></div>
+            <div class="pmodal-info-item"><label>Depuis</label><span>2018 – Présent</span></div>
+            <div class="pmodal-info-item"><label>Domaine</label><span>Audiovisuel · Musique · Événementiel</span></div>
+            <div class="pmodal-info-item"><label>Festival</label><span>F2H – Fouta Hors Frontières</span></div>
+            <div class="pmodal-info-item"><label>Instagram</label><span><a href="https://www.instagram.com/sallbyrecord/" target="_blank" style="color:#c4b5fd">@sallbyrecord</a></span></div>
+            <div class="pmodal-info-item"><label>Facebook</label><span><a href="https://www.facebook.com/Denta.Fouta.Production/" target="_blank" style="color:#93c5fd">Denta Fouta Production</a></span></div>
+          </div>
+
+          <div class="pmodal-info" style="margin-top:20px;">
+            <h5>Activités</h5>
+            <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;">
+              <span style="background:rgba(124,58,237,.12);border:1px solid rgba(124,58,237,.25);color:#c4b5fd;padding:5px 12px;border-radius:20px;font-size:.8rem;">🎙️ Studio</span>
+              <span style="background:rgba(245,158,11,.1);border:1px solid rgba(245,158,11,.25);color:#fcd34d;padding:5px 12px;border-radius:20px;font-size:.8rem;">🎤 Festival F2H</span>
+              <span style="background:rgba(192,132,252,.1);border:1px solid rgba(192,132,252,.25);color:#c4b5fd;padding:5px 12px;border-radius:20px;font-size:.8rem;">🎭 Caravane</span>
+              <span style="background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.25);color:#6ee7b7;padding:5px 12px;border-radius:20px;font-size:.8rem;">🎵 Production</span>
+              <span style="background:rgba(0,212,255,.1);border:1px solid rgba(0,212,255,.25);color:#00d4ff;padding:5px 12px;border-radius:20px;font-size:.8rem;">📹 Clips vidéo</span>
+              <span style="background:rgba(239,68,68,.1);border:1px solid rgba(239,68,68,.25);color:#fca5a5;padding:5px 12px;border-radius:20px;font-size:.8rem;">🌍 Management</span>
+            </div>
+          </div>
+
+          <div class="pmodal-info" style="margin-top:20px;background:rgba(124,58,237,.06);border:1px solid rgba(124,58,237,.15);border-radius:12px;padding:18px;">
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">
+              <img src="assets/img/portfolio/logoDFProd.jpeg" alt="Logo" style="width:48px;height:48px;border-radius:8px;object-fit:contain;background:#fff;">
+              <div>
+                <div style="font-weight:700;color:#fff;font-size:.95rem;">D.F. PROD</div>
+                <div style="font-size:.8rem;color:#8ba3c7;">Denta Fouta Production</div>
+              </div>
+            </div>
+            <p style="font-size:.82rem;color:#8ba3c7;margin:0;line-height:1.6;">Un projet culturel qui valorise la musique et la culture peule à travers la création, le partage et le rassemblement.</p>
+          </div>
+        </div>
       </div>
-    </section><!-- End Contact Section -->
+    </div>
+  </div>
+</div>
 
-  </main><!-- End #main -->
+<!-- ── MODAL: Frise de Parcours ── -->
+<div class="pmodal-overlay" id="modal-frise">
+  <div class="pmodal wide">
+    <button class="pmodal-close" onclick="closeModal('modal-frise')"><i class="fa fa-times"></i></button>
+    <div class="pmodal-body" style="padding:32px 32px 28px;">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;flex-wrap:wrap;gap:12px;">
+        <div>
+          <div class="pmodal-badge"><i class="fa fa-chart-bar"></i> Chronologie</div>
+          <h2 class="pmodal-title" style="margin-top:8px;">Frise de Parcours 2015 → 2026</h2>
+        </div>
+        <a href="frise_sall_djiby_oumar.pdf" target="_blank" class="btn-ghost" style="font-size:.85rem;padding:10px 20px;">
+          <i class="fa fa-file-pdf"></i> Télécharger le PDF
+        </a>
+      </div>
+      <div class="frise-container">
+        <img src="assets/img/FRISE_NEW.svg" alt="Frise de parcours Djiby Oumar SALL">
+      </div>
+    </div>
+  </div>
+</div>
 
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+<!-- ── SCRIPTS ── -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.1.0/dist/typed.umd.js"></script>
 
-  <!-- Vendor JS Files -->
-  
-  <script src="assets/vendor/purecounter/purecounter.js"></script>
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/typed.js/typed.min.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
+<script>
+  // AOS
+  AOS.init({ duration: 700, once: true, offset: 60 });
 
-  <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
+  // Mobile nav
+  const toggle = document.getElementById('mobileToggle');
+  const links  = document.getElementById('navLinks');
+  toggle.addEventListener('click', () => links.classList.toggle('open'));
+  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
 
+  // Typed.js
+  new Typed('#typed', {
+    strings: ['Ingénieur DevOps', 'Cloud & Infrastructure Engineer', 'Kubernetes & GitOps Expert', 'Terraform & IaC Specialist'],
+    typeSpeed: 60, backSpeed: 30, loop: true, backDelay: 2000
+  });
 
-  	<!-- jQuery -->
-	<script src="js/jquery.min.js"></script>
-	<!-- jQuery Easing -->
-	<script src="js/jquery.easing.1.3.js"></script>
-	<!-- Bootstrap -->
-	<script src="js/bootstrap.min.js"></script>
-	<!-- Waypoints -->
-	<script src="js/jquery.waypoints.min.js"></script>
-	<!-- Flexslider -->
-	<script src="js/jquery.flexslider-min.js"></script>
-	<!-- Owl carousel -->
-	<script src="js/owl.carousel.min.js"></script>
-	<!-- Counters -->
-	<script src="js/jquery.countTo.js"></script>
-	
-	
-	<!-- MAIN JS -->
-	<!-- <script src="js/main.js"></script> -->
+  // Counter animation
+  function animateCounters() {
+    document.querySelectorAll('.counter').forEach(el => {
+      const target = +el.dataset.target;
+      const dur = 1500;
+      const step = target / (dur / 16);
+      let cur = 0;
+      const timer = setInterval(() => {
+        cur = Math.min(cur + step, target);
+        el.textContent = Math.floor(cur);
+        if (cur >= target) clearInterval(timer);
+      }, 16);
+    });
+  }
 
+  const statsSection = document.getElementById('stats');
+  let counted = false;
+  const observer = new IntersectionObserver(entries => {
+    if (entries[0].isIntersecting && !counted) { counted = true; animateCounters(); }
+  }, { threshold: .3 });
+  observer.observe(statsSection);
 
+  // Active nav link on scroll
+  const sections = document.querySelectorAll('section[id]');
+  const navAnchors = document.querySelectorAll('.nav-links a');
+  window.addEventListener('scroll', () => {
+    let cur = '';
+    sections.forEach(s => { if (window.scrollY >= s.offsetTop - 120) cur = s.id; });
+    navAnchors.forEach(a => {
+      a.classList.remove('active');
+      if (a.getAttribute('href') === '#' + cur) a.classList.add('active');
+    });
 
+    // Back to top
+    document.getElementById('back-top').classList.toggle('visible', window.scrollY > 400);
+  });
 
+  // Swiper testimonials
+  new Swiper('.testimonials-swiper', {
+    loop: true, spaceBetween: 24,
+    slidesPerView: 1,
+    breakpoints: { 768: { slidesPerView: 2 }, 1100: { slidesPerView: 3 } },
+    pagination: { el: '.swiper-pagination', clickable: true },
+    autoplay: { delay: 5000, disableOnInteraction: false },
+  });
+
+  // ── Lightbox ──
+  let lbImages = [], lbIndex = 0;
+  function lbOpen(imgs, idx) {
+    lbImages = imgs; lbIndex = idx;
+    lbShow();
+    document.getElementById('lb-overlay').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function lbShow() {
+    document.getElementById('lb-img').src = lbImages[lbIndex];
+    document.getElementById('lb-counter').textContent = (lbIndex + 1) + ' / ' + lbImages.length;
+  }
+  function lbClose() {
+    document.getElementById('lb-overlay').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  function lbPrev() { lbIndex = (lbIndex - 1 + lbImages.length) % lbImages.length; lbShow(); }
+  function lbNext() { lbIndex = (lbIndex + 1) % lbImages.length; lbShow(); }
+  document.getElementById('lb-overlay').addEventListener('click', function(e) {
+    if (e.target === this) lbClose();
+  });
+  document.addEventListener('keydown', function(e) {
+    if (!document.getElementById('lb-overlay').classList.contains('open')) return;
+    if (e.key === 'Escape') lbClose();
+    if (e.key === 'ArrowLeft') lbPrev();
+    if (e.key === 'ArrowRight') lbNext();
+  });
+
+  // ── Modal system ──
+  function openModal(id) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    el.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    el.scrollTop = 0;
+  }
+  function closeModal(id) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    el.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  // Close on overlay click
+  document.querySelectorAll('.pmodal-overlay').forEach(overlay => {
+    overlay.addEventListener('click', function(e) {
+      if (e.target === this) closeModal(this.id);
+    });
+  });
+  // Close on Escape key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      document.querySelectorAll('.pmodal-overlay.open').forEach(el => closeModal(el.id));
+    }
+  });
+
+  // Contact form — open mail client
+  function handleContactSubmit(e) {
+    e.preventDefault();
+    const subject = document.getElementById('subject').value;
+    const name    = document.getElementById('name').value;
+    const msg     = document.getElementById('message').value;
+    window.location.href = `mailto:djibyth714@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent('De : ' + name + '\n\n' + msg)}`;
+  }
+</script>
+
+<!-- ── LIGHTBOX ── -->
+<div id="lb-overlay">
+  <button id="lb-close" onclick="lbClose()"><i class="fa fa-times"></i></button>
+  <button id="lb-prev" onclick="lbPrev()"><i class="fa fa-chevron-left"></i></button>
+  <img id="lb-img" src="" alt="">
+  <button id="lb-next" onclick="lbNext()"><i class="fa fa-chevron-right"></i></button>
+  <div id="lb-counter"></div>
+</div>
 </body>
-
 </html>

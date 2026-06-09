@@ -1,0 +1,145 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#050a18"/>
+      <stop offset="100%" style="stop-color:#0d1b35"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#00d4ff"/>
+      <stop offset="100%" style="stop-color:#7c3aed"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="675" fill="url(#bg)"/>
+
+  <!-- Grid -->
+  <g opacity="0.06" stroke="#00d4ff" stroke-width="1">
+    <line x1="0" y1="67" x2="1200" y2="67"/>
+    <line x1="0" y1="134" x2="1200" y2="134"/>
+    <line x1="0" y1="201" x2="1200" y2="201"/>
+    <line x1="0" y1="268" x2="1200" y2="268"/>
+    <line x1="0" y1="335" x2="1200" y2="335"/>
+    <line x1="0" y1="402" x2="1200" y2="402"/>
+    <line x1="0" y1="469" x2="1200" y2="469"/>
+    <line x1="0" y1="536" x2="1200" y2="536"/>
+    <line x1="0" y1="603" x2="1200" y2="603"/>
+    <line x1="120" y1="0" x2="120" y2="675"/>
+    <line x1="240" y1="0" x2="240" y2="675"/>
+    <line x1="360" y1="0" x2="360" y2="675"/>
+    <line x1="480" y1="0" x2="480" y2="675"/>
+    <line x1="600" y1="0" x2="600" y2="675"/>
+    <line x1="720" y1="0" x2="720" y2="675"/>
+    <line x1="840" y1="0" x2="840" y2="675"/>
+    <line x1="960" y1="0" x2="960" y2="675"/>
+    <line x1="1080" y1="0" x2="1080" y2="675"/>
+  </g>
+
+  <!-- Glow top center -->
+  <ellipse cx="600" cy="0" rx="500" ry="200" fill="#00d4ff" opacity="0.04"/>
+
+  <!-- Company badge -->
+  <rect x="60" y="56" width="130" height="32" rx="16" fill="rgba(0,212,255,0.1)" stroke="rgba(0,212,255,0.3)" stroke-width="1"/>
+  <text x="125" y="77" font-family="Inter,sans-serif" font-size="13" fill="#00d4ff" text-anchor="middle" font-weight="600">SACEM · 2025</text>
+
+  <!-- Title -->
+  <text x="60" y="145" font-family="Inter,sans-serif" font-size="52" fill="white" font-weight="800" letter-spacing="-2">Kubernetes</text>
+  <text x="60" y="205" font-family="Inter,sans-serif" font-size="52" fill="url(#accent)" font-weight="800" letter-spacing="-2">GitOps Platform</text>
+
+  <!-- Subtitle -->
+  <text x="60" y="250" font-family="Inter,sans-serif" font-size="17" fill="rgba(139,163,199,0.9)" font-weight="400">Infrastructure automatisée · vSphere · Terraform · FluxCD</text>
+
+  <!-- Pipeline diagram -->
+  <!-- Box 1: Git -->
+  <rect x="60" y="295" width="140" height="64" rx="10" fill="rgba(255,255,255,0.04)" stroke="rgba(0,212,255,0.25)" stroke-width="1.5"/>
+  <text x="130" y="321" font-family="Inter,sans-serif" font-size="11" fill="#00d4ff" text-anchor="middle" font-weight="700">GIT</text>
+  <text x="130" y="338" font-family="Inter,sans-serif" font-size="10" fill="rgba(139,163,199,0.8)" text-anchor="middle">GitLab CI/CD</text>
+  <text x="130" y="351" font-family="Inter,sans-serif" font-size="10" fill="rgba(139,163,199,0.8)" text-anchor="middle">TFLint · Checkov</text>
+
+  <!-- Arrow -->
+  <line x1="200" y1="327" x2="248" y2="327" stroke="rgba(0,212,255,0.5)" stroke-width="2"/>
+  <polygon points="248,322 258,327 248,332" fill="rgba(0,212,255,0.5)"/>
+
+  <!-- Box 2: Terraform -->
+  <rect x="258" y="295" width="140" height="64" rx="10" fill="rgba(124,58,237,0.12)" stroke="rgba(124,58,237,0.35)" stroke-width="1.5"/>
+  <text x="328" y="321" font-family="Inter,sans-serif" font-size="11" fill="#c4b5fd" text-anchor="middle" font-weight="700">TERRAFORM</text>
+  <text x="328" y="338" font-family="Inter,sans-serif" font-size="10" fill="rgba(139,163,199,0.8)" text-anchor="middle">vSphere VMs</text>
+  <text x="328" y="351" font-family="Inter,sans-serif" font-size="10" fill="rgba(139,163,199,0.8)" text-anchor="middle">Réseaux · Stockage</text>
+
+  <!-- Arrow -->
+  <line x1="398" y1="327" x2="446" y2="327" stroke="rgba(0,212,255,0.5)" stroke-width="2"/>
+  <polygon points="446,322 456,327 446,332" fill="rgba(0,212,255,0.5)"/>
+
+  <!-- Box 3: Ansible -->
+  <rect x="456" y="295" width="140" height="64" rx="10" fill="rgba(16,185,129,0.1)" stroke="rgba(16,185,129,0.3)" stroke-width="1.5"/>
+  <text x="526" y="321" font-family="Inter,sans-serif" font-size="11" fill="#6ee7b7" text-anchor="middle" font-weight="700">ANSIBLE</text>
+  <text x="526" y="338" font-family="Inter,sans-serif" font-size="10" fill="rgba(139,163,199,0.8)" text-anchor="middle">RKE2 Cluster</text>
+  <text x="526" y="351" font-family="Inter,sans-serif" font-size="10" fill="rgba(139,163,199,0.8)" text-anchor="middle">Bootstrap k8s</text>
+
+  <!-- Arrow -->
+  <line x1="596" y1="327" x2="644" y2="327" stroke="rgba(0,212,255,0.5)" stroke-width="2"/>
+  <polygon points="644,322 654,327 644,332" fill="rgba(0,212,255,0.5)"/>
+
+  <!-- Box 4: FluxCD -->
+  <rect x="654" y="295" width="140" height="64" rx="10" fill="rgba(245,158,11,0.1)" stroke="rgba(245,158,11,0.3)" stroke-width="1.5"/>
+  <text x="724" y="321" font-family="Inter,sans-serif" font-size="11" fill="#fcd34d" text-anchor="middle" font-weight="700">FLUXCD</text>
+  <text x="724" y="338" font-family="Inter,sans-serif" font-size="10" fill="rgba(139,163,199,0.8)" text-anchor="middle">Kustomize GitOps</text>
+  <text x="724" y="351" font-family="Inter,sans-serif" font-size="10" fill="rgba(139,163,199,0.8)" text-anchor="middle">DEV · STAGING · PROD</text>
+
+  <!-- Arrow -->
+  <line x1="794" y1="327" x2="842" y2="327" stroke="rgba(0,212,255,0.5)" stroke-width="2"/>
+  <polygon points="842,322 852,327 842,332" fill="rgba(0,212,255,0.5)"/>
+
+  <!-- Box 5: Monitoring -->
+  <rect x="852" y="295" width="140" height="64" rx="10" fill="rgba(20,184,166,0.1)" stroke="rgba(20,184,166,0.3)" stroke-width="1.5"/>
+  <text x="922" y="321" font-family="Inter,sans-serif" font-size="11" fill="#5eead4" text-anchor="middle" font-weight="700">MONITORING</text>
+  <text x="922" y="338" font-family="Inter,sans-serif" font-size="10" fill="rgba(139,163,199,0.8)" text-anchor="middle">Prometheus</text>
+  <text x="922" y="351" font-family="Inter,sans-serif" font-size="10" fill="rgba(139,163,199,0.8)" text-anchor="middle">Grafana Dashboards</text>
+
+  <!-- Environments row -->
+  <text x="60" y="415" font-family="Inter,sans-serif" font-size="12" fill="rgba(139,163,199,0.6)" font-weight="600" letter-spacing="1">ENVIRONNEMENTS</text>
+
+  <rect x="60" y="428" width="100" height="34" rx="8" fill="rgba(16,185,129,0.12)" stroke="rgba(16,185,129,0.3)" stroke-width="1"/>
+  <text x="110" y="450" font-family="Inter,sans-serif" font-size="13" fill="#6ee7b7" text-anchor="middle" font-weight="700">DEV</text>
+
+  <rect x="174" y="428" width="100" height="34" rx="8" fill="rgba(245,158,11,0.12)" stroke="rgba(245,158,11,0.3)" stroke-width="1"/>
+  <text x="224" y="450" font-family="Inter,sans-serif" font-size="13" fill="#fcd34d" text-anchor="middle" font-weight="700">STAGING</text>
+
+  <rect x="288" y="428" width="100" height="34" rx="8" fill="rgba(239,68,68,0.12)" stroke="rgba(239,68,68,0.3)" stroke-width="1"/>
+  <text x="338" y="450" font-family="Inter,sans-serif" font-size="13" fill="#fca5a5" text-anchor="middle" font-weight="700">PROD</text>
+
+  <!-- Tech tags bottom -->
+  <rect x="60" y="505" width="90" height="28" rx="6" fill="rgba(0,212,255,0.08)" stroke="rgba(0,212,255,0.2)" stroke-width="1"/>
+  <text x="105" y="524" font-family="Inter,sans-serif" font-size="11" fill="#00d4ff" text-anchor="middle">Terraform</text>
+
+  <rect x="162" y="505" width="90" height="28" rx="6" fill="rgba(0,212,255,0.08)" stroke="rgba(0,212,255,0.2)" stroke-width="1"/>
+  <text x="207" y="524" font-family="Inter,sans-serif" font-size="11" fill="#00d4ff" text-anchor="middle">Kubernetes</text>
+
+  <rect x="264" y="505" width="90" height="28" rx="6" fill="rgba(0,212,255,0.08)" stroke="rgba(0,212,255,0.2)" stroke-width="1"/>
+  <text x="309" y="524" font-family="Inter,sans-serif" font-size="11" fill="#00d4ff" text-anchor="middle">FluxCD</text>
+
+  <rect x="366" y="505" width="90" height="28" rx="6" fill="rgba(0,212,255,0.08)" stroke="rgba(0,212,255,0.2)" stroke-width="1"/>
+  <text x="411" y="524" font-family="Inter,sans-serif" font-size="11" fill="#00d4ff" text-anchor="middle">Ansible</text>
+
+  <rect x="468" y="505" width="90" height="28" rx="6" fill="rgba(0,212,255,0.08)" stroke="rgba(0,212,255,0.2)" stroke-width="1"/>
+  <text x="513" y="524" font-family="Inter,sans-serif" font-size="11" fill="#00d4ff" text-anchor="middle">Kustomize</text>
+
+  <rect x="570" y="505" width="90" height="28" rx="6" fill="rgba(0,212,255,0.08)" stroke="rgba(0,212,255,0.2)" stroke-width="1"/>
+  <text x="615" y="524" font-family="Inter,sans-serif" font-size="11" fill="#00d4ff" text-anchor="middle">Helm</text>
+
+  <rect x="672" y="505" width="90" height="28" rx="6" fill="rgba(0,212,255,0.08)" stroke="rgba(0,212,255,0.2)" stroke-width="1"/>
+  <text x="717" y="524" font-family="Inter,sans-serif" font-size="11" fill="#00d4ff" text-anchor="middle">Kyverno</text>
+
+  <!-- Accent bottom bar -->
+  <rect x="0" y="660" width="1200" height="3" fill="url(#accent)" opacity="0.6"/>
+
+  <!-- K8s logo (simplified hex) -->
+  <g transform="translate(1060, 320)" opacity="0.12">
+    <polygon points="60,0 120,35 120,105 60,140 0,105 0,35" fill="none" stroke="#00d4ff" stroke-width="3"/>
+    <text x="60" y="82" font-family="Inter,sans-serif" font-size="28" fill="#00d4ff" text-anchor="middle" font-weight="900">K8s</text>
+  </g>
+</svg>

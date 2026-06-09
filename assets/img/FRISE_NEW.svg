@@ -1,0 +1,308 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2840" height="1100" viewBox="0 0 2840 1100">
+  <defs>
+    <linearGradient id="bgf" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#050a18"/>
+      <stop offset="100%" style="stop-color:#0a1628"/>
+    </linearGradient>
+    <!-- Couleurs par catégorie -->
+    <!-- Expérience: bleu cyan -->
+    <!-- Formation: violet/purple -->
+  </defs>
+
+  <rect width="2840" height="1100" fill="url(#bgf)"/>
+
+  <!-- ═══════════════════════════════════════════ HEADER ═══ -->
+  <text x="80" y="70" font-family="Inter,sans-serif" font-size="32" fill="white" font-weight="800" letter-spacing="-1">Frise de Parcours — Djiby Oumar SALL</text>
+  <text x="80" y="104" font-family="Inter,sans-serif" font-size="16" fill="rgba(139,163,199,0.6)">Ingénieur DevOps &amp; Cloud · 2015 → 2026</text>
+
+  <!-- Legend -->
+  <rect x="1900" y="50" width="18" height="18" rx="3" fill="#00d4ff" opacity="0.8"/>
+  <text x="1925" y="64" font-family="Inter,sans-serif" font-size="14" fill="rgba(139,163,199,0.8)">Expérience professionnelle</text>
+  <rect x="2180" y="50" width="18" height="18" rx="3" fill="#7c3aed" opacity="0.8"/>
+  <text x="2205" y="64" font-family="Inter,sans-serif" font-size="14" fill="rgba(139,163,199,0.8)">Formation</text>
+  <rect x="2360" y="50" width="18" height="18" rx="3" fill="#f59e0b" opacity="0.8"/>
+  <text x="2385" y="64" font-family="Inter,sans-serif" font-size="14" fill="rgba(139,163,199,0.8)">Certification</text>
+  <rect x="2520" y="50" width="18" height="18" rx="3" fill="#10b981" opacity="0.8"/>
+  <text x="2545" y="64" font-family="Inter,sans-serif" font-size="14" fill="rgba(139,163,199,0.8)">Projet perso</text>
+
+  <!-- ═══════════════════════════════════════════ TIMELINE AXIS ═══ -->
+  <!-- Total width: 2840, margins: 80 left, 80 right → 2680 usable
+       Years: 2015 → 2026 = 11 years = 12 marks
+       Pixel per year: 2680 / 11 = ~243.6 px/year
+       2015 → x=80, 2016→323.6, 2017→567.3, 2018→811, 2019→1054, 2020→1297.5,
+       2021→1541, 2022→1784, 2023→2028, 2024→2271, 2025→2515, 2026→2759 -->
+
+  <!-- Main axis line -->
+  <line x1="80" y1="148" x2="2759" y2="148" stroke="rgba(139,163,199,0.2)" stroke-width="2"/>
+
+  <!-- Year marks -->
+  <g font-family="Inter,sans-serif" font-size="16" fill="rgba(139,163,199,0.5)" font-weight="600" text-anchor="middle">
+    <!-- 2015 -->
+    <line x1="80" y1="140" x2="80" y2="156" stroke="rgba(139,163,199,0.3)" stroke-width="2"/>
+    <text x="80" y="130">2015</text>
+    <!-- 2016 -->
+    <line x1="324" y1="140" x2="324" y2="156" stroke="rgba(139,163,199,0.3)" stroke-width="2"/>
+    <text x="324" y="130">2016</text>
+    <!-- 2017 -->
+    <line x1="568" y1="140" x2="568" y2="156" stroke="rgba(139,163,199,0.3)" stroke-width="2"/>
+    <text x="568" y="130">2017</text>
+    <!-- 2018 -->
+    <line x1="812" y1="140" x2="812" y2="156" stroke="rgba(139,163,199,0.3)" stroke-width="2"/>
+    <text x="812" y="130">2018</text>
+    <!-- 2019 -->
+    <line x1="1055" y1="140" x2="1055" y2="156" stroke="rgba(139,163,199,0.3)" stroke-width="2"/>
+    <text x="1055" y="130">2019</text>
+    <!-- 2020 -->
+    <line x1="1298" y1="140" x2="1298" y2="156" stroke="rgba(139,163,199,0.3)" stroke-width="2"/>
+    <text x="1298" y="130">2020</text>
+    <!-- 2021 -->
+    <line x1="1541" y1="140" x2="1541" y2="156" stroke="rgba(139,163,199,0.3)" stroke-width="2"/>
+    <text x="1541" y="130">2021</text>
+    <!-- 2022 -->
+    <line x1="1785" y1="140" x2="1785" y2="156" stroke="rgba(139,163,199,0.3)" stroke-width="2"/>
+    <text x="1785" y="130">2022</text>
+    <!-- 2023 -->
+    <line x1="2028" y1="140" x2="2028" y2="156" stroke="rgba(139,163,199,0.3)" stroke-width="2"/>
+    <text x="2028" y="130">2023</text>
+    <!-- 2024 -->
+    <line x1="2271" y1="140" x2="2271" y2="156" stroke="rgba(139,163,199,0.3)" stroke-width="2"/>
+    <text x="2271" y="130">2024</text>
+    <!-- 2025 -->
+    <line x1="2515" y1="140" x2="2515" y2="156" stroke="rgba(139,163,199,0.2)" stroke-width="2"/>
+    <text x="2515" y="130">2025</text>
+    <!-- 2026 -->
+    <line x1="2759" y1="140" x2="2759" y2="156" stroke="rgba(139,163,199,0.2)" stroke-width="2"/>
+    <text x="2759" y="130">2026</text>
+  </g>
+
+  <!-- ═══════════════════════════════════════════ SECTION LABELS ═══ -->
+  <rect x="0" y="170" width="80" height="830" fill="rgba(0,0,0,0.3)"/>
+
+  <!-- Expérience label -->
+  <text x="40" y="490" font-family="Inter,sans-serif" font-size="15" fill="rgba(0,212,255,0.7)" font-weight="700"
+    transform="rotate(-90,40,490)" text-anchor="middle">EXPÉRIENCE</text>
+
+  <!-- Formation label -->
+  <text x="40" y="840" font-family="Inter,sans-serif" font-size="15" fill="rgba(124,58,237,0.7)" font-weight="700"
+    transform="rotate(-90,40,840)" text-anchor="middle">FORMATION</text>
+
+  <!-- ═══════════════════════════════════════════ EXPERIENCE ROWS ═══ -->
+  <!-- Row heights: each row ~80px, starting y=180 -->
+  <!--
+    Row labels x=82, bars start x=82+label_offset
+    px/year = 243.6
+    Formula: x = 80 + (year - 2015) * 243.6 + (month-1)/12 * 243.6
+
+    Simplified monthly positions (px/month ≈ 20.3):
+    2015.0 = 80
+    2015.75 = 80 + 0.75*243.6 = 262.7 → Aug 2015
+    2017.0 = 567.3 → Aug 2017 = 567.3 + 0.583*243.6 = 709
+    2017.833 = 567.3 + 0.833*243.6 = 710
+    2017.917 = Nov 2017 → 567.3 + 0.833*243.6 = 710
+    2017.917 = 567.3 + 0.917*243.6 = 790
+    2017.958 = Dec 2017 = 567.3 + 0.958*243.6 = 800
+
+    Let me compute key dates:
+    Aug 2017  = 2017 + 7/12  = 80 + 2*243.6 + 7/12*243.6 = 80 + 487.2 + 142.1 = 709
+    Nov 2017  = 2017 + 10/12 = 80 + 487.2 + 202.9 = 770
+    Dec 2017  = 2017 + 11/12 = 80 + 487.2 + 223.3 = 790
+    Oct 2017  = 2017 + 9/12  = 80 + 487.2 + 182.6 = 750
+
+    Jan 2018 = 812
+    Oct 2018 = 812 + 9/12*243.6 = 812 + 182.7 = 995
+    Dec 2018 = 812 + 11/12*243.6 = 812 + 223.3 = 1035
+
+    Oct 2019 = 1055 + 9/12*243.6 = 1055 + 182.7 = 1238
+    Nov 2019 = 1055 + 10/12*243.6 = 1055 + 203 = 1258
+
+    Sep 2020 = 1298 + 8/12*243.6 = 1298 + 162.4 = 1460
+    Mar 2021 = 1541 + 2/12*243.6 = 1541 + 40.6 = 1582
+    Aug 2021 = 1541 + 7/12*243.6 = 1541 + 142.1 = 1683
+    Sep 2021 = 1541 + 8/12*243.6 = 1541 + 162.4 = 1703
+
+    Oct 2021 = 1703 + 20 = 1723 (approx)
+    Sep 2023 = 2028 + 8/12*243.6 = 2028 + 162.4 = 2190
+    Nov 2023 = 2028 + 10/12*243.6 = 2028 + 203 = 2231
+    Jan 2024 = 2271
+    Apr 2024 = 2271 + 3/12*243.6 = 2271 + 61 = 2332
+    May 2024 = 2271 + 4/12*243.6 = 2271 + 81 = 2352
+    Jan 2025 = 2515
+    Jun 2025 = 2515 + 5/12*243.6 = 2515 + 101.5 = 2617
+    Nov 2025 = 2515 + 10/12*243.6 = 2515 + 203 = 2718
+    Feb 2026 = 2759 + 1/12*243.6 = 2759 + 20 = 2779 (cap at 2759)
+    Today ~Jun 2026 → 2759 (cap)
+  -->
+
+  <!-- Row 1: ISI Stagiaire - Ingénieur réseau sys (Aug 2017 - Oct 2017) -->
+  <g>
+    <text x="88" y="215" font-family="Inter,sans-serif" font-size="13" fill="rgba(139,163,199,0.6)">ISI – Stagiaire Rés. &amp; Sys.</text>
+    <!-- Aug 2017 → Oct 2017: x=709 → x=750, w=41 -->
+    <rect x="709" y="195" width="41" height="34" rx="5" fill="rgba(0,212,255,0.2)" stroke="#00d4ff" stroke-width="1.5"/>
+    <text x="729" y="217" font-family="Inter,sans-serif" font-size="10" fill="#00d4ff" text-anchor="middle">Août→Oct 17</text>
+  </g>
+
+  <!-- Row 2: Expresso Sénégal CDD (Nov - Dec 2017) -->
+  <g>
+    <text x="88" y="265" font-family="Inter,sans-serif" font-size="13" fill="rgba(139,163,199,0.6)">Expresso Sénégal</text>
+    <!-- Nov 2017 → Dec 2017: x=770 → x=790, w=20 -->
+    <rect x="770" y="245" width="30" height="34" rx="5" fill="rgba(0,212,255,0.25)" stroke="#00d4ff" stroke-width="1.5"/>
+    <text x="785" y="267" font-family="Inter,sans-serif" font-size="10" fill="#00d4ff" text-anchor="middle">Nov→Déc 17</text>
+  </g>
+
+  <!-- Row 3: EDF Stagiaire (Sep 2020 - Mar 2021) -->
+  <g>
+    <text x="88" y="315" font-family="Inter,sans-serif" font-size="13" fill="rgba(139,163,199,0.6)">EDF – Stagiaire DevOps</text>
+    <!-- Sep 2020 → Mar 2021: x=1460 → x=1582, w=122 -->
+    <rect x="1460" y="295" width="122" height="34" rx="5" fill="rgba(0,212,255,0.3)" stroke="#00d4ff" stroke-width="1.5"/>
+    <text x="1521" y="317" font-family="Inter,sans-serif" font-size="11" fill="#00d4ff" text-anchor="middle">Sep 2020 → Mar 2021</text>
+  </g>
+
+  <!-- Row 4: EDF CDD (Mar - Sep 2021) -->
+  <g>
+    <text x="88" y="365" font-family="Inter,sans-serif" font-size="13" fill="rgba(139,163,199,0.6)">EDF – CDD DevOps</text>
+    <!-- Mar 2021 → Aug 2021: x=1582 → x=1683, w=101 -->
+    <rect x="1582" y="345" width="101" height="34" rx="5" fill="rgba(0,212,255,0.35)" stroke="#00d4ff" stroke-width="1.5"/>
+    <text x="1632" y="367" font-family="Inter,sans-serif" font-size="11" fill="#00d4ff" text-anchor="middle">Mar → Août 2021</text>
+  </g>
+
+  <!-- Row 5: EDF Alternant + Carlili (Sep 2021 - Sep 2023) -->
+  <g>
+    <text x="88" y="415" font-family="Inter,sans-serif" font-size="13" fill="rgba(139,163,199,0.6)">EDF – Alternant DevOps</text>
+    <!-- Sep 2021 → Sep 2023: x=1703 → x=2190, w=487 -->
+    <rect x="1703" y="395" width="487" height="34" rx="5" fill="rgba(0,212,255,0.35)" stroke="#00d4ff" stroke-width="1.5"/>
+    <text x="1946" y="417" font-family="Inter,sans-serif" font-size="12" fill="#00d4ff" text-anchor="middle">Sep 2021 → Sep 2023</text>
+  </g>
+
+  <!-- Row 6: Carlili Freelance (Sep 2021 - Sep 2023) -->
+  <g>
+    <text x="88" y="465" font-family="Inter,sans-serif" font-size="13" fill="rgba(139,163,199,0.6)">Carlili – Freelance Ops</text>
+    <rect x="1703" y="445" width="487" height="34" rx="5" fill="rgba(20,184,166,0.2)" stroke="#14b8a6" stroke-width="1.5"/>
+    <text x="1946" y="467" font-family="Inter,sans-serif" font-size="12" fill="#5eead4" text-anchor="middle">Sep 2021 → Sep 2023</text>
+  </g>
+
+  <!-- Row 7: TEOLIA Teo School (Sep - Nov 2023) -->
+  <g>
+    <text x="88" y="515" font-family="Inter,sans-serif" font-size="13" fill="rgba(139,163,199,0.6)">TEOLIA – Teo School DevOps</text>
+    <!-- Sep 2023 → Nov 2023: x=2190 → x=2231, w=41 -->
+    <rect x="2190" y="495" width="41" height="34" rx="5" fill="rgba(0,212,255,0.3)" stroke="#00d4ff" stroke-width="1.5"/>
+    <text x="2210" y="517" font-family="Inter,sans-serif" font-size="10" fill="#00d4ff" text-anchor="middle">Sep→Nov 23</text>
+  </g>
+
+  <!-- Row 8: TEOLIA Platform Eng (Jan - Apr 2024) -->
+  <g>
+    <text x="88" y="565" font-family="Inter,sans-serif" font-size="13" fill="rgba(139,163,199,0.6)">TEOLIA – Platform Eng.</text>
+    <!-- Jan 2024 → Apr 2024: x=2271 → x=2332, w=61 -->
+    <rect x="2271" y="545" width="61" height="34" rx="5" fill="rgba(0,212,255,0.35)" stroke="#00d4ff" stroke-width="1.5"/>
+    <text x="2301" y="567" font-family="Inter,sans-serif" font-size="11" fill="#00d4ff" text-anchor="middle">Jan → Avr 24</text>
+  </g>
+
+  <!-- Row 9: SACEM Supervision (May 2024 - Today) -->
+  <g>
+    <text x="88" y="615" font-family="Inter,sans-serif" font-size="13" fill="rgba(139,163,199,0.6)">SACEM – Supervision IT / DevOps</text>
+    <!-- May 2024 → Jun 2026: x=2352 → x=2759, w=407 -->
+    <rect x="2352" y="595" width="407" height="34" rx="5" fill="rgba(0,212,255,0.4)" stroke="#00d4ff" stroke-width="1.5"/>
+    <text x="2555" y="617" font-family="Inter,sans-serif" font-size="12" fill="#00d4ff" text-anchor="middle">Mai 2024 → Aujourd'hui</text>
+  </g>
+
+  <!-- Row 10: SACEM Kubernetes GitOps (Jan 2025 - Today) -->
+  <g>
+    <text x="88" y="665" font-family="Inter,sans-serif" font-size="13" fill="rgba(139,163,199,0.6)">SACEM – Kubernetes GitOps</text>
+    <!-- Jan 2025 → Today: x=2515 → x=2759, w=244 -->
+    <rect x="2515" y="645" width="244" height="34" rx="5" fill="rgba(0,212,255,0.45)" stroke="#00d4ff" stroke-width="1.5"/>
+    <text x="2637" y="667" font-family="Inter,sans-serif" font-size="11" fill="#00d4ff" text-anchor="middle">Jan 2025 → Aujourd'hui</text>
+  </g>
+
+  <!-- Row 11: SACEM Météo DSI (Nov 2025 - Feb 2026) -->
+  <g>
+    <text x="88" y="715" font-family="Inter,sans-serif" font-size="13" fill="rgba(139,163,199,0.6)">SACEM – Météo DSI Full Stack</text>
+    <!-- Nov 2025 → Feb 2026: x=2718 → x=2759 (cap), w~41 -->
+    <rect x="2718" y="695" width="41" height="34" rx="5" fill="rgba(0,212,255,0.5)" stroke="#00d4ff" stroke-width="1.5"/>
+    <text x="2738" y="717" font-family="Inter,sans-serif" font-size="9" fill="#00d4ff" text-anchor="middle">Nov25→Fév26</text>
+  </g>
+
+  <!-- Row 12: Djib Data-AI (Jun 2025 - Today) -->
+  <g>
+    <text x="88" y="765" font-family="Inter,sans-serif" font-size="13" fill="rgba(139,163,199,0.6)">Djib Data-AI – E-Gov AWS</text>
+    <!-- Jun 2025 → today: x=2617 → x=2759, w=142 -->
+    <rect x="2617" y="745" width="142" height="34" rx="5" fill="rgba(245,158,11,0.3)" stroke="#f59e0b" stroke-width="1.5"/>
+    <text x="2688" y="767" font-family="Inter,sans-serif" font-size="11" fill="#fcd34d" text-anchor="middle">Juin 2025 → Aujourd'hui</text>
+  </g>
+
+  <!-- Divider between Exp and Formation -->
+  <line x1="80" y1="810" x2="2759" y2="810" stroke="rgba(255,255,255,0.06)" stroke-width="1" stroke-dasharray="8,8"/>
+  <text x="88" y="835" font-family="Inter,sans-serif" font-size="14" fill="rgba(124,58,237,0.6)" font-weight="700" letter-spacing="2">FORMATION &amp; CERTIFICATIONS</text>
+
+  <!-- ═══════════════════════════════════════════ FORMATION ROWS ═══ -->
+
+  <!-- DTS Maintenance Informatique (Nov 2015 - Jul 2017) -->
+  <g>
+    <text x="88" y="885" font-family="Inter,sans-serif" font-size="13" fill="rgba(139,163,199,0.6)">ISI – DTS Maintenance Informatique</text>
+    <!-- Nov 2015 → Jul 2017: x = 80+0.833*243.6 = 283 → x = 80+1.583*243.6 = 466, w=183 -->
+    <rect x="283" y="858" width="426" height="34" rx="5" fill="rgba(124,58,237,0.25)" stroke="#7c3aed" stroke-width="1.5"/>
+    <text x="496" y="880" font-family="Inter,sans-serif" font-size="12" fill="#c4b5fd" text-anchor="middle">Nov 2015 → Jul 2017</text>
+  </g>
+
+  <!-- Licence réseau ISI (Jan 2018 - Dec 2018) -->
+  <g>
+    <text x="88" y="930" font-family="Inter,sans-serif" font-size="13" fill="rgba(139,163,199,0.6)">ISI – Licence Réseau &amp; Systèmes</text>
+    <!-- Jan 2018 → Dec 2018: x=812 → x=1035, w=223 -->
+    <rect x="812" y="908" width="223" height="34" rx="5" fill="rgba(124,58,237,0.25)" stroke="#7c3aed" stroke-width="1.5"/>
+    <text x="923" y="930" font-family="Inter,sans-serif" font-size="12" fill="#c4b5fd" text-anchor="middle">Jan 2018 → Déc 2018</text>
+  </g>
+
+  <!-- IT Essentials CISCO Cert (2017) -->
+  <g>
+    <text x="88" y="975" font-family="Inter,sans-serif" font-size="13" fill="rgba(139,163,199,0.6)">CISCO IT Essentials</text>
+    <!-- ~Oct 2017: x=750 → w=30 -->
+    <rect x="750" y="958" width="50" height="26" rx="5" fill="rgba(245,158,11,0.3)" stroke="#f59e0b" stroke-width="1.5"/>
+    <text x="775" y="976" font-family="Inter,sans-serif" font-size="10" fill="#fcd34d" text-anchor="middle">Oct 2017</text>
+  </g>
+
+  <!-- Bachelor INTECH (Sep 2019 - Jan 2021) -->
+  <!-- Sep 2019 → Jan 2021: x = 80+4.667*243.6 = 1216 → x = 80+6.083*243.6 = 1561, w=345 -->
+  <!-- Actually Sep 2019 = 1055 + 8/12*243.6 = 1055+162 = 1217 -->
+  <!-- Jan 2021 = 1541 + 0 = 1541 -->
+  <g>
+    <rect x="1217" y="858" width="324" height="34" rx="5" fill="rgba(124,58,237,0.3)" stroke="#7c3aed" stroke-width="1.5"/>
+    <text x="1379" y="880" font-family="Inter,sans-serif" font-size="12" fill="#c4b5fd" text-anchor="middle">INTECH Bachelor Sys. &amp; Réseaux (Sep 2019 → Jan 2021)</text>
+  </g>
+
+  <!-- Master 2 INTECH (Sep 2021 - Sep 2023) -->
+  <g>
+    <rect x="1703" y="908" width="487" height="34" rx="5" fill="rgba(124,58,237,0.35)" stroke="#7c3aed" stroke-width="1.5"/>
+    <text x="1946" y="930" font-family="Inter,sans-serif" font-size="12" fill="#c4b5fd" text-anchor="middle">INTECH Master 2 – Architecture SI (Sep 2021 → Sep 2023)</text>
+  </g>
+
+  <!-- Certifications (2023) -->
+  <!-- Terraform 2023 → x≈2028 + 3/12*243.6 = 2028+61 = 2089, w=60 -->
+  <g>
+    <rect x="2028" y="958" width="80" height="26" rx="5" fill="rgba(245,158,11,0.3)" stroke="#f59e0b" stroke-width="1.5"/>
+    <text x="2068" y="976" font-family="Inter,sans-serif" font-size="10" fill="#fcd34d" text-anchor="middle">Terraform 003</text>
+  </g>
+
+  <!-- Azure Fund Apr 2023 → x=2028 + 3.5/12*243.6 = 2028+71 = 2099 -->
+  <g>
+    <rect x="2115" y="958" width="80" height="26" rx="5" fill="rgba(245,158,11,0.3)" stroke="#f59e0b" stroke-width="1.5"/>
+    <text x="2155" y="976" font-family="Inter,sans-serif" font-size="10" fill="#fcd34d" text-anchor="middle">Azure Fund.</text>
+  </g>
+
+  <!-- CCNA 1&2 May 2023 → x ≈ 2028 + 4/12*243.6 = 2028+81 = 2109 -->
+  <g>
+    <rect x="2200" y="958" width="80" height="26" rx="5" fill="rgba(245,158,11,0.3)" stroke="#f59e0b" stroke-width="1.5"/>
+    <text x="2240" y="976" font-family="Inter,sans-serif" font-size="10" fill="#fcd34d" text-anchor="middle">CCNA 1 &amp; 2</text>
+  </g>
+
+  <!-- CISCO IT Essentials Nov 2023 → x = 2028 + 10/12*243.6 = 2028+203 = 2231 -->
+  <g>
+    <rect x="2290" y="958" width="80" height="26" rx="5" fill="rgba(245,158,11,0.3)" stroke="#f59e0b" stroke-width="1.5"/>
+    <text x="2330" y="976" font-family="Inter,sans-serif" font-size="10" fill="#fcd34d" text-anchor="middle">IT Essentials</text>
+  </g>
+
+  <!-- "Today" marker -->
+  <line x1="2759" y1="148" x2="2759" y2="1020" stroke="rgba(0,212,255,0.4)" stroke-width="2" stroke-dasharray="6,4"/>
+  <rect x="2699" y="108" width="120" height="28" rx="14" fill="rgba(0,212,255,0.15)" stroke="rgba(0,212,255,0.4)" stroke-width="1"/>
+  <text x="2759" y="127" font-family="Inter,sans-serif" font-size="13" fill="#00d4ff" text-anchor="middle" font-weight="700">Aujourd'hui</text>
+
+  <!-- Bottom border gradient -->
+  <rect x="0" y="1090" width="2840" height="6" rx="3" fill="rgba(0,212,255,0.4)" opacity="0.8"/>
+</svg>
