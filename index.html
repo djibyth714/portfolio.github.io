@@ -296,6 +296,7 @@
       position: absolute;
       background: rgba(10,22,40,.9); border: 1px solid var(--border);
       backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
       border-radius: 12px; padding: 10px 16px;
       display: flex; align-items: center; gap: 10px;
       font-size: .8rem; font-weight: 600; white-space: nowrap;
@@ -505,7 +506,7 @@
 
     .portfolio-overlay-btn {
       width: 44px; height: 44px; border-radius: 50%;
-      background: rgba(255,255,255,.15); backdrop-filter: blur(8px);
+      background: rgba(255,255,255,.15); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
       border: 1px solid rgba(255,255,255,.2);
       display: flex; align-items: center; justify-content: center;
       color: #fff; text-decoration: none; font-size: 1rem;
@@ -802,7 +803,7 @@
     /* ── LIGHTBOX ── */
     #lb-overlay {
       display: none; position: fixed; inset: 0; z-index: 10000;
-      background: rgba(0,0,0,.92); backdrop-filter: blur(16px);
+      background: rgba(0,0,0,.92); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
       align-items: center; justify-content: center;
     }
     #lb-overlay.open { display: flex; }
@@ -1215,28 +1216,28 @@
         </div>
         <ul>
           <li><strong>Projet :</strong> Refonte et modernisation de la plateforme Météo DSI – Migration d'Excel VBA vers application web centralisée.</li>
-          <li><strong>Contexte :</strong> Transformation complète d'un outil de supervision critique basé sur Excel/VBA vers une plateforme web moderne et scalable. Le nouveau système centralise les données (Dollar U, Prometheus, Centreon, NetBackup) dans une architecture haute disponibilité sur infrastructure on-premise vSphere/RHEL9, avec authentification LDAP, interface web responsive, API REST, et base de données PostgreSQL pour l'historisation.</li>
+          <li><strong>Contexte :</strong> Transformation complète d'un outil de supervision critique basé sur Excel avec macros VBA vers une plateforme web moderne et scalable. L'ancienne solution, dépendante d'un poste Windows, collectait manuellement les données depuis Dollar U (ordonnancement), Prometheus (disponibilité applications), Centreon (supervision système) et NetBackup (sauvegardes) pour générer des rapports quotidiens. Le nouveau système centralise ces données dans une architecture haute disponibilité sur infrastructure on-premise vSphere/RHEL9, avec authentification LDAP, interface web responsive, API REST, et base de données PostgreSQL pour l'historisation.</li>
         </ul>
         <ul>
-          <li>Architecture microservices HA sur 2 VMs RHEL 9.4 (Backend : 8 vCPU/16 GB RAM · Frontend : 4 vCPU/8 GB RAM) avec séparation frontend/backend et sécurisation réseau (VLAN DMZ, firewalld).</li>
-          <li>API REST Node.js/Express avec architecture modulaire (routes, controllers, models, services) et middleware d'authentification JWT/LDAP.</li>
-          <li>Modèle de données PostgreSQL 15 avec gestion d'historique, relations complexes et migrations automatisées.</li>
-          <li>Collecteurs de données automatisés multi-sources : Prometheus, Dollar U Oracle, Centreon, NetBackup API, EasyVista ITSM — avec gestion erreurs et retry logic.</li>
-          <li>Schedulers pour collectes automatiques, génération de rapports quotidiens à 7h00 et envoi d'emails via SMTP Exchange.</li>
-          <li>Interface web React 18 + TypeScript + Vite + Tailwind CSS avec composants réutilisables (React Query, Chart.js).</li>
-          <li>Authentification LDAP/Active Directory avec gestion des rôles (Admin, Editor, Viewer) et protection des routes.</li>
-          <li>Tableaux de bord dynamiques avec visualisation temps réel de 59 sondes applicatives, indicateurs métiers et graphiques interactifs.</li>
-          <li>Nginx 1.30.1 comme reverse proxy avec TLS 1.3, HTTP/2 ; résolution de problèmes SSL (BOM UTF-8) sur 6 serveurs.</li>
-          <li>Pipelines CI/CD GitLab, services systemd, stratégie zero-downtime avec health checks.</li>
-          <li>Intégration Prometheus Node Exporter + Grafana pour métriques système/applicatives et alerting proactif.</li>
-          <li>Sécurisation complète : HTTPS, JWT, CSRF/XSS, Fail2Ban, rate limiting API, logs centralisés.</li>
-          <li>Documentation technique complète : architecture, guides d'installation, API OpenAPI/Swagger, runbooks opérationnels.</li>
+          <li>Conception d'une architecture microservices haute disponibilité sur 2 VMs RHEL 9.4 (Backend : 8 vCPU, 16GB RAM / Frontend : 4 vCPU, 8GB RAM) avec séparation frontend/backend et sécurisation réseau (VLAN DMZ, firewalld).</li>
+          <li>Développement d'une API REST Node.js/Express avec architecture modulaire (routes, controllers, models, services) et middleware d'authentification JWT/LDAP.</li>
+          <li>Conception et implémentation du modèle de données PostgreSQL 15 avec gestion d'historique, relations complexes et migrations automatisées.</li>
+          <li>Création de collecteurs de données automatisés pour intégration multi-sources (Prometheus, Dollar U Oracle, Centreon, NetBackup API, EasyVista ITSM) avec gestion erreurs et retry logic.</li>
+          <li>Implémentation de schedulers pour collectes automatiques, génération de rapports quotidiens à 7h00, et envoi d'emails via SMTP Exchange.</li>
+          <li>Développement d'une interface web moderne en React 18 + TypeScript avec Vite, Tailwind CSS, et composants réutilisables (React Query, Chart.js).</li>
+          <li>Implémentation d'un système d'authentification LDAP/Active Directory avec gestion des rôles (Admin, Editor, Viewer) et protection des routes.</li>
+          <li>Création de tableaux de bord dynamiques avec visualisation temps réel des statuts de 59 sondes applicatives, indicateurs métiers, et graphiques interactifs.</li>
+          <li>Mise en place de Nginx 1.30.1 comme reverse proxy avec configuration TLS 1.3, HTTP/2, et résolution de problèmes critiques de certificats SSL (BOM UTF-8) sur 6 serveurs (Prometheus, Grafana).</li>
+          <li>Déploiement automatisé avec pipelines CI/CD, scripts PowerShell/SSH, services systemd pour gestion des processus, et stratégies zero-downtime avec health checks.</li>
+          <li>Intégration monitoring avec Prometheus Node Exporter et Grafana pour métriques système, applicatives, et alerting proactif.</li>
+          <li>Sécurisation complète de la chaîne applicative : HTTPS obligatoire, tokens JWT, protection CSRF/XSS, Fail2Ban, rate limiting API, et logs centralisés.</li>
+          <li>Documentation technique complète : architecture système, guides d'installation, procédures de déploiement, API documentation (OpenAPI/Swagger), et runbooks opérationnels.</li>
         </ul>
         <div class="exp-stack">
           <span>Node.js</span><span>Express</span><span>TypeScript</span><span>React 18</span><span>Vite</span><span>Tailwind CSS</span>
           <span>PostgreSQL 15</span><span>Redis</span><span>Nginx</span><span>RHEL 9.4</span><span>vSphere</span>
-          <span>GitLab CI/CD</span><span>Prometheus</span><span>Grafana</span><span>Checkly</span><span>Oracle</span>
-          <span>Centreon</span><span>NetBackup API</span><span>LDAP/AD</span><span>JWT</span><span>TLS/SSL</span><span>SELinux</span>
+          <span>Git</span><span>GitLab CI/CD</span><span>Prometheus</span><span>Grafana</span><span>Checkly</span><span>EasyVista API</span><span>Oracle</span>
+          <span>Centreon</span><span>NetBackup API</span><span>LDAP/Active Directory</span><span>JWT</span><span>TLS/SSL</span><span>SELinux</span><span>Firewalld</span><span>Systemd</span>
         </div>
       </div>
     </div>
