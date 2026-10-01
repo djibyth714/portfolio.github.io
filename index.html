@@ -87,7 +87,7 @@
 
     .nav-logo span { color: var(--accent); }
 
-    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .nav-links { display: flex; gap: 26px; list-style: none; }
     .nav-links a {
       color: var(--text-secondary); text-decoration: none;
       font-size: .85rem; font-weight: 500; letter-spacing: .5px;
@@ -521,6 +521,38 @@
     @media (max-width: 900px) { .portfolio-grid { grid-template-columns: 1fr 1fr; } }
     @media (max-width: 600px) { .portfolio-grid { grid-template-columns: 1fr; } }
 
+    /* ── FREELANCE ── */
+    #freelance { background: var(--bg-secondary); }
+    .portfolio-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+    .portfolio-tags span {
+      font-size: .7rem; font-weight: 600; padding: 3px 10px; border-radius: 100px;
+      background: rgba(0,212,255,.08); border: 1px solid rgba(0,212,255,.2); color: var(--accent);
+    }
+    .portfolio-tags span.live { background: rgba(16,185,129,.1); border-color: rgba(16,185,129,.3); color: #6ee7b7; }
+    .services-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 56px;
+    }
+    .service-item {
+      display: flex; gap: 14px; align-items: flex-start;
+      background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; padding: 20px;
+    }
+    .service-item i { color: var(--accent); font-size: 1.2rem; margin-top: 2px; width: 22px; text-align: center; flex-shrink: 0; }
+    .service-item h5 { font-size: .95rem; font-weight: 700; margin-bottom: 4px; }
+    .service-item p { color: var(--text-secondary); font-size: .82rem; margin: 0; line-height: 1.6; }
+    .freelance-cta {
+      margin-top: 32px; padding: 32px 36px; border-radius: 18px;
+      background: linear-gradient(135deg, rgba(0,212,255,.08), rgba(124,58,237,.1));
+      border: 1px solid rgba(0,212,255,.2);
+      display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap;
+    }
+    .freelance-cta h4 { font-size: 1.25rem; font-weight: 800; margin-bottom: 6px; }
+    .freelance-cta p { color: var(--text-secondary); margin: 0; font-size: .92rem; max-width: 620px; }
+    @media (max-width: 900px) { .services-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 600px) {
+      .services-grid { grid-template-columns: 1fr; }
+      .freelance-cta { padding: 24px 20px; }
+    }
+
     /* ── EXPERIENCE ── */
     #experience { background: var(--bg-secondary); }
 
@@ -849,6 +881,7 @@
       <li><a href="#about">Profil</a></li>
       <li><a href="#skills">Compétences</a></li>
       <li><a href="#portfolio">Réalisations</a></li>
+      <li><a href="#freelance">Freelance</a></li>
       <li><a href="#experience">Expérience</a></li>
       <li><a href="#formation">Formation</a></li>
       <li><a href="#testimonials">Réputation</a></li>
@@ -875,6 +908,7 @@
       </div>
       <p class="hero-desc">
         Ingénieur DevOps passionné, 5 ans d'expérience en Cloud, Kubernetes, GitOps et Infrastructure as Code.
+        Je conçois aussi des applications web et mobiles sur mesure pour les entreprises et les associations.
         Basé à Drancy, Île-de-France.
       </p>
       <div class="hero-actions">
@@ -1195,6 +1229,140 @@
         </div>
       </a>
 
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════ FREELANCE ══ -->
+<section id="freelance">
+  <div class="container-lg">
+    <div class="section-label" data-aos="fade-up">Freelance</div>
+    <h2 class="section-title" data-aos="fade-up" data-aos-delay="50">Applications Web & Mobile</h2>
+    <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+      Plateformes conçues et développées de A à Z pour des clients : réservation, e-commerce, billetterie,
+      paiement en ligne, espace client et back-office. Toutes sont en ligne.
+    </p>
+    <div class="portfolio-grid">
+
+      <a href="#" class="portfolio-card" data-aos="fade-up" data-aos-delay="0" onclick="openModal('modal-scoot2go');return false;">
+        <div class="portfolio-img-wrap">
+          <img src="assets/img/portfolio/scoot2go.svg" alt="Scoot2Go – Application de moto-taxi">
+          <div class="portfolio-img-overlay">
+            <span class="portfolio-overlay-btn"><i class="fa fa-expand"></i></span>
+          </div>
+        </div>
+        <div class="portfolio-body">
+          <h4>Scoot2Go – Moto-taxi iOS & Android</h4>
+          <p>Application passager et conducteur, API, back-office et paiements Stripe Connect. Publiée sur l'App Store.</p>
+          <div class="portfolio-tags"><span class="live">scoot2go.fr</span><span>React Native</span><span>Stripe Connect</span></div>
+        </div>
+      </a>
+
+      <a href="#" class="portfolio-card" data-aos="fade-up" data-aos-delay="80" onclick="openModal('modal-senticket');return false;">
+        <div class="portfolio-img-wrap">
+          <img src="assets/img/portfolio/senticket.svg" alt="SenTicket – Billetterie en ligne">
+          <div class="portfolio-img-overlay">
+            <span class="portfolio-overlay-btn"><i class="fa fa-expand"></i></span>
+          </div>
+        </div>
+        <div class="portfolio-body">
+          <h4>SenTicket – Billetterie web & mobile</h4>
+          <p>Vente de billets avec Wave, Orange Money ou carte, billets QR code et scan à l'entrée des événements.</p>
+          <div class="portfolio-tags"><span class="live">senticket.dsall.fr</span><span>PayTech</span><span>Capacitor</span></div>
+        </div>
+      </a>
+
+      <a href="#" class="portfolio-card" data-aos="fade-up" data-aos-delay="160" onclick="openModal('modal-csc');return false;">
+        <div class="portfolio-img-wrap">
+          <img src="assets/img/portfolio/csc-building.svg" alt="CSC Building Design – Plateforme métier">
+          <div class="portfolio-img-overlay">
+            <span class="portfolio-overlay-btn"><i class="fa fa-expand"></i></span>
+          </div>
+        </div>
+        <div class="portfolio-body">
+          <h4>CSC Building Design – Bureau d'études</h4>
+          <p>Simulateur de devis, paiement mobile money, espace client et back-office pour un bureau d'études à Dakar.</p>
+          <div class="portfolio-tags"><span class="live">csc-buildingdesign.com</span><span>PayTech</span><span>Supabase</span></div>
+        </div>
+      </a>
+
+      <a href="#" class="portfolio-card" data-aos="fade-up" data-aos-delay="0" onclick="openModal('modal-kokiy');return false;">
+        <div class="portfolio-img-wrap">
+          <img src="assets/img/portfolio/kokiy-paris.svg" alt="Kokiy Paris – Boutique en ligne">
+          <div class="portfolio-img-overlay">
+            <span class="portfolio-overlay-btn"><i class="fa fa-expand"></i></span>
+          </div>
+        </div>
+        <div class="portfolio-body">
+          <h4>Kokiy Paris – E-commerce mode</h4>
+          <p>Refonte d'une boutique WooCommerce en stack TypeScript : paiement Stripe, espace client, back-office, 3 langues.</p>
+          <div class="portfolio-tags"><span class="live">kokiy.com</span><span>React 19</span><span>Stripe</span></div>
+        </div>
+      </a>
+
+      <a href="#" class="portfolio-card" data-aos="fade-up" data-aos-delay="80" onclick="openModal('modal-tk');return false;">
+        <div class="portfolio-img-wrap">
+          <img src="assets/img/portfolio/tk-coiffure.svg" alt="TK Coiffure – Réservation et boutique">
+          <div class="portfolio-img-overlay">
+            <span class="portfolio-overlay-btn"><i class="fa fa-expand"></i></span>
+          </div>
+        </div>
+        <div class="portfolio-body">
+          <h4>TK Coiffure – Réservation & boutique</h4>
+          <p>Prise de rendez-vous avec acompte, boutique en ligne, factures PDF et emails automatiques pour un salon.</p>
+          <div class="portfolio-tags"><span class="live">tkcoiffure.fr</span><span>Stripe</span><span>Supabase</span></div>
+        </div>
+      </a>
+
+      <a href="#" class="portfolio-card" data-aos="fade-up" data-aos-delay="160" onclick="openModal('modal-adt');return false;">
+        <div class="portfolio-img-wrap">
+          <img src="assets/img/portfolio/thiemping-connect.svg" alt="Thiemping Connect – Site de l'association ADT">
+          <div class="portfolio-img-overlay">
+            <span class="portfolio-overlay-btn"><i class="fa fa-expand"></i></span>
+          </div>
+        </div>
+        <div class="portfolio-body">
+          <h4>Thiemping Connect – Association ADT</h4>
+          <p>Dons en ligne, espace membre et cotisations, rappels automatiques par email et WhatsApp.</p>
+          <div class="portfolio-tags"><span class="live">adt-france.fr</span><span>Stripe</span><span>Twilio</span></div>
+        </div>
+      </a>
+
+    </div>
+
+    <div class="services-grid">
+      <div class="service-item" data-aos="fade-up">
+        <i class="fa fa-calendar-check"></i>
+        <div><h5>Réservation en ligne</h5><p>Prise de rendez-vous avec créneaux, acompte et confirmation automatique.</p></div>
+      </div>
+      <div class="service-item" data-aos="fade-up" data-aos-delay="60">
+        <i class="fa fa-shopping-bag"></i>
+        <div><h5>Boutique e-commerce</h5><p>Catalogue, panier, paiement, suivi des commandes et gestion du stock.</p></div>
+      </div>
+      <div class="service-item" data-aos="fade-up" data-aos-delay="120">
+        <i class="fa fa-credit-card"></i>
+        <div><h5>Paiement en ligne</h5><p>Stripe, Wave, Orange Money et carte bancaire, avec factures et remboursements.</p></div>
+      </div>
+      <div class="service-item" data-aos="fade-up">
+        <i class="fa fa-mobile-alt"></i>
+        <div><h5>Applications mobiles</h5><p>iOS et Android à partir d'une seule base de code, jusqu'à la publication sur les stores.</p></div>
+      </div>
+      <div class="service-item" data-aos="fade-up" data-aos-delay="60">
+        <i class="fa fa-tachometer-alt"></i>
+        <div><h5>Espace client & back-office</h5><p>Tableaux de bord pour suivre vos clients, commandes, paiements et projets.</p></div>
+      </div>
+      <div class="service-item" data-aos="fade-up" data-aos-delay="120">
+        <i class="fa fa-paper-plane"></i>
+        <div><h5>Automatisations</h5><p>Emails, rappels WhatsApp et factures PDF envoyés sans intervention manuelle.</p></div>
+      </div>
+    </div>
+
+    <div class="freelance-cta" data-aos="fade-up">
+      <div>
+        <h4>Vous avez un projet de site ou d'application ?</h4>
+        <p>Je m'occupe de tout, de la conception à la mise en ligne, puis de l'hébergement et de la maintenance. Décrivez-moi votre besoin, je vous réponds rapidement avec une proposition.</p>
+      </div>
+      <a href="#contact" class="btn-primary-custom"><i class="fa fa-paper-plane"></i> Discutons de votre projet</a>
     </div>
   </div>
 </section>
@@ -2377,6 +2545,383 @@
   </div>
 </div>
 
+<!-- ── MODAL: Scoot2Go ── -->
+<div class="pmodal-overlay" id="modal-scoot2go">
+  <div class="pmodal wide">
+    <button class="pmodal-close" onclick="closeModal('modal-scoot2go')"><i class="fa fa-times"></i></button>
+    <img src="assets/img/portfolio/scoot2go.svg" class="pmodal-banner-svg" alt="Scoot2Go">
+    <div class="pmodal-body">
+      <div class="pmodal-header">
+        <div class="pmodal-badge"><i class="fa fa-mobile-alt"></i> Application mobile · 2025 – 2026</div>
+        <h2 class="pmodal-title">Scoot2Go – Moto-taxi à la demande</h2>
+        <p class="pmodal-subtitle">Application iOS & Android passager et conducteur, API REST et back-office · publiée sur l'App Store</p>
+      </div>
+      <div class="pmodal-grid">
+        <div class="pmodal-content">
+          <p>Scoot2Go met en relation des passagers et des conducteurs de moto-taxi. J'ai assuré la conception et le développement de l'ensemble de la plateforme : application mobile, API, back-office d'administration et publication sur les stores. Le projet compte 58 écrans, 30 tables PostgreSQL et environ 37 000 lignes de code, développés sur 16 mois.</p>
+          <h3>Parcours passager</h3>
+          <ul>
+            <li>Estimation du prix avant la commande, puis paiement en ligne.</li>
+            <li>Recherche d'un conducteur avec expiration automatique au bout de 5 minutes et remboursement si personne n'accepte.</li>
+            <li>Suivi du conducteur sur la carte en temps réel et messagerie pendant la course.</li>
+            <li>Pourboire facultatif, historique des courses et facture envoyée par email.</li>
+          </ul>
+          <h3>Parcours conducteur</h3>
+          <ul>
+            <li>Inscription en plusieurs étapes avec dépôt des pièces justificatives, vérifiées par l'administration.</li>
+            <li>Passage en ligne géolocalisé et réception des courses avec une sonnerie dédiée, même application fermée.</li>
+            <li>Déclaration d'incident pendant le trajet, suivi des gains et des virements.</li>
+          </ul>
+          <h3>Paiements</h3>
+          <ul>
+            <li>Encaissement avant la mise en relation, pour que chaque course soit garantie.</li>
+            <li>Remboursement automatique en cas d'annulation, validé uniquement par le webhook Stripe.</li>
+            <li>Commission de 10 % calculée sur le montant net après frais bancaires.</li>
+            <li>Reversement hebdomadaire automatique aux conducteurs via Stripe Connect, avec rattrapage des virements qui ont échoué.</li>
+          </ul>
+          <h3>Back-office</h3>
+          <ul>
+            <li>Validation des dossiers conducteurs, suspension et réactivation des comptes.</li>
+            <li>Remboursements totaux ou partiels, traitement des incidents et des réclamations, modération des avis.</li>
+            <li>Journal d'audit et double authentification pour les administrateurs.</li>
+          </ul>
+          <h3>Problèmes techniques résolus</h3>
+          <ul>
+            <li><strong>Attribution concurrente :</strong> une course envoyée à 5 conducteurs ne peut être acceptée qu'une fois, grâce à un verrou atomique en base de données.</li>
+            <li><strong>Remboursements fiables :</strong> une course n'est marquée remboursée qu'à la confirmation du webhook Stripe, le règlement bancaire étant asynchrone.</li>
+            <li><strong>Notifications en arrière-plan :</strong> correction d'une contrainte d'unicité qui empêchait l'enregistrement des jetons push.</li>
+            <li><strong>Performance :</strong> temps de connexion réduit de 2,3 s à 0,58 s.</li>
+          </ul>
+          <h3>RGPD</h3>
+          <ul>
+            <li>Suppression de compte avec anonymisation des données, versionnage des CGU et nouvelle acceptation à chaque mise à jour.</li>
+          </ul>
+        </div>
+        <div>
+          <div class="pmodal-info">
+            <h5>Informations</h5>
+            <div class="pmodal-info-item"><label>Type</label><span>Application mobile, API et back-office</span></div>
+            <div class="pmodal-info-item"><label>Rôle</label><span>Conception et développement full-stack</span></div>
+            <div class="pmodal-info-item"><label>Période</label><span>Mai 2025 – Septembre 2026</span></div>
+            <div class="pmodal-info-item"><label>Statut</label><span>Publiée sur l'App Store</span></div>
+            <div class="pmodal-info-item"><label>Stack technique</label></div>
+            <div class="pmodal-stack">
+              <span>React Native</span><span>Expo</span><span>TypeScript</span><span>Node.js</span><span>Express</span>
+              <span>PostgreSQL</span><span>Supabase</span><span>Stripe</span><span>Stripe Connect</span>
+              <span>Cloudinary</span><span>Brevo</span><span>Expo Push</span><span>Render</span>
+            </div>
+            <a href="https://scoot2go.fr/" target="_blank" rel="noopener" class="btn-primary-custom" style="margin-top:20px;width:100%;justify-content:center;"><i class="fa fa-external-link-alt"></i> Voir le site</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── MODAL: SenTicket ── -->
+<div class="pmodal-overlay" id="modal-senticket">
+  <div class="pmodal wide">
+    <button class="pmodal-close" onclick="closeModal('modal-senticket')"><i class="fa fa-times"></i></button>
+    <img src="assets/img/portfolio/senticket.svg" class="pmodal-banner-svg" alt="SenTicket">
+    <div class="pmodal-body">
+      <div class="pmodal-header">
+        <div class="pmodal-badge"><i class="fa fa-ticket-alt"></i> Billetterie · 2025 – 2026</div>
+        <h2 class="pmodal-title">SenTicket – Billetterie en ligne</h2>
+        <p class="pmodal-subtitle">Vente et contrôle de billets d'événements au Sénégal, sur le web et en application iOS / Android</p>
+      </div>
+      <div class="pmodal-grid">
+        <div class="pmodal-content">
+          <p>SenTicket permet aux organisateurs de créer et vendre des billets en ligne, et aux clients de les acheter, de les recevoir et de les présenter à l'entrée, sur le web comme sur mobile. J'ai conçu et développé la plateforme complète, du paiement mobile money jusqu'au scan des billets.</p>
+          <h3>Gestion des événements</h3>
+          <ul>
+            <li>Création d'événements avec plusieurs types de billets : tarifs, quotas et visuels.</li>
+            <li>Modification et suivi des ventes en temps réel.</li>
+          </ul>
+          <h3>Paiement Wave, Orange Money et carte</h3>
+          <ul>
+            <li>Intégration de l'API PayTech avec redirection sécurisée.</li>
+            <li>Commande validée uniquement à la réception du webhook de paiement (IPN).</li>
+            <li>Suivi du cycle de vie de chaque commande : en attente, validée, annulée, billet émis.</li>
+          </ul>
+          <h3>Billets numériques et contrôle d'accès</h3>
+          <ul>
+            <li>Billets PDF personnalisés avec un QR code unique, envoyés par email et exportables en lot (ZIP).</li>
+            <li>Scanner intégré qui utilise la caméra pour valider les billets à l'entrée.</li>
+            <li>Traçabilité de chaque scan : agent, heure et résultat.</li>
+          </ul>
+          <h3>Rôles et statistiques</h3>
+          <ul>
+            <li>Quatre niveaux d'accès : client, organisateur, agent de vente et administrateur.</li>
+            <li>Tableaux de bord des ventes, des revenus par événement et de la performance des agents.</li>
+          </ul>
+          <h3>Applications mobiles</h3>
+          <ul>
+            <li>Applications iOS et Android générées avec Capacitor à partir de la même base de code, avec accès à la caméra et partage natif.</li>
+          </ul>
+        </div>
+        <div>
+          <div class="pmodal-info">
+            <h5>Informations</h5>
+            <div class="pmodal-info-item"><label>Type</label><span>Plateforme web et applications mobiles</span></div>
+            <div class="pmodal-info-item"><label>Rôle</label><span>Développeur full-stack</span></div>
+            <div class="pmodal-info-item"><label>Période</label><span>2025 – 2026</span></div>
+            <div class="pmodal-info-item"><label>Marché</label><span>Événements au Sénégal</span></div>
+            <div class="pmodal-info-item"><label>Stack technique</label></div>
+            <div class="pmodal-stack">
+              <span>React</span><span>TypeScript</span><span>Tailwind CSS</span><span>Supabase</span>
+              <span>PostgreSQL</span><span>Clerk</span><span>PayTech</span><span>Resend</span>
+              <span>Capacitor</span><span>Vercel</span>
+            </div>
+            <a href="https://senticket.dsall.fr/" target="_blank" rel="noopener" class="btn-primary-custom" style="margin-top:20px;width:100%;justify-content:center;"><i class="fa fa-external-link-alt"></i> Voir le site</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── MODAL: CSC Building Design ── -->
+<div class="pmodal-overlay" id="modal-csc">
+  <div class="pmodal wide">
+    <button class="pmodal-close" onclick="closeModal('modal-csc')"><i class="fa fa-times"></i></button>
+    <img src="assets/img/portfolio/csc-building.svg" class="pmodal-banner-svg" alt="CSC Building Design">
+    <div class="pmodal-body">
+      <div class="pmodal-header">
+        <div class="pmodal-badge"><i class="fa fa-drafting-compass"></i> Bureau d'études · Dakar · 2026</div>
+        <h2 class="pmodal-title">CSC Building Design – Plateforme métier</h2>
+        <p class="pmodal-subtitle">Site vitrine, espace client et back-office pour un bureau d'études en génie civil</p>
+      </div>
+      <div class="pmodal-grid">
+        <div class="pmodal-content">
+          <p>CSC Building Design est un bureau d'études basé à Dakar qui réalise des plans 2D/3D, des calculs de structure en béton armé et des devis quantitatifs. J'ai conçu et développé une application qui regroupe le site vitrine, l'espace client et le back-office de la gérante. Elle s'adresse en particulier à la diaspora sénégalaise, qui fait construire au pays depuis l'étranger et doit pouvoir suivre son projet et payer à distance.</p>
+          <h3>Simulateur de devis</h3>
+          <ul>
+            <li>Formulaire en plusieurs étapes qui donne au visiteur une fourchette de prix.</li>
+            <li>Calcul fait sur le serveur pour que la grille tarifaire reste confidentielle.</li>
+            <li>Tarifs modifiables par la gérante depuis le back-office, sans redéploiement.</li>
+          </ul>
+          <h3>Du devis à la livraison des plans</h3>
+          <ul>
+            <li>Chaque demande passe par la qualification, le devis, la facture d'acompte de 50 %, le paiement, puis le suivi du projet jusqu'à la livraison.</li>
+            <li>Devis, factures et estimations générés en PDF côté serveur, en FCFA, avec les mentions légales (NINEA, RCCM).</li>
+          </ul>
+          <h3>Paiement Wave, Orange Money, Free Money et carte</h3>
+          <ul>
+            <li>Intégration PayTech : un paiement n'est validé que par le webhook IPN signé, jamais par la simple redirection du navigateur.</li>
+            <li>Traitement idempotent des notifications et mise à jour automatique des factures.</li>
+          </ul>
+          <h3>Espace client et back-office</h3>
+          <ul>
+            <li>Côté client : tableau de bord, projets avec leur avancement, factures, historique des paiements et profil.</li>
+            <li>Côté admin : indicateurs clés, demandes, clients, projets, facturation, portfolio, services, tarifs et utilisateurs.</li>
+          </ul>
+          <h3>Sécurité</h3>
+          <ul>
+            <li>Authentification sur mesure : bcrypt, session JWT en cookie httpOnly, Google OAuth 2.0 et vérification de l'email par code.</li>
+            <li>reCAPTCHA v3, en-têtes CSP et HSTS, validation des données avec zod, droits vérifiés côté serveur et RLS PostgreSQL.</li>
+            <li>Conception mobile-first optimisée pour la 3G/4G, avec bouton WhatsApp et carte Google Maps.</li>
+          </ul>
+        </div>
+        <div>
+          <div class="pmodal-info">
+            <h5>Informations</h5>
+            <div class="pmodal-info-item"><label>Client</label><span>Bureau d'études en génie civil, Dakar</span></div>
+            <div class="pmodal-info-item"><label>Rôle</label><span>Développeur full-stack, de la conception à la mise en ligne</span></div>
+            <div class="pmodal-info-item"><label>Période</label><span>Juillet 2026 – aujourd'hui</span></div>
+            <div class="pmodal-info-item"><label>Stack technique</label></div>
+            <div class="pmodal-stack">
+              <span>React 18</span><span>TypeScript</span><span>Vite</span><span>Tailwind CSS</span>
+              <span>Vercel Serverless</span><span>Supabase</span><span>PostgreSQL</span><span>PayTech</span>
+              <span>Brevo</span><span>zod</span><span>@react-pdf/renderer</span><span>Google Maps</span>
+            </div>
+            <a href="https://www.csc-buildingdesign.com/" target="_blank" rel="noopener" class="btn-primary-custom" style="margin-top:20px;width:100%;justify-content:center;"><i class="fa fa-external-link-alt"></i> Voir le site</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── MODAL: Kokiy Paris ── -->
+<div class="pmodal-overlay" id="modal-kokiy">
+  <div class="pmodal wide">
+    <button class="pmodal-close" onclick="closeModal('modal-kokiy')"><i class="fa fa-times"></i></button>
+    <img src="assets/img/portfolio/kokiy-paris.svg" class="pmodal-banner-svg" alt="Kokiy Paris">
+    <div class="pmodal-body">
+      <div class="pmodal-header">
+        <div class="pmodal-badge"><i class="fa fa-shopping-bag"></i> E-commerce · Mode</div>
+        <h2 class="pmodal-title">Kokiy Paris – Boutique en ligne</h2>
+        <p class="pmodal-subtitle">Refonte d'une boutique WordPress / WooCommerce en stack TypeScript moderne</p>
+      </div>
+      <div class="pmodal-grid">
+        <div class="pmodal-content">
+          <p>Kokiy Paris est une marque de mode qui vend des pagnes tissés et des pièces uniques. J'ai refait entièrement sa boutique en ligne, jusque-là sous WordPress et WooCommerce, avec une stack TypeScript moderne : rendu serveur pour le référencement, paiement Stripe, espace client et back-office complet.</p>
+          <h3>Boutique et catalogue</h3>
+          <ul>
+            <li>Catalogue avec variantes (tailles, couleurs) et fiches produit détaillées.</li>
+            <li>Section « Pièces uniques » avec liste d'attente, et page de personnalisation produit.</li>
+            <li>Recherche, filtres et panier persistant.</li>
+          </ul>
+          <h3>Paiement et commandes</h3>
+          <ul>
+            <li>Tunnel de paiement Stripe : carte bancaire et paiement en plusieurs fois.</li>
+            <li>Commande sans compte (invité) avec suggestions d'adresse.</li>
+            <li>Suivi de commande public avec numéro de suivi et statut d'expédition.</li>
+          </ul>
+          <h3>Espace client et back-office</h3>
+          <ul>
+            <li>Inscription, connexion, réinitialisation du mot de passe et connexion Google.</li>
+            <li>Gestion des commandes et des expéditions, avec annulation automatique des commandes impayées après 48 h.</li>
+            <li>Gestion des produits, du stock, des utilisateurs, des listes d'attente et suivi de trésorerie.</li>
+          </ul>
+          <h3>Confiance et performance</h3>
+          <ul>
+            <li>Carrousel d'avis Google, formulaires protégés par reCAPTCHA et pages légales complètes.</li>
+            <li>Emails transactionnels automatiques : confirmation de commande, facture, notifications.</li>
+            <li>Rendu serveur (SSR) pour le SEO et site disponible en français, anglais et espagnol.</li>
+          </ul>
+        </div>
+        <div>
+          <div class="pmodal-info">
+            <h5>Informations</h5>
+            <div class="pmodal-info-item"><label>Client</label><span>Marque de mode, Paris</span></div>
+            <div class="pmodal-info-item"><label>Rôle</label><span>Développeur full-stack : conception, développement, déploiement et maintenance</span></div>
+            <div class="pmodal-info-item"><label>Langues</label><span>Français, anglais, espagnol</span></div>
+            <div class="pmodal-info-item"><label>Stack technique</label></div>
+            <div class="pmodal-stack">
+              <span>React 19</span><span>TanStack Start</span><span>TanStack Router</span><span>Tailwind CSS 4</span>
+              <span>i18next</span><span>Supabase</span><span>PostgreSQL</span><span>Stripe</span>
+              <span>Zod</span><span>reCAPTCHA v3</span><span>Vercel</span>
+            </div>
+            <a href="https://www.kokiy.com/" target="_blank" rel="noopener" class="btn-primary-custom" style="margin-top:20px;width:100%;justify-content:center;"><i class="fa fa-external-link-alt"></i> Voir le site</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── MODAL: TK Coiffure ── -->
+<div class="pmodal-overlay" id="modal-tk">
+  <div class="pmodal wide">
+    <button class="pmodal-close" onclick="closeModal('modal-tk')"><i class="fa fa-times"></i></button>
+    <img src="assets/img/portfolio/tk-coiffure.svg" class="pmodal-banner-svg" alt="TK Coiffure">
+    <div class="pmodal-body">
+      <div class="pmodal-header">
+        <div class="pmodal-badge"><i class="fa fa-cut"></i> Salon de coiffure · En production</div>
+        <h2 class="pmodal-title">TK Coiffure – Réservation & boutique en ligne</h2>
+        <p class="pmodal-subtitle">Prise de rendez-vous, vente de produits et outils de gestion, avec paiement en ligne sécurisé</p>
+      </div>
+      <div class="pmodal-grid">
+        <div class="pmodal-content">
+          <p>Application web développée pour digitaliser l'activité d'un salon de coiffure : les clients réservent et paient en ligne, achètent des produits, et l'équipe gère toute l'activité depuis un back-office. Je l'ai développée seul, de la conception à la mise en production.</p>
+          <h3>Réservation en ligne</h3>
+          <ul>
+            <li>Le client choisit un service et un créneau disponible, puis paie la totalité ou un acompte.</li>
+            <li>Le salon peut bloquer des dates et des créneaux.</li>
+            <li>Confirmation de la réservation envoyée par email.</li>
+          </ul>
+          <h3>Boutique en ligne</h3>
+          <ul>
+            <li>Catalogue de produits, panier et passage de commande.</li>
+            <li>Suivi du statut (préparation, expédition) avec un email à chaque étape.</li>
+          </ul>
+          <h3>Paiements et remboursements</h3>
+          <ul>
+            <li>Intégration Stripe complète : paiement par carte, facture PDF générée automatiquement.</li>
+            <li>Remboursements déclenchés depuis le back-office.</li>
+            <li>Webhooks Stripe avec vérification de signature et journalisation de chaque événement de paiement en base.</li>
+          </ul>
+          <h3>Back-office administrateur</h3>
+          <ul>
+            <li>Gestion des réservations, commandes, produits, services, utilisateurs et paiements.</li>
+            <li>Historique complet des paiements et remboursements.</li>
+          </ul>
+          <h3>Sécurité</h3>
+          <ul>
+            <li>Authentification des utilisateurs et règles d'accès au niveau de la base de données (Row Level Security).</li>
+          </ul>
+        </div>
+        <div>
+          <div class="pmodal-info">
+            <h5>Informations</h5>
+            <div class="pmodal-info-item"><label>Client</label><span>Salon de coiffure</span></div>
+            <div class="pmodal-info-item"><label>Rôle</label><span>Développement full-stack en solo</span></div>
+            <div class="pmodal-info-item"><label>Statut</label><span>En production, nom de domaine personnalisé</span></div>
+            <div class="pmodal-info-item"><label>Stack technique</label></div>
+            <div class="pmodal-stack">
+              <span>React</span><span>TypeScript</span><span>Vite</span><span>Tailwind CSS</span>
+              <span>shadcn/ui</span><span>Supabase</span><span>PostgreSQL</span><span>Edge Functions</span>
+              <span>Stripe</span><span>Mailgun</span><span>Vercel</span>
+            </div>
+            <a href="https://www.tkcoiffure.fr/" target="_blank" rel="noopener" class="btn-primary-custom" style="margin-top:20px;width:100%;justify-content:center;"><i class="fa fa-external-link-alt"></i> Voir le site</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── MODAL: Thiemping Connect (ADT) ── -->
+<div class="pmodal-overlay" id="modal-adt">
+  <div class="pmodal wide">
+    <button class="pmodal-close" onclick="closeModal('modal-adt')"><i class="fa fa-times"></i></button>
+    <img src="assets/img/portfolio/thiemping-connect.svg" class="pmodal-banner-svg" alt="Thiemping Connect">
+    <div class="pmodal-body">
+      <div class="pmodal-header">
+        <div class="pmodal-badge"><i class="fa fa-hands-helping"></i> Association · ADT</div>
+        <h2 class="pmodal-title">Thiemping Connect – Site de l'association ADT</h2>
+        <p class="pmodal-subtitle">Site vitrine, espace membre, dons et cotisations en ligne, notifications email et WhatsApp</p>
+      </div>
+      <div class="pmodal-grid">
+        <div class="pmodal-content">
+          <p>L'Association pour le Développement de Thiemping (ADT) finance des écoles, des forages, des postes de santé, une maternité et des mosquées dans le village de Thiemping. Elle communiquait jusque-là de manière informelle. J'ai conçu et développé une plateforme qui présente ses réalisations, gère ses membres et leurs cotisations, collecte des dons en ligne et automatise les rappels.</p>
+          <h3>Site vitrine</h3>
+          <ul>
+            <li>Accueil avec présentation de l'association, statistiques et événements phares.</li>
+            <li>Fiche détaillée pour chaque réalisation : besoin initial, financeurs, partenaires, impact et galerie photo.</li>
+            <li>Calendrier des événements, actualités et formulaire de contact.</li>
+          </ul>
+          <h3>Dons en ligne</h3>
+          <ul>
+            <li>Paiement par carte avec Stripe, intention de paiement créée côté serveur.</li>
+            <li>Suivi du statut du paiement et reçu de don envoyé automatiquement par email.</li>
+          </ul>
+          <h3>Membres et cotisations</h3>
+          <ul>
+            <li>Inscription en deux étapes avec validation par email.</li>
+            <li>Espace membre avec historique et statut des cotisations, paiement en ligne et factures.</li>
+            <li>Vue « Trésorier » pour suivre les cotisations de tous les membres.</li>
+          </ul>
+          <h3>Notifications automatiques</h3>
+          <ul>
+            <li>Emails de validation de compte, reçus, factures et rappels de paiement.</li>
+            <li>Rappels de cotisation et de réunion envoyés sur WhatsApp via Twilio.</li>
+          </ul>
+          <h3>Back-office</h3>
+          <ul>
+            <li>Gestion des rôles (membre, trésorier, administrateur), validation, suspension et suppression des comptes.</li>
+          </ul>
+        </div>
+        <div>
+          <div class="pmodal-info">
+            <h5>Informations</h5>
+            <div class="pmodal-info-item"><label>Client</label><span>Association pour le Développement de Thiemping</span></div>
+            <div class="pmodal-info-item"><label>Rôle</label><span>Conception et développement front-end et back-end</span></div>
+            <div class="pmodal-info-item"><label>Stack technique</label></div>
+            <div class="pmodal-stack">
+              <span>React</span><span>TypeScript</span><span>Vite</span><span>Tailwind CSS</span>
+              <span>shadcn/ui</span><span>Supabase</span><span>PostgreSQL</span><span>Edge Functions</span>
+              <span>Stripe</span><span>Twilio WhatsApp</span><span>Vercel</span>
+            </div>
+            <a href="https://www.adt-france.fr/" target="_blank" rel="noopener" class="btn-primary-custom" style="margin-top:20px;width:100%;justify-content:center;"><i class="fa fa-external-link-alt"></i> Voir le site</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- ── MODAL: Frise de Parcours ── -->
 <div class="pmodal-overlay" id="modal-frise">
   <div class="pmodal wide">
@@ -2416,7 +2961,7 @@
 
   // Typed.js
   new Typed('#typed', {
-    strings: ['Ingénieur DevOps', 'Cloud & Infrastructure Engineer', 'Kubernetes & GitOps Expert', 'Terraform & IaC Specialist'],
+    strings: ['Ingénieur DevOps', 'Développeur Full-Stack Web & Mobile', 'Cloud & Infrastructure Engineer', 'Kubernetes & GitOps Expert', 'Terraform & IaC Specialist'],
     typeSpeed: 60, backSpeed: 30, loop: true, backDelay: 2000
   });
 
